@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import InstituteDetails from "./InstituteDetails";
 import ClassAndDivision from "./ClassAndDivision";
 import Subject from "./Subject";
+import StudyMaterials from "./StudyMaterials";
+import Attendance from "./Attendance";
+import ClassTimeTable from "./ClassTimeTable";
 
 function AcademicDetails() {
   const [activeSection, setActiveSection] = useState("classAndDivision");
@@ -79,17 +82,17 @@ function AcademicDetails() {
           )}
           {activeSection === "studyMaterials" && (
             <div>
-              <p>Details about Class Time Table...</p>
+              <StudyMaterials/>
             </div>
           )}
           {activeSection === "attendance" && (
             <div>
-              <p>Details about Class Time Table...</p>
+              <Attendance/>
             </div>
           )}
           {activeSection === "classTimeTable" && (
             <div>
-              <p>Details about Class Time Table...</p>
+              <ClassTimeTable/>
             </div>
           )}
         </div>

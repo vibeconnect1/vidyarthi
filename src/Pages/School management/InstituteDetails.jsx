@@ -57,6 +57,78 @@ function InstituteDetails() {
               </li>
               <li>
                 <NavLink
+                  to="/school-management/school-song-and-prayer"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Song & Prayer
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/academic-parent-recommendation"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Parent Recommendation
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/academic/general-rules"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  General Rules
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/academic/csr"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  CSR
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/academic/discipline-code"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Discipline Code
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/academic/path-to-success"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Path To Success
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/school-management/academic-details"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${

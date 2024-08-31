@@ -1,38 +1,59 @@
 import React, { useState } from "react";
-import Table from "../../ConfigurationFile/Table";
 import { CiSearch } from "react-icons/ci";
 import { IoAddCircleOutline } from "react-icons/io5";
-import ClassesModal from "../Modal/ClassesModal";
+import Table from "../../ConfigurationFile/Table";
 import { Link } from "react-router-dom";
+import { BsEye } from "react-icons/bs";
+import { BiSolidEdit } from "react-icons/bi";
+import { FaRegFileAlt } from "react-icons/fa";
 
-function ClassAndDivision() {
-    const [addModal, setAddModal] = useState(false);
-    const [divisionModal, setDivisionModal] = useState(false);
+function Attendance() {
   const columns = [
     {
-      name: "Classes",
-      selector: (row) => row.classes,
-    },
-    {
-      name: "Total Students",
-      selector: (row) => row.students,
-    },
-    {
-      name: "Division",
+      name: "Action",
 
       cell: (row) => (
         <div className="flex items-center gap-4">
-          <Link to={``} className="border border-gray-500 rounded-md px-4 py-2">
-            manage
+          <Link to={`/school-management/academic-study-materials-details`}>
+            <BsEye size={15} />
+          </Link>
+          <Link to={`/school-management/academic-edit-study-materials`}>
+            <BiSolidEdit size={15} />
           </Link>
         </div>
       ),
     },
+    {
+      name: "Class",
+      selector: (row) => row.class,
+    },
+    {
+      name: "Division",
+      selector: (row) => row.division,
+    },
+    {
+      name: "Roll No",
+      selector: (row) => row.rollNo,
+    },
+    {
+      name: "Date",
+      selector: (row) => row.date,
+    },
+    {
+        name: "Status",
+        selector: (row) => row.status,
+    },
   ];
   const data = [
     {
-      classes: "10th",
-      students: "0",
+      title: "The Midnight Visitor",
+      class: "9th",
+      division: "A",
+      attachment: (
+        <div>
+          <FaRegFileAlt size={20} />
+        </div>
+      ),
     },
   ];
   return (
@@ -47,24 +68,19 @@ function ClassAndDivision() {
             />
             <CiSearch className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500" />
           </div>
-          <button
+          <Link
+            to={`/school-management/academic-add-study-materials`}
             className="bg-white rounded-md px-4 p-1 flex gap-2 justify-center items-center"
-            onClick={() => setAddModal(true)}
           >
             <IoAddCircleOutline size={20} /> Add
-          </button>
+          </Link>
         </div>
         <div>
           <Table columns={columns} data={data} pagination />
         </div>
-        {addModal && (
-          <ClassesModal
-            onclose={() => setAddModal(false)}
-          />
-        )}
       </div>
     </section>
   );
 }
 
-export default ClassAndDivision;
+export default Attendance;

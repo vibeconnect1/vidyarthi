@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InstituteDetails from "./InstituteDetails";
 import { IoIosArrowUp } from "react-icons/io";
+import { FaImage } from "react-icons/fa";
 
 function StudentsForm() {
   const [openDropdown, setOpenDropdown] = useState("student");
@@ -36,8 +37,9 @@ function StudentsForm() {
                 <div className="md:mx-10 my-5 col-span-1">
                   <label
                     htmlFor="file-upload"
-                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex items-center justify-center cursor-pointer"
+                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex items-center flex-col justify-center cursor-pointer"
                   >
+                    <FaImage size={30} className="my-2"/>
                     <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
@@ -216,7 +218,7 @@ function StudentsForm() {
                   <input
                     type="number"
                     name=""
-                    placeholder="Landing Number"
+                    placeholder="Landline"
                     className="border-b border-gray-500 focus:outline-none"
                   />
                 </div>
@@ -367,9 +369,10 @@ function StudentsForm() {
                 <div className="md:mx-10 my-5 col-span-1">
                   <label
                     htmlFor="file-upload"
-                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex items-center justify-center cursor-pointer"
+                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex flex-col items-center justify-center cursor-pointer"
                   >
-                    <p>Upload Picture</p>
+                   <FaImage size={30} className="my-2"/>
+                   <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
                 </div>
@@ -544,8 +547,9 @@ function StudentsForm() {
                 <div className="md:mx-10 my-5 col-span-1">
                   <label
                     htmlFor="file-upload"
-                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex items-center justify-center cursor-pointer"
+                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex flex-col items-center justify-center cursor-pointer"
                   >
+                    <FaImage size={30} className="my-2"/>
                     <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
@@ -695,14 +699,22 @@ function StudentsForm() {
                 <div className="md:mx-10 my-5 col-span-1">
                   <label
                     htmlFor="file-upload"
-                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex items-center justify-center cursor-pointer"
+                    className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex flex-col items-center justify-center cursor-pointer"
                   >
-                    <p>Upload Picture</p>
+                     <FaImage size={30} className="my-2"/>
+                     <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
                 </div>
                 <div className="col-span-2 mt-8">
                   <div className="grid grid-cols-2 gap-10">
+                    <select className="border-b border-gray-500 focus:outline-none">
+                      <option value="">Select Guardian's Relation</option>
+                      <option value="uncle">Uncle</option>
+                      <option value="aunt">Aunt</option>
+                      <option value="grandfather">Grandfather</option>
+                      <option value="grandmother">Grandmother</option>
+                    </select>
                     <div className="flex flex-col">
                       <input
                         type="text"
@@ -715,7 +727,7 @@ function StudentsForm() {
                       <input
                         type="text"
                         name=""
-                        placeholder="Surname's Name"
+                        placeholder="Guardian's Surname"
                         className="border-b border-gray-500 focus:outline-none"
                       />
                     </div>
@@ -739,29 +751,29 @@ function StudentsForm() {
                       <input
                         type="email"
                         name=""
-                        placeholder="Guardian Email"
+                        placeholder="Guardian's Email"
                         className="border-b border-gray-500 focus:outline-none"
                       />
-                    </div>
-                    <div className="flex flex-col space-y-4">
-                      <select
-                        name="qualification"
-                        className="border-b border-gray-500 focus:outline-none"
-                      >
-                        <option value="" disabled selected>
-                          Select Guardian's Qualification
-                        </option>
-                        <option value="highSchool">High School</option>
-                        <option value="bachelors">Bachelor's Degree</option>
-                        <option value="masters">Master's Degree</option>
-                        <option value="phd">Ph.D.</option>
-                        <option value="other">Other</option>
-                      </select>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-10 mx-5">
+                <div className="flex flex-col space-y-4">
+                  <select
+                    name="qualification"
+                    className="border-b border-gray-500 focus:outline-none"
+                  >
+                    <option value="" disabled selected>
+                      Select Guardian's Qualification
+                    </option>
+                    <option value="highSchool">High School</option>
+                    <option value="bachelors">Bachelor's Degree</option>
+                    <option value="masters">Master's Degree</option>
+                    <option value="phd">Ph.D.</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
                 <div className="flex flex-col">
                   <input
                     type="number"
@@ -774,7 +786,7 @@ function StudentsForm() {
                   <input
                     type="number"
                     name=""
-                    placeholder="Guardian's Landing Number"
+                    placeholder="Guardian's Landline"
                     className="border-b border-gray-500 focus:outline-none"
                   />
                 </div>

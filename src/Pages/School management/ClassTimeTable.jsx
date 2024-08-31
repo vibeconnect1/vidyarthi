@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import Table from "../../ConfigurationFile/Table";
 import { CiSearch } from "react-icons/ci";
 import { IoAddCircleOutline } from "react-icons/io5";
-import ClassesModal from "../Modal/ClassesModal";
-import { Link } from "react-router-dom";
 
-function ClassAndDivision() {
-    const [addModal, setAddModal] = useState(false);
-    const [divisionModal, setDivisionModal] = useState(false);
+function ClassTimeTable() {
   const columns = [
     {
       name: "Classes",
@@ -16,17 +12,6 @@ function ClassAndDivision() {
     {
       name: "Total Students",
       selector: (row) => row.students,
-    },
-    {
-      name: "Division",
-
-      cell: (row) => (
-        <div className="flex items-center gap-4">
-          <Link to={``} className="border border-gray-500 rounded-md px-4 py-2">
-            manage
-          </Link>
-        </div>
-      ),
     },
   ];
   const data = [
@@ -55,16 +40,12 @@ function ClassAndDivision() {
           </button>
         </div>
         <div>
+            <h2>School Timing</h2>
           <Table columns={columns} data={data} pagination />
         </div>
-        {addModal && (
-          <ClassesModal
-            onclose={() => setAddModal(false)}
-          />
-        )}
       </div>
     </section>
   );
 }
 
-export default ClassAndDivision;
+export default ClassTimeTable
