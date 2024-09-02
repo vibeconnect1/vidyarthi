@@ -4,8 +4,6 @@ import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { BsEye } from "react-icons/bs";
 import { IoAddCircleOutline } from "react-icons/io5";
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { BiSolidEdit } from "react-icons/bi";
 import { LuPanelLeftClose } from "react-icons/lu";
 import Table from "../../ConfigurationFile/Table";
 
@@ -37,7 +35,7 @@ function Students() {
     "Mother Tongue": true,
     "Blood Group": true,
     "Aadhar Card No": true,
-    "Landline": true,
+    Landline: true,
     "Mobile No": true,
     "Emergency Contact Name": true,
     "Emergency Contact Mob No": true,
@@ -74,6 +72,7 @@ function Students() {
     "Mother is Government Employee.": true,
     "Mother Office Landline.": true,
     "Mother Office Email.": true,
+    "Guardian's Relation": true,
     "Guardian Aadhar Card No.": true,
     "Guardian PAN Card No.": true,
     "Guardian Personal Email.": true,
@@ -90,7 +89,7 @@ function Students() {
     "Sibling Name": true,
     Relation: true,
     "Sibling Date of Birth": true,
-    "Class": true,
+    Class: true,
     Board: true,
     State: true,
     Country: true,
@@ -113,8 +112,13 @@ function Students() {
 
   const columns = [
     {
-      name: "View",
-      selector: (row) => row.view,
+      name: "Action",
+
+      cell: (row) => (
+        <Link to={`/school-management/school-students-details/${row.id}`}>
+          <BsEye size={15} />
+        </Link>
+      ),
     },
     {
       name: "Roll No",
@@ -205,8 +209,8 @@ function Students() {
       selector: (row) => row.aadharCardNo,
     },
     {
-      name: "Landing No",
-      selector: (row) => row.landingNo,
+      name: "Landline",
+      selector: (row) => row.landline,
     },
     {
       name: "Mobile No",
@@ -269,8 +273,8 @@ function Students() {
       selector: (row) => row.fatherMobileNo,
     },
     {
-      name: "Father Landing No.",
-      selector: (row) => row.fatherLandingNo,
+      name: "Father Landline",
+      selector: (row) => row.fatherLandline,
     },
     {
       name: "Father Occupation.",
@@ -293,8 +297,8 @@ function Students() {
       selector: (row) => row.fatherIsGovernmentEmployee,
     },
     {
-      name: "Father Office Landing No.",
-      selector: (row) => row.fatherOfficeLandingNo,
+      name: "Father Office Landline",
+      selector: (row) => row.fatherOfficeLandline,
     },
     {
       name: "Father Office Email.",
@@ -321,8 +325,8 @@ function Students() {
       selector: (row) => row.motherMobileNo,
     },
     {
-      name: "Mother Landing No.",
-      selector: (row) => row.motherLandingNo,
+      name: "Mother Landline No.",
+      selector: (row) => row.motherLandline,
     },
     {
       name: "Mother Occupation.",
@@ -345,12 +349,16 @@ function Students() {
       selector: (row) => row.motherIsGovernmentEmployee,
     },
     {
-      name: "Mother Office Landing No.",
-      selector: (row) => row.motherOfficeLandingNo,
+      name: "Mother Office Landline.",
+      selector: (row) => row.motherOfficeLandline,
     },
     {
       name: "Mother Office Email.",
       selector: (row) => row.motherOfficeEmail,
+    },
+    {
+      name: "Guardian's Relation",
+      selector: (row) => row.guardianRelation,
     },
     {
       name: "Guardian Name.",
@@ -381,8 +389,8 @@ function Students() {
       selector: (row) => row.guardianMobileNo,
     },
     {
-      name: "Guardian Landing No.",
-      selector: (row) => row.guardianLandingNo,
+      name: "Guardian Landline No.",
+      selector: (row) => row.guardianLandline,
     },
     {
       name: "Guardian Occupation.",
@@ -405,8 +413,8 @@ function Students() {
       selector: (row) => row.guardianIsGovernmentEmployee,
     },
     {
-      name: "Guardian Office Landing No.",
-      selector: (row) => row.guardianOfficeLandingNo,
+      name: "Guardian Office Landline No.",
+      selector: (row) => row.guardianOfficeLandline,
     },
     {
       name: "Guardian Office Email.",
@@ -452,16 +460,13 @@ function Students() {
       name: "Month & Year Of Passing",
       selector: (row) => row.monthYearOfPassing,
     },
-    {
-      name: "Action",
-      selector: (row) => row.action,
-    },
   ];
 
-  const filteredColumns = columns.filter(column => visibleColumns[column.name]);
+  const filteredColumns = columns.filter(
+    (column) => visibleColumns[column.name]
+  );
   const data = [
     {
-      view: "View Details",
       rollNo: "101",
       name: "Rakesh",
       surname: "Sharma",
@@ -469,9 +474,9 @@ function Students() {
       motherName: "Gita Sharma",
       admissionFormNo: "AF-1001",
       studentRegistrationNo: "SR-1001",
-      class: "10th Grade",
+      class: "10th ",
       division: "A",
-      house: "Red",
+      house: "Red market house",
       dateOfBirth: "2005-06-21",
       age: "19",
       placeOfBirth: "Mumbai",
@@ -484,7 +489,7 @@ function Students() {
       motherTongue: "Hindi",
       bloodGroup: "B+",
       aadharCardNo: "1234-5678-9123",
-      landingNo: "022-12345678",
+      landline: "022-12345678",
       mobileNo: "9876543210",
       emergencyContactName: "Rajesh Sharma",
       emergencyContactMobNo: "9876543210",
@@ -492,35 +497,36 @@ function Students() {
       state: "Maharashtra",
       country: "India",
       board: "CBSE",
-      fromClass: "9th Grade",
-      toClass: "10th Grade",
+      fromClass: "9th ",
+      toClass: "10th",
       monthYearOfPassing: "March 2021",
       fatherAadharCardNo: "1234-5678-9123",
       fatherPanCardNo: "ABCDE1234F",
       fatherPersonalEmail: "rajesh.sharma@example.com",
-      fatherQualification: "M.Sc.",
+      fatherQualification: "M.Sc",
       fatherMobileNo: "9876543210",
-      fatherLandingNo: "022-12345678",
+      fatherLandline: "022-12345678",
       fatherOccupation: "Engineer",
       fatherAnnualIncome: "10,00,000",
       fatherOrganization: "ABC Ltd.",
       fatherDesignation: "Manager",
       fatherIsGovernmentEmployee: "No",
-      fatherOfficeLandingNo: "022-12345678",
+      fatherOfficeLandline: "022-12345678",
       fatherOfficeEmail: "rajesh.office@example.com",
       motherAadharCardNo: "1234-5678-9123",
       motherPanCardNo: "ABCDE1234G",
       motherPersonalEmail: "gita.sharma@example.com",
       motherQualification: "B.Sc.",
       motherMobileNo: "9876543210",
-      motherLandingNo: "022-12345678",
+      motherLandline: "022-12345678",
       motherOccupation: "Teacher",
       motherAnnualIncome: "5,00,000",
       motherOrganization: "XYZ School",
       motherDesignation: "Lecturer",
       motherIsGovernmentEmployee: "No",
-      motherOfficeLandingNo: "022-12345678",
+      motherOfficeLandline: "022-12345678",
       motherOfficeEmail: "gita.office@example.com",
+      guardianRelation: "Uncle",
       guardianName: "Vinay",
       guardianSurname: "Singh",
       guardianAadharCardNo: "5678-1234-9123",
@@ -528,14 +534,14 @@ function Students() {
       guardianPersonalEmail: "mukesh.sharma@example.com",
       guardianQualification: "MBA",
       guardianMobileNo: "9876543210",
-      guardianLandingNo: "022-87654321",
+      guardianLandline: "022-87654321",
       guardianOccupation: "Businessman",
       guardianAnnualIncome: "12,00,000",
       guardianOrganization: "Sharma Enterprises",
       guardianDesignation: "Owner",
       guardianIsGovernmentEmployee: "No",
-      guardianOfficeLandingNo: "022-87654321",
-      guardianOfficeEmail: "mukesh.office@example.com",
+      guardianOfficeLandLine: "022-87654321",
+      guardianOfficeEmail: "vinay.office@example.com",
       siblingName: "Ritika Sharma",
       relation: "Sister",
       siblingDateOfBirth: "2007-08-15",
@@ -543,10 +549,9 @@ function Students() {
       board: "CBSE",
       state: "Maharashtra",
       country: "India",
-      fromClass: "7th Grade",
+      fromClass: "7th ",
       toClass: "8th Grade",
       monthYearOfPassing: "March 2021",
-      action: "Edit",
     },
   ];
   return (
@@ -594,7 +599,9 @@ function Students() {
                     onChange={() => handleColumnToggle(column.name)}
                     className="mr-2"
                   />
-                  <label htmlFor={column.name} className="text-sm">{column.name}</label>
+                  <label htmlFor={column.name} className="text-sm">
+                    {column.name}
+                  </label>
                 </div>
               ))}
             </div>

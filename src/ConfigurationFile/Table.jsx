@@ -24,6 +24,7 @@ const Table = ({columns, data}) => {
             style: {
                 paddingLeft: '16px',
                 paddingRight: '16px',
+                color:'black'
             },
         },
         cells: {

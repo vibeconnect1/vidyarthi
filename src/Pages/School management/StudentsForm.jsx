@@ -4,10 +4,9 @@ import { IoIosArrowUp } from "react-icons/io";
 import { FaImage } from "react-icons/fa";
 
 function StudentsForm() {
-  const [openDropdown, setOpenDropdown] = useState("student");
-
-  const toggleDropdown = (dropdown) => {
-    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  const [openSection, setOpenSection] = useState(null);
+  const toggleSection = (section) => {
+    setOpenSection(openSection === section ? null : section);
   };
 
   return (
@@ -22,16 +21,15 @@ function StudentsForm() {
             <h2 className="border-b border-gray-500 text-xl font-medium  my-5 mx-5">
               Student Details
             </h2>
-            <button className="mx-5">
+            <button className="mx-5" onClick={() => toggleSection("student")}>
               <IoIosArrowUp
-                className={`transform transition-transform ${
-                  openDropdown ? "rotate-180" : "rotate-0"
+                className={`transition-transform ${
+                  openSection === "student" ? "rotate-180" : ""
                 }`}
-                onClick={() => toggleDropdown("student")}
               />
             </button>
           </div>
-          {openDropdown === "student" && (
+          {openSection === "student" && (
             <div>
               <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
                 <div className="md:mx-10 my-5 col-span-1">
@@ -39,7 +37,7 @@ function StudentsForm() {
                     htmlFor="file-upload"
                     className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex items-center flex-col justify-center cursor-pointer"
                   >
-                    <FaImage size={30} className="my-2"/>
+                    <FaImage size={30} className="my-2" />
                     <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
@@ -324,7 +322,7 @@ function StudentsForm() {
                     name=""
                     rows={3}
                     placeholder=" Local Address"
-                    className="border border-gray-500 focus:outline-none rounded-md"
+                    className="border-b border-gray-500 focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col col-span-3">
@@ -333,7 +331,7 @@ function StudentsForm() {
                     name=""
                     rows={3}
                     placeholder=" Permanent Address"
-                    className="border border-gray-500 focus:outline-none rounded-md"
+                    className="border-b border-gray-500 focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col col-span-3 mb-5">
@@ -342,7 +340,7 @@ function StudentsForm() {
                     name=""
                     rows={3}
                     placeholder=" School/College e Name"
-                    className="border border-gray-500 rounded-md focus:outline-none"
+                    className="border-b border-gray-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -354,16 +352,15 @@ function StudentsForm() {
             <h2 className="border-b border-gray-500 text-xl font-medium  my-5 mx-5">
               Father Details
             </h2>
-            <button className="mx-5">
+            <button className="mx-5" onClick={() => toggleSection("father")}>
               <IoIosArrowUp
-                className={`transform transition-transform ${
-                  openDropdown ? "rotate-180" : "rotate-0"
+                className={`transition-transform ${
+                  openSection === "father" ? "rotate-180" : ""
                 }`}
-                onClick={() => toggleDropdown("father")}
               />
             </button>
           </div>
-          {openDropdown === "father" && (
+          {openSection === "father" && (
             <div>
               <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
                 <div className="md:mx-10 my-5 col-span-1">
@@ -371,8 +368,8 @@ function StudentsForm() {
                     htmlFor="file-upload"
                     className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex flex-col items-center justify-center cursor-pointer"
                   >
-                   <FaImage size={30} className="my-2"/>
-                   <p>Upload Picture</p>
+                    <FaImage size={30} className="my-2" />
+                    <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
                 </div>
@@ -510,14 +507,14 @@ function StudentsForm() {
                 <div className="flex flex-col">
                   <input
                     type="email"
-                    name="fatherOfficialEmailId"
+                    name=""
                     placeholder="Father's Official Email ID"
                     className="border-b border-gray-500 focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col col-span-3 mb-5">
                   <textarea
-                    name="fatherOfficeAddress"
+                    name=""
                     placeholder="Father's Office Address"
                     className="border-b border-gray-500 focus:outline-none resize-none"
                     rows="3"
@@ -532,16 +529,15 @@ function StudentsForm() {
             <h2 className="border-b border-gray-500 text-xl font-medium  my-5 mx-5">
               Mother Details
             </h2>
-            <button className="mx-5">
-              <IoIosArrowUp
-                className={`transform transition-transform ${
-                  openDropdown ? "rotate-180" : "rotate-0"
-                }`}
-                onClick={() => toggleDropdown("mother")}
-              />
-            </button>
+            <button className="mx-5" onClick={() => toggleSection("mother")}>
+                <IoIosArrowUp
+                  className={`transition-transform ${
+                    openSection === "mother" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
           </div>
-          {openDropdown === "mother" && (
+          {openSection === "mother" && (
             <div>
               <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
                 <div className="md:mx-10 my-5 col-span-1">
@@ -549,7 +545,7 @@ function StudentsForm() {
                     htmlFor="file-upload"
                     className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex flex-col items-center justify-center cursor-pointer"
                   >
-                    <FaImage size={30} className="my-2"/>
+                    <FaImage size={30} className="my-2" />
                     <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
@@ -684,16 +680,15 @@ function StudentsForm() {
             <h2 className="border-b border-gray-500 text-xl font-medium  my-5 mx-5">
               Guardian Details
             </h2>
-            <button className="mx-5">
-              <IoIosArrowUp
-                className={`transform transition-transform ${
-                  openDropdown ? "rotate-180" : "rotate-0"
-                }`}
-                onClick={() => toggleDropdown("guardian")}
-              />
-            </button>
+            <button className="mx-5" onClick={() => toggleSection("guardian")}>
+                <IoIosArrowUp
+                  className={`transition-transform ${
+                    openSection === "guardian" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
           </div>
-          {openDropdown === "guardian" && (
+          {openSection === "guardian" && (
             <div>
               <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
                 <div className="md:mx-10 my-5 col-span-1">
@@ -701,8 +696,8 @@ function StudentsForm() {
                     htmlFor="file-upload"
                     className="border border-gray-500 p-4 mb-4 h-48 w-36 rounded-lg  flex flex-col items-center justify-center cursor-pointer"
                   >
-                     <FaImage size={30} className="my-2"/>
-                     <p>Upload Picture</p>
+                    <FaImage size={30} className="my-2" />
+                    <p>Upload Picture</p>
                   </label>
                   <input type="file" className="hidden" id="file-upload" />
                 </div>
@@ -859,16 +854,15 @@ function StudentsForm() {
             <h2 className="border-b border-gray-500 text-xl font-medium  my-5 mx-5">
               Other Details
             </h2>
-            <button className="mx-5">
-              <IoIosArrowUp
-                className={`transform transition-transform ${
-                  openDropdown ? "rotate-180" : "rotate-0"
-                }`}
-                onClick={() => toggleDropdown("other")}
-              />
-            </button>
+            <button className="mx-5" onClick={() => toggleSection("other")}>
+                <IoIosArrowUp
+                  className={`transition-transform ${
+                    openSection === "other" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
           </div>
-          {openDropdown === "other" && (
+          {openSection === "other" && (
             <div>
               <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
                 {/* <div className="md:mx-10 my-5 col-span-1">
@@ -1001,16 +995,15 @@ function StudentsForm() {
             <h2 className="border-b border-gray-500 text-xl font-medium  my-5 mx-5">
               Banking Details
             </h2>
-            <button className="mx-5">
-              <IoIosArrowUp
-                className={`transform transition-transform ${
-                  openDropdown ? "rotate-180" : "rotate-0"
-                }`}
-                onClick={() => toggleDropdown("banking")}
-              />
-            </button>
+            <button className="mx-5" onClick={() => toggleSection("banking")}>
+                <IoIosArrowUp
+                  className={`transition-transform ${
+                    openSection === "banking" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
           </div>
-          {openDropdown === "banking" && (
+          {openSection === "banking" && (
             <div>
               <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
                 {/* <div className="md:mx-10 my-5 col-span-1">
@@ -1067,16 +1060,15 @@ function StudentsForm() {
             <h2 className="border-b border-gray-500 text-xl font-medium  my-5 mx-5">
               Flexible Fields
             </h2>
-            <button className="mx-5">
-              <IoIosArrowUp
-                className={`transform transition-transform ${
-                  openDropdown ? "rotate-180" : "rotate-0"
-                }`}
-                onClick={() => toggleDropdown("flexible")}
-              />
-            </button>
+            <button className="mx-5" onClick={() => toggleSection("flexible")}>
+                <IoIosArrowUp
+                  className={`transition-transform ${
+                    openSection === "flexible" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
           </div>
-          {openDropdown === "flexible" && (
+          {openSection === "flexible" && (
             <div>
               <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
                 <div className="md:mx-10 my-5 col-span-1">

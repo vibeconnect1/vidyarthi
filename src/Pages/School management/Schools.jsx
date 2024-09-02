@@ -59,12 +59,14 @@ function Schools() {
   ];
 
   return (
-    <section className="flex">
+    <section>
+      <Header/>
+      <div className="flex">
       <Sidebar />
-      <div className="flex-1">
+      <div className="flex flex-col overflow-hidden w-full">
         <div className="p-6">
-          <div className="flex justify-between my-5">
-            <h2 className="text-2xl font-semibold">Schools</h2>
+          <div className="md:flex justify-between my-5">
+            <h2 className="text-2xl font-semibold my-2 md:my-0">Schools</h2>
             <div className="flex gap-5">
               <div className="relative">
                 <input
@@ -153,6 +155,7 @@ function Schools() {
             </table>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

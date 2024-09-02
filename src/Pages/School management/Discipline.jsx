@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InstituteDetails from "./InstituteDetails";
 import { Link } from "react-router-dom";
 import { IoAddCircleOutline, IoPencilSharp, IoTrashBinSharp } from "react-icons/io5";
+import { BiSolidEdit } from "react-icons/bi";
 
 function Discipline() {
   const [editingIndex, setEditingIndex] = useState(null);
@@ -72,10 +73,10 @@ function Discipline() {
                         <textarea
                           value={editText}
                           onChange={(e) => setEditText(e.target.value)}
-                          className="border rounded-md p-2 mb-2"
+                          className="border-b border-gray-500 focus:outline-none"
                           rows="3"
                         />
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 my-2">
                           <button
                             onClick={handleSave}
                             className="bg-green-500 text-white px-4 py-1 rounded-md"
@@ -99,9 +100,9 @@ function Discipline() {
                       <div className="flex gap-2 items-center">
                         <button
                           onClick={() => handleEditClick(index)}
-                          className="text-blue-500"
+                          className="text-gray-500"
                         >
-                          <IoPencilSharp size={20} />
+                          <BiSolidEdit size={20} />
                         </button>
                         <button
                           onClick={() => handleDelete(index)}

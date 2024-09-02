@@ -4,27 +4,37 @@ import { CiSearch } from "react-icons/ci";
 import { IoAddCircleOutline } from "react-icons/io5";
 import ClassesModal from "../Modal/ClassesModal";
 import { Link } from "react-router-dom";
+import { BiSolidEdit } from "react-icons/bi";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { BsEye } from "react-icons/bs";
+import EditClassAndDivision from "../Modal/EditClassAndDivision";
 
 function ClassAndDivision() {
-    const [addModal, setAddModal] = useState(false);
-    const [divisionModal, setDivisionModal] = useState(false);
+  const [addModal, setAddModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
   const columns = [
+    {
+      name: "Action",
+
+      cell: (row) => (
+        <Link to={`/school-management/academic/class-division-details`}>
+          <BsEye />
+        </Link>
+      ),
+    },
     {
       name: "Classes",
       selector: (row) => row.classes,
     },
     {
-      name: "Total Students",
-      selector: (row) => row.students,
-    },
-    {
-      name: "Division",
+      name: "Action",
 
       cell: (row) => (
         <div className="flex items-center gap-4">
-          <Link to={``} className="border border-gray-500 rounded-md px-4 py-2">
-            manage
-          </Link>
+          <button onClick={()=> setEditModal(true)}>
+            <BiSolidEdit size={15} />
+          </button>
+          <button><RiDeleteBin5Line size={15} /></button>
         </div>
       ),
     },
@@ -57,11 +67,8 @@ function ClassAndDivision() {
         <div>
           <Table columns={columns} data={data} pagination />
         </div>
-        {addModal && (
-          <ClassesModal
-            onclose={() => setAddModal(false)}
-          />
-        )}
+        {addModal && <ClassesModal onclose={() => setAddModal(false)} />}
+        {editModal && <EditClassAndDivision onclose={() => setEditModal(false)} />}
       </div>
     </section>
   );

@@ -5,14 +5,14 @@ import { NavLink } from "react-router-dom";
 
 function InstituteDetails() {
   const [isBasicSetup, setIsBasicSetup] = useState(false);
-
+  const [isFees, setIsFees] = useState(false);
   const toggleBasicSetup = () => {
     setIsBasicSetup((prevState) => !prevState);
   };
 
   return (
     <div className="h-screen w-48 text-black bg-white">
-      <ul>
+      <ul className="flex flex-col space-y-2 p-4 bg-white">
         <li>
           <NavLink
             to="/school-management/school-dashboard"
@@ -42,7 +42,7 @@ function InstituteDetails() {
             />
           </div>
           {isBasicSetup && (
-            <ul className="">
+            <ul>
               <li>
                 <NavLink
                   to="/school-management/school-Institution-home"
@@ -153,7 +153,7 @@ function InstituteDetails() {
               </li>
               <li>
                 <NavLink
-                  to="/Application Details"
+                  to="/school-management/academic/applicant"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
                       isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
@@ -165,7 +165,7 @@ function InstituteDetails() {
               </li>
               <li>
                 <NavLink
-                  to="/school-management/certificates"
+                  to="/school-management/academic/employees"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
                       isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
@@ -177,7 +177,7 @@ function InstituteDetails() {
               </li>
               <li>
                 <NavLink
-                  to="/school-management/certificates"
+                  to="/school-management/academic/Quotas"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
                       isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
@@ -189,7 +189,7 @@ function InstituteDetails() {
               </li>
               <li>
                 <NavLink
-                  to="/school-management/certificates"
+                  to="/school-management/staff/Role"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
                       isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
@@ -201,7 +201,7 @@ function InstituteDetails() {
               </li>
               <li>
                 <NavLink
-                  to="/school-management/certificates"
+                  to="/school-management/academic/calendar"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
                       isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
@@ -209,6 +209,73 @@ function InstituteDetails() {
                   }
                 >
                   Calendar & Timing
+                </NavLink>
+              </li>
+            </ul>
+          )}
+        </li>
+        <li>
+          <div
+            className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
+            onClick={() =>setIsFees(!isFees)}
+          >
+            <div className="flex items-center">
+              <span className="whitespace-nowrap">Fees & Payment</span>
+            </div>
+            <IoIosArrowUp
+              className={`transform transition-transform ${
+                isFees ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </div>
+          {isFees && (
+            <ul>
+              <li>
+                <NavLink
+                  to="/school-management/fees-payment/feesType"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Fees type
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/fees-payment/fees-payment"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Fees Payment 
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/fees-payment/income"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Income 
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="dd"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                   Expense
                 </NavLink>
               </li>
             </ul>
