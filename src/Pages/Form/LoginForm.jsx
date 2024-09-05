@@ -19,7 +19,7 @@ function LoginForm() {
             </label>
             <input
               type="text"
-              className="w-full px-3 py-2 mt-1 border rounded-md"
+              className="border-b border-gray-500 focus:outline-none"
             />
           </div>
           <div className="flex flex-col my-3">
@@ -28,7 +28,7 @@ function LoginForm() {
             </label>
             <input
               type="password"
-              className="w-full px-3 py-2 mt-1 border rounded-md text-gray-700"
+              className="border-b border-gray-500 focus:outline-none"
             />
           </div>
           <div className="flex justify-between mt-3">

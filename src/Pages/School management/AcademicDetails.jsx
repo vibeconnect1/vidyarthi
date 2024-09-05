@@ -5,6 +5,7 @@ import Subject from "./Subject";
 import StudyMaterials from "./StudyMaterials";
 import Attendance from "./Attendance";
 import ClassTimeTable from "./ClassTimeTable";
+import AssignHomework from "./AssignHomework";
 
 function AcademicDetails() {
   const [activeSection, setActiveSection] = useState("classAndDivision");
@@ -46,7 +47,16 @@ function AcademicDetails() {
               Study Materials
             </h2>
           </div>
-
+          <div>
+            <h2
+              className={`p-3 text-slate-800 cursor-pointer ${
+                activeSection === "homework" ? "text-violet-700" : ""
+              }`}
+              onClick={() => setActiveSection("homework")}
+            >
+              Homework
+            </h2>
+          </div>
           <div>
             <h2
               className={`p-3 text-slate-800 cursor-pointer ${
@@ -57,7 +67,6 @@ function AcademicDetails() {
               Attendance
             </h2>
           </div>
-
           <div>
             <h2
               className={`p-3 text-slate-800 cursor-pointer ${
@@ -93,6 +102,11 @@ function AcademicDetails() {
           {activeSection === "classTimeTable" && (
             <div>
               <ClassTimeTable/>
+            </div>
+          )}
+          {activeSection === "homework" && (
+            <div>
+              <AssignHomework/>
             </div>
           )}
         </div>

@@ -13,7 +13,7 @@ const FeesPayment = () => {
         {
           name: "View",
           cell: (row) => (
-            <Link to={`/school-management/fees-payment/feesType-details/${row.id}`}>
+            <Link to={`/school-management/fees-payment/fees-payment-detail/${row.id}`}>
               <BsEye size={15} />
             </Link>
           ),
@@ -27,8 +27,8 @@ const FeesPayment = () => {
           selector: (row) => row.class,
         },
         {
-          name: "Section",
-          selector: (row) => row.section,
+          name: "Division",
+          selector: (row) => row.division,
         },
         {
           name: "Roll No",
@@ -70,7 +70,7 @@ const FeesPayment = () => {
           id: 1,
           studentName: "Ajay Singh",
           class: "9th",
-          section: "A",
+          division: "A",
           rollNo: "12",
           feesType: "Admission",
           totalFees: "₹ 64,000",
@@ -81,7 +81,7 @@ const FeesPayment = () => {
           id: 2,
           studentName: "Rohan Gupta",
           class: "10th",
-          section: "B",
+          division: "B",
           rollNo: "15",
           feesType: "Library",
           totalFees: "₹ 50,000",
@@ -92,7 +92,7 @@ const FeesPayment = () => {
           id: 3,
           studentName: "Kavita Yadav",
           class: "8th",
-          section: "C",
+          division: "C",
           rollNo: "8",
           feesType: "Lab Fees",
           totalFees: "₹ 10,000",
@@ -100,8 +100,6 @@ const FeesPayment = () => {
           paymentDate: "2024-08-22",
         },
       ];
-      
-
   return (
     <div>
       <Header />

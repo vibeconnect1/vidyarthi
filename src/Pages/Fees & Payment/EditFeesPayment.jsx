@@ -67,19 +67,17 @@ function EditFeesPayment() {
                 />
               </div>
               <div className="flex flex-col">
-                <select className="border-b border-gray-500 focus:outline-none placeholder-gray-700">
-                  <option value="" disabled selected>
-                    Select Payment Method
-                  </option>
-                  <option value="">A</option>
-                  <option value="">B</option>
-                  <option value="">C</option>
-                </select>
+                <input
+                  type="date"
+                  name=""
+                  placeholder="Payment Date"
+                  className="border-b border-gray-500 focus:outline-none placeholder-gray-700"
+                />
               </div>
               <div className="flex flex-col">
                 <select className="border-b border-gray-500 focus:outline-none placeholder-gray-700">
                   <option value="" disabled selected>
-                    Select Payment Date
+                    Select Payment Method
                   </option>
                   <option value="">Cash</option>
                   <option value="">Check</option>

@@ -19,21 +19,47 @@ function AddStudyMaterials() {
                 className="border-b border-gray-500 focus:outline-none"
               />
             </div>
-            <div className="flex flex-col">
-              <input
-                type="text"
+            <div className="flex flex-col space-y-4">
+              <select
                 name=""
-                placeholder="Class"
                 className="border-b border-gray-500 focus:outline-none"
-              />
+              >
+                <option value="" disabled selected>
+                  Select Class
+                </option>
+                <option value="">9th</option>
+                <option value="">10th</option>
+                <option value="">11th</option>
+                <option value="">12th</option>
+              </select>
             </div>
-            <div className="flex flex-col">
-              <input
-                type="text"
+            <div className="flex flex-col space-y-4">
+              <select
                 name=""
-                placeholder="Division"
                 className="border-b border-gray-500 focus:outline-none"
-              />
+              >
+                <option value="" disabled selected>
+                  Select Division
+                </option>
+                <option value="">A</option>
+                <option value="">B</option>
+                <option value="">C</option>
+                <option value="">D</option>
+              </select>
+            </div>
+            <div className="flex flex-col space-y-4">
+              <select
+                name=""
+                className="border-b border-gray-500 focus:outline-none"
+              >
+                <option value="" disabled selected>
+                  Select Subject
+                </option>
+                <option value="">English</option>
+                <option value="">Hindi</option>
+                <option value="">Math</option>
+                <option value="">Science</option>
+              </select>
             </div>
             <div className="flex flex-col">
               <input
@@ -52,7 +78,9 @@ function AddStudyMaterials() {
             </div>
           </div>
           <div className="flex justify-center my-5">
-            <button className="border border-gray-500 rounded-md px-4 p-1 flex gap-2 justify-center items-center">Submit</button>
+            <button className="border border-gray-500 rounded-md px-4 p-1 flex gap-2 justify-center items-center">
+              Submit
+            </button>
           </div>
         </div>
       </div>

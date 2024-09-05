@@ -55,10 +55,96 @@ import FeesIncome from '../Pages/Fees & Payment/FeesIncome';
 import AddFeesPayment from '../Pages/Fees & Payment/AddFeesPayment';
 import FeesPayment from '../Pages/Fees & Payment/FeesPayment';
 import EditFeesPayment from '../Pages/Fees & Payment/EditFeesPayment';
+import StudentDashboard from '../Pages/Student/StudentDashboard';
+import StudentSidebar from '../Pages/Student/StudentSidebar';
+import StudentAttendanceReport from '../Pages/Student/StudentAttendanceReport';
+import StudentFeesInvoice from '../Pages/Student/StudentFeesInvoice';
+import StudentFeesHistory from '../Pages/Student/StudentFeesHistory';
+import StudentStudyMaterial from '../Pages/Student/StudentStudyMaterial';
+import StudentHomeWork from '../Pages/Student/StudentHomeWork';
+import StudentHomeworkSubmit from '../Pages/Student/StudentHomeworkSubmit';
+import StudentNoticeBoard from '../Pages/Student/StudentNoticeBoard';
+import AddAssignHomework from '../Pages/School management/AddAssignHomework';
+import EditAssignHomework from '../Pages/School management/EditAssignHomework';
+import AssignHomeworkDetails from '../Pages/School management/AssignHomeworkDetails';
+import Noticeboard from '../Pages/School management/Noticeboard';
+import AddNoticeboard from '../Pages/School management/AddNoticeboard';
+import EditNoticeboard from '../Pages/School management/EditNoticeboard';
+import NoticeboardDetails from '../Pages/School management/NoticeboardDetails';
+import EventCommunication from '../Pages/Communication/EventCommunication';
+import AddEvent from '../Pages/Communication/AddEvent';
+import EditEvent from '../Pages/Communication/EditEvent';
+import EventDetails from '../Pages/Communication/EventDetails';
+import StudentEvent from '../Pages/Student/StudentEvent';
+import Survey from '../Pages/Communication/Survey';
+import AddSurvey from '../Pages/Communication/AddSurvey';
+import EditSurvey from '../Pages/Communication/EditSurvey';
+import SurveyDetails from '../Pages/Communication/SurveyDetails';
+import Book from '../Pages/Library Management/Book';
+import AddBook from '../Pages/Library Management/AddBook';
+import EditBook from '../Pages/Library Management/EditBook';
+import BookDetails from '../Pages/Library Management/BookDetails';
+import LibraryCard from '../Pages/Library Management/LibraryCard';
+import AddLibraryCard from '../Pages/Library Management/AddLibraryCard';
+import EditLibraryCard from '../Pages/Library Management/EditLibraryCard';
+import LibraryCardDetails from '../Pages/Library Management/LibraryCardDetails';
+import StudentLiveClass from '../Pages/Student/StudentLiveClass';
+import LiveClasses from '../Pages/School management/LiveClasses';
+import AddLiveClasses from '../Pages/School management/AddLiveClasses';
+import EditLiveClasses from '../Pages/School management/EditLiveClasses';
+import LiveClassesDetails from '../Pages/School management/LiveClassesDetails';
+import ExamTable from '../Pages/Examination/ExamTable';
+import AddExamTimetable from '../Pages/Examination/AddExamTimetable';
+import IssueBook from '../Pages/Library Management/IssueBook';
+import AddIssueBook from '../Pages/Library Management/AddIssueBook';
+import EditIssueBook from '../Pages/Library Management/EditIssueBook';
+import IssueBookDetails from '../Pages/Library Management/IssueBookDetails';
+import BookReturn from '../Pages/Library Management/BookReturn';
+import AddBookReturn from '../Pages/Library Management/AddBookReturn';
+import EditBookReturn from '../Pages/Library Management/EditBookReturn';
+import BookReturnDetails from '../Pages/Library Management/BookReturnDetails';
+import RequestBook from '../Pages/Library Management/RequestBook';
+import AddRequestBook from '../Pages/Library Management/AddRequestBook';
+import EditRequestBook from '../Pages/Library Management/EditRequestBook';
+import RequestBookDetails from '../Pages/Library Management/RequestBookDetails';
+import Vehicle from '../Pages/Transport Management/Vehicle';
+import AddVehicle from '../Pages/Transport Management/AddVehicle';
+import EditVehicle from '../Pages/Transport Management/EditVehicle';
+import VehicleDetails from '../Pages/Transport Management/VehicleDetails';
+import Driver from '../Pages/Transport Management/Driver';
+import AddDriver from '../Pages/Transport Management/AddDriver';
+import EditDriver from '../Pages/Transport Management/EditDriver';
+import DriverDetails from '../Pages/Transport Management/DriverDetails';
+import VehicleRoute from '../Pages/Transport Management/VehicleRoute';
+import AddRoute from '../Pages/Transport Management/AddRoute';
+import EditRoute from '../Pages/Transport Management/EditRoute';
+import RouteDetails from '../Pages/Transport Management/RouteDetails';
+import TransportAllocation from '../Pages/Transport Management/TransportAllocation';
+import AddTransportAllocation from '../Pages/Transport Management/AddTransportAllocation';
+import EditTransportAllocation from '../Pages/Transport Management/EditTransportAllocation';
+import TransportAllocationDetails from '../Pages/Transport Management/TransportAllocationDetails';
+import FeesPaymentDetails from '../Pages/Fees & Payment/FeesPaymentDetails';
+import SalaryProcessing from '../Pages/Fees & Payment/SalaryProcessing';
+import AddSalaryProcessing from '../Pages/Fees & Payment/AddSalaryProcessing';
+import EditSalaryProcessing from '../Pages/Fees & Payment/EditSalaryProcessing';
+import ExamTimeTableDetails from '../Pages/Examination/ExamTimeTableDetails';
+import StudentExamTimetable from '../Pages/Student/StudentExamTimetable';
+import StudentExamResult from '../Pages/Student/StudentExamResult';
+import AddExamResult from '../Pages/Examination/AddExamResult';
+import AccountingDashboard from '../Pages/Fees & Payment/AccountingDashboard';
+import EditExamTimetable from '../Pages/Examination/EditExamTimetable';
+import SalaryProcessingDetails from '../Pages/Fees & Payment/SalaryProcessingDetails';
+import AddIncome from '../Pages/Fees & Payment/AddIncome';
+import EditIncome from '../Pages/Fees & Payment/EditIncome';
+import IncomeDetails from '../Pages/Fees & Payment/IncomeDetails';
+import Expense from '../Pages/Fees & Payment/Expense';
+import AddExpense from '../Pages/Fees & Payment/AddExpense';
+import EditExpense from '../Pages/Fees & Payment/EditExpense';
+import Notification from './Notification';
 
 const routes = [
     {
-        path: '/dashboard',
+        path: '/',
         element: <Dashboard />,
     },
     {
@@ -72,6 +158,10 @@ const routes = [
     {
         path: '/forgot-password',
         element: <ForgotPassword />,
+    }, 
+    {
+        path: '/notification',
+        element: <Notification />,
     }, 
     {
         path: '/',
@@ -218,6 +308,51 @@ const routes = [
         element: < CalendarAndTiming/>,
     },
     {
+        path: '/school-management/academic/add-assign-homework',
+        element: < AddAssignHomework/>,
+    },
+    {
+        path: '/school-management/academic/edit-assign-homework/:id',
+        element: < EditAssignHomework/>,
+    },
+    {
+        path: '/school-management/academic/assign-homework-details/:id',
+        element: < AssignHomeworkDetails/>,
+    },
+    {
+        path: '/school-management/academic/noticeboard',
+        element: < Noticeboard/>,
+    },
+    {
+        path: '/school-management/academic/add-noticeboard',
+        element: < AddNoticeboard/>,
+    },
+    {
+        path: '/school-management/academic/edit-noticeboard/:id',
+        element: < EditNoticeboard/>,
+    },
+    {
+        path: '/school-management/academic/noticeboard-details/:id',
+        element: < NoticeboardDetails/>,
+    },
+    {
+        path: '/school-management/academic/live-classes',
+        element: <LiveClasses/>,
+    },
+    {
+        path: '/school-management/academic/add-live-classes',
+        element: <AddLiveClasses/>,
+    },
+    {
+        path: '/school-management/academic/edit-live-classes/:id',
+        element: <EditLiveClasses/>,
+    },
+    {
+        path: '/school-management/academic/live-classes-details/:id',
+        element: <LiveClassesDetails/>,
+    },
+    //staff
+    {
         path: '/school-management/staff/add-employees',
         element: < AddEmployees/>,
     },
@@ -237,6 +372,7 @@ const routes = [
         path: '/school-management/staff/edit-role/:id',
         element: < EditRole/>,
     },
+    // fees
     {
         path: '/school-management/fees-payment/feesType',
         element: < FeesType/>,
@@ -258,6 +394,30 @@ const routes = [
         element: < FeesIncome/>,
     },
     {
+        path: '/school-management/fees-payment/add-income',
+        element: < AddIncome/>,
+    },
+    {
+        path: '/school-management/fees-payment/edit-income/:id',
+        element: < EditIncome/>,
+    },
+    {
+        path: '/school-management/fees-payment/income-details/:id',
+        element: < IncomeDetails/>,
+    },
+    {
+        path: '/school-management/fees-payment/expense',
+        element: < Expense/>,
+    },
+    {
+        path: '/school-management/fees-payment/add-expense',
+        element: < AddExpense/>,
+    },
+    {
+        path: '/school-management/fees-payment/edit-expense/:id',
+        element: < EditExpense/>,
+    },
+    {
         path: '/school-management/fees-payment/fees-payment',
         element: < FeesPayment/>,
     },
@@ -268,6 +428,288 @@ const routes = [
     {
         path: '/school-management/fees-payment/edit-fees-payment/:id',
         element: < EditFeesPayment/>,
+    },
+    {
+        path: '/school-management/fees-payment/fees-payment-detail/:id',
+        element: < FeesPaymentDetails/>,
+    },
+    {
+        path: '/school-management/fees-payment/salary-processing',
+        element: < SalaryProcessing/>,
+    },
+    {
+        path: '/school-management/fees-payment/add-salary-processing',
+        element: < AddSalaryProcessing/>,
+    },
+    {
+        path: '/school-management/fees-payment/edit-salary-processing/:id',
+        element: < EditSalaryProcessing/>,
+    },
+    {
+        path: '/school-management/fees-payment/salary-processing-details/:id',
+        element: < SalaryProcessingDetails/>,
+    },
+    {
+        path: '/school-management/fees-payment/accounting',
+        element: < AccountingDashboard/>,
+    },
+    
+    // student section
+    {
+        path: '/student/student-dashboard',
+        element: < StudentDashboard/>,
+    },
+    {
+        path: '/student/student-sidebar',
+        element: < StudentSidebar/>,
+    },
+    {
+        path: '/student/student-attendance-report',
+        element: < StudentAttendanceReport/>,
+    },
+    {
+        path: '/student/student-fees-invoice',
+        element: < StudentFeesInvoice/>,
+    },
+    {
+        path: '/student/student-fees-history',
+        element: < StudentFeesHistory/>,
+    },
+    {
+        path: '/student/student-study-materials',
+        element: < StudentStudyMaterial/>,
+    },
+    {
+        path: '/student/student-study-materials',
+        element: < StudentStudyMaterial/>,
+    },
+    {
+        path: '/student/student-homework',
+        element: < StudentHomeWork/>,
+    },
+    {
+        path: '/student/student-homework-submit',
+        element: < StudentHomeworkSubmit/>,
+    },
+    {
+        path: '/student/student-noticeboard',
+        element: < StudentNoticeBoard/>,
+    },
+    {
+        path: '/student/student-event',
+        element: < StudentEvent/>,
+    },
+    {
+        path: '/student/student-live-classes',
+        element: < StudentLiveClass/>,
+    },
+    {
+        path: '/student/student-exam-timetable',
+        element: < StudentExamTimetable/>,
+    },
+    {
+        path: '/student/student-exam-result',
+        element: < StudentExamResult/>,
+    },
+    // event
+    {
+        path: '/student/event',
+        element: <EventCommunication/>,
+    },
+    {
+        path: '/student/add-event',
+        element: <AddEvent/>,
+    },
+    {
+        path: '/student/edit-event/:id',
+        element: <EditEvent/>,
+    },
+    {
+        path: '/student/event-details/:id',
+        element: <EventDetails/>,
+    },
+    {
+        path: '/student/survey',
+        element: <Survey/>,
+    },
+    {
+        path: '/student/add-survey',
+        element: <AddSurvey/>,
+    },
+    {
+        path: '/student/edit-survey/:id',
+        element: <EditSurvey/>,
+    },
+    {
+        path: '/student/survey-detail/:id',
+        element: <SurveyDetails/>,
+    },
+    // Library
+    {
+        path: '/school-management/library/book',
+        element: < Book/>,
+    },
+    {
+        path: '/school-management/library/add-book',
+        element: < AddBook/>,
+    },
+    {
+        path: '/school-management/library/edit-book/:id',
+        element: < EditBook/>,
+    },
+    {
+        path: '/school-management/library/book-details/:id',
+        element: < BookDetails/>,
+    },
+    {
+        path: '/school-management/library/library-card',
+        element: < LibraryCard/>,
+    },
+    {
+        path: '/school-management/library/add-library-card',
+        element: < AddLibraryCard/>,
+    },
+    {
+        path: '/school-management/library/edit-library-card/:id',
+        element: < EditLibraryCard/>,
+    },
+    {
+        path: '/school-management/library/library-card-details/:id',
+        element: < LibraryCardDetails/>,
+    },
+    {
+        path: '/school-management/library/issue-book',
+        element: < IssueBook/>,
+    },
+    {
+        path: '/school-management/library/add-issue-book',
+        element: < AddIssueBook/>,
+    },
+    {
+        path: '/school-management/library/add-issue-book/:id',
+        element: < EditIssueBook/>,
+    },
+    {
+        path: '/school-management/library/issue-book-details/:id',
+        element: < IssueBookDetails/>,
+    },
+    {
+        path: '/school-management/library/book-return',
+        element: < BookReturn/>,
+    },
+    {
+        path: '/school-management/library/add-book-return',
+        element: < AddBookReturn/>,
+    },
+    {
+        path: '/school-management/library/edit-book-return/:id',
+        element: < EditBookReturn/>,
+    },
+    {
+        path: '/school-management/library/book-return-details/:id',
+        element: < BookReturnDetails/>,
+    },
+    {
+        path: '/school-management/library/request-book',
+        element: < RequestBook/>,
+    },
+    {
+        path: '/school-management/library/add-request-book',
+        element: < AddRequestBook/>,
+    },
+    {
+        path: '/school-management/library/edit-request-book/:id',
+        element: < EditRequestBook/>,
+    },
+    {
+        path: '/school-management/library/request-book-details/:id',
+        element: < RequestBookDetails/>,
+    },
+    // exam timetable
+    {
+        path: '/school-management/exam-timetable',
+        element: < ExamTable/>,
+    },
+    {
+        path: '/school-management/add-exam-timetable',
+        element: < AddExamTimetable/>,
+    },
+    {
+        path: '/school-management/edit-exam-timetable/:id',
+        element: < EditExamTimetable/>,
+    },
+    {
+        path: '/school-management/exam-timetable-details/:id',
+        element: < ExamTimeTableDetails/>,
+    },
+    {
+        path: '/school-management/add-exam-result',
+        element: < AddExamResult/>,
+    },
+    // Transport management
+    {
+        path: '/school-management/transport/vehicle',
+        element: < Vehicle/>,
+    },
+    {
+        path: '/school-management/transport/add-vehicle',
+        element: < AddVehicle/>,
+    },
+    {
+        path: '/school-management/transport/edit-vehicle/:id',
+        element: < EditVehicle/>,
+    },
+    {
+        path: '/school-management/transport/vehicle-details/:id',
+        element: < VehicleDetails/>,
+    },
+    {
+        path: '/school-management/transport/driver',
+        element: < Driver/>,
+    },
+    {
+        path: '/school-management/transport/add-driver',
+        element: < AddDriver/>,
+    },
+    {
+        path: '/school-management/transport/edit-driver/:id',
+        element: < EditDriver/>,
+    },
+    {
+        path: '/school-management/transport/driver-details/:id',
+        element: < DriverDetails/>,
+    },
+    {
+        path: '/school-management/transport/vehicle-route',
+        element: < VehicleRoute/>,
+    },
+    {
+        path: '/school-management/transport/add-route',
+        element: < AddRoute/>,
+    },
+    {
+        path: '/school-management/transport/edit-route/:id',
+        element: < EditRoute/>,
+    },
+    {
+        path: '/school-management/transport/route-details/:id',
+        element: <RouteDetails/>,
+    },
+    {
+        path: '/school-management/transport/transport-allocation',
+        element: <TransportAllocation/>,
+    },
+    {
+        path: '/school-management/transport/add-transport-allocation',
+        element: <AddTransportAllocation/>,
+    },
+    {
+        path: '/school-management/transport/edit-transport-allocation/:id',
+        element: <EditTransportAllocation/>,
+    },
+    {
+        path: '/school-management/transport/transport-allocation-details/:id',
+        element: <TransportAllocationDetails/>,
     },
 ];
 

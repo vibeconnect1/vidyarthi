@@ -1,6 +1,5 @@
 import React from 'react'
 import ModalWrapper from "../Modal/ModalWrapper"
-
 const EditSubjectModal = ({ onclose} ) => {
     return (
         <ModalWrapper onclose={onclose}>

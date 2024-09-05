@@ -89,4 +89,5 @@ const Quotas = () => {
     </div>
   );
 };
+
 export default Quotas;
