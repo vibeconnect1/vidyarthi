@@ -73,7 +73,6 @@ import EditNoticeboard from '../Pages/School management/EditNoticeboard';
 import NoticeboardDetails from '../Pages/School management/NoticeboardDetails';
 import EventCommunication from '../Pages/Communication/EventCommunication';
 import AddEvent from '../Pages/Communication/AddEvent';
-import EditEvent from '../Pages/Communication/EditEvent';
 import EventDetails from '../Pages/Communication/EventDetails';
 import StudentEvent from '../Pages/Student/StudentEvent';
 import Survey from '../Pages/Communication/Survey';
@@ -141,6 +140,18 @@ import Expense from '../Pages/Fees & Payment/Expense';
 import AddExpense from '../Pages/Fees & Payment/AddExpense';
 import EditExpense from '../Pages/Fees & Payment/EditExpense';
 import Notification from './Notification';
+import StudentSubject from '../Pages/Student/StudentSubject';
+import StudentIdCard from '../Pages/Student/StudentIdCard';
+import StudentEventDetails from '../Pages/Student/StudentEventDetails';
+import AddClassTimeTable from '../Pages/School management/AddClassTimeTable';
+import StudentLiveClassDetails from '../Pages/Student/StudentLiveClassDetails';
+import Canteen from '../Pages/Canteen Management/Canteen';
+import AddCanteenProduct from '../Pages/Canteen Management/AddCanteenProduct';
+import EditCanteenProduct from '../Pages/Canteen Management/EditCanteenProduct';
+import CanteenProductDetails from '../Pages/Canteen Management/CanteenProductDetails';
+import StudIdCard from '../Pages/School management/StudIdCard';
+import StudentNoticeDetails from '../Pages/Student/StudentNoticeDetails';
+import Asset from '../Pages/Asset/Asset';
 
 const routes = [
     {
@@ -226,6 +237,10 @@ const routes = [
     {
         path: '/school-management/academic-study-materials-details',
         element: < StudyMaterialsDetails/>,
+    },
+    {
+        path: '/school-management/add-class-time-table',
+        element: < AddClassTimeTable/>,
     }, 
     {
         path: '/school-management/academic-parent-recommendation',
@@ -453,6 +468,10 @@ const routes = [
         path: '/school-management/fees-payment/accounting',
         element: < AccountingDashboard/>,
     },
+    {
+        path: '/school-management/stud-id-card',
+        element: < StudIdCard/>,
+    },
     
     // student section
     {
@@ -511,6 +530,26 @@ const routes = [
         path: '/student/student-exam-result',
         element: < StudentExamResult/>,
     },
+    {
+        path: '/student/student-subject',
+        element: < StudentSubject/>,
+    },
+    {
+        path: '/student/student-id-card',
+        element: < StudentIdCard/>,
+    },
+    {
+        path: '/student/student-event-details/:id',
+        element: < StudentEventDetails/>,
+    },
+    {
+        path: '/student/student-live-class-details/:id',
+        element: < StudentLiveClassDetails/>,
+    },
+    {
+        path: '/student/student-notice-details',
+        element: < StudentNoticeDetails/>,
+    },
     // event
     {
         path: '/student/event',
@@ -519,10 +558,6 @@ const routes = [
     {
         path: '/student/add-event',
         element: <AddEvent/>,
-    },
-    {
-        path: '/student/edit-event/:id',
-        element: <EditEvent/>,
     },
     {
         path: '/student/event-details/:id',
@@ -710,6 +745,28 @@ const routes = [
     {
         path: '/school-management/transport/transport-allocation-details/:id',
         element: <TransportAllocationDetails/>,
+    },
+    // canteen 
+    {
+        path: '/school-management/canteen',
+        element: <Canteen/>,
+    },
+    {
+        path: '/school-management/add-canteen-product',
+        element: <AddCanteenProduct/>,
+    },
+    {
+        path: '/school-management/edit-canteen-product/:id',
+        element: <EditCanteenProduct/>,
+    },
+    {
+        path: '/school-management/canteen-product-details/:id',
+        element: <CanteenProductDetails/>,
+    },
+    // asset
+    {
+        path: '/school-management/asset',
+        element: <Asset/>,
     },
 ];
 

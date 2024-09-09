@@ -14,6 +14,22 @@ const StudentSidebar = () => {
           Student Profile
         </NavLink>
         <NavLink 
+          to="/student/student-subject" 
+          className={({ isActive }) => 
+            isActive ? 'text-black p-2 rounded-md custom-bg' : 'p-2 text-gray-800 hover:my-custom-class hover:text-black rounded-md'
+          }
+        >
+          Subjects
+        </NavLink>
+        <NavLink 
+          to="/student/student-id-card" 
+          className={({ isActive }) => 
+            isActive ? 'text-black p-2 rounded-md custom-bg' : 'p-2 text-gray-800 hover:my-custom-class hover:text-black rounded-md'
+          }
+        >
+          Id Card
+        </NavLink>
+        <NavLink 
           to="/student/student-attendance-report" 
           className={({ isActive }) => 
             isActive ? 'text-black p-2 rounded-md custom-bg' : 'p-2 text-gray-800 hover:my-custom-class hover:text-black rounded-md'

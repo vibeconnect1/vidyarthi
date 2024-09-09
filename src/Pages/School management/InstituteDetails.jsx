@@ -10,6 +10,7 @@ function InstituteDetails() {
   const [library, setLibrary] = useState(false);
   const [exam, setExam] = useState(false);
   const[transport, setTransport] = useState(false)
+  const[canteen, setCanteen] = useState(false)
   const toggleBasicSetup = () => {
     setIsBasicSetup((prevState) => !prevState);
   };
@@ -154,6 +155,20 @@ function InstituteDetails() {
                 >
                   Student
                 </NavLink>
+                
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/stud-id-card"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Student Id Card
+                </NavLink>
+                
               </li>
               <li>
                 <NavLink
@@ -283,16 +298,6 @@ function InstituteDetails() {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/school-management/fees-payment/salary-processing"
-                  className={({ isActive }) =>
-                    `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
-                    }`
-                  }
-                >
-                  Salary
-                </NavLink>
               </li>
               <li>
                 <NavLink
@@ -552,6 +557,52 @@ function InstituteDetails() {
               </li>
             </ul>
           )}
+          
+        </li>
+        <li>
+          <div
+            className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
+            onClick={() =>setCanteen(!canteen)}
+          >
+            <div className="flex items-center">
+              <span className="whitespace-nowrap">Canteen</span>
+            </div>
+            <IoIosArrowUp
+              className={`transform transition-transform ${
+                canteen ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </div>
+          {canteen && (
+            <ul>
+              <li>
+                <NavLink
+                  to="/school-management/canteen"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                    }`
+                  }
+                >
+                  Canteen
+                </NavLink>
+              </li>
+            </ul>
+          )}
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/school-dashboard"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">
+               Asset
+            </div>
+          </NavLink>
         </li>
       </ul>
     </div>

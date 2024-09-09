@@ -1,16 +1,17 @@
 import React from "react";
 import Header from "../Form/Header";
-import InstituteDetails from "../School management/InstituteDetails";
 import event from "/event.jpg";
 import { CiLocationOn } from "react-icons/ci";
 import { AiOutlineLike } from "react-icons/ai";
+import StudentSidebar from "./StudentSidebar";
+import { MdPersonAdd } from "react-icons/md";
 
-const EventDetails = () => {
+const StudentEventDetails = () => {
   return (
     <div>
       <Header />
       <div className="flex">
-        <InstituteDetails />
+        <StudentSidebar />
         <div className="flex flex-col overflow-hidden w-full">
           <div className="flex justify-between mx-5 my-5">
             <p className="text-xl font-bold text-gray-600">Event Details</p>
@@ -60,30 +61,21 @@ const EventDetails = () => {
                 </div>
                 <div className="grid grid-cols-2 items-center">
                   <p className="font-medium">RSVP:</p>
-                  <p className="text-sm font-normal"></p>
+                  <p className="text-sm font-normal">Yes</p>
                 </div>
               </div>
             </div>
             <div className="grid grid-cols-1 items-center md:px-5">
               <p className="font-medium mb-1">Description:</p>
-              <p className="text-sm font-normal border border-dashed border-gray-500 rounded-md py-5 px-4">
+              <p className="text-sm font-normal">
                 This name stands out by combining “Tech” to convey a focus on
                 technology, and “Spark” to suggest innovation and inspiration.
                 “Summit” implies a high-level gathering for tech professionals,
                 offering valuable insights and networking opportunities.
               </p>
             </div>
-            <div className="grid grid-cols-1 items-center md:px-5">
-              <p className="font-medium mb-1">Share With Member:</p>
-              <p className="text-sm font-normal border border-dashed border-gray-500 rounded-md py-5 px-4"></p>
-            </div>
-            <div className="grid grid-cols-1 items-center md:px-5">
-              <p className="font-medium mb-1">Share With Group:</p>
-              <p className="text-sm font-normal border border-dashed border-gray-500 rounded-md py-5 px-4"></p>
-            </div>
-            <div className="grid grid-cols-1 items-center md:px-5">
-              <p className="font-medium mb-1">Feedback:</p>
-              <p className="text-sm font-normal border border-dashed border-gray-500 rounded-md py-5 px-4"></p>
+            <div className="mx-5 my-3">
+                <button className="border border-gray-500 rounded-md px-5 py-1 flex gap-1"><MdPersonAdd className="mt-1"/>Join</button>
             </div>
           </div>
         </div>
@@ -92,4 +84,4 @@ const EventDetails = () => {
   );
 };
 
-export default EventDetails;
+export default StudentEventDetails

@@ -1,39 +1,16 @@
 import React, { useState } from "react";
 import Header from "../Form/Header";
-import InstituteDetails from "./InstituteDetails";
-import Table from "../../ConfigurationFile/Table";
-import LiveClassSummaryModal from "../Modal/LiveClassSummaryModal";
 import { FaDownload } from "react-icons/fa";
+import StudentSidebar from "./StudentSidebar";
+import StudentLiveClassSummaryModal from "../Modal/StudentLiveClassSummaryModal";
 
-const LiveClassesDetails = () => {
+const StudentLiveClassDetails = () => {
   const [summaryModal, setSummaryModal] = useState(false);
-  const upcomingColumns = [
-    {
-      name: "Name",
-      selector: (row) => row.name,
-    },
-    {
-      name: "Phone No",
-      selector: (row) => row.phoneNo,
-    },
-    {
-      name: "Email",
-      selector: (row) => row.email,
-    },
-  ];
-  const upcomingData = [
-    {
-      id: 1,
-      name: "Mathematics Review",
-      phoneNo: "2024-09-03",
-      email: "10:00 AM",
-    },
-  ];
   return (
     <div>
       <Header />
       <div className="flex">
-        <InstituteDetails />
+        <StudentSidebar />
         <div className="flex flex-col overflow-hidden w-full">
           <div className="flex justify-between mx-5 my-5">
             <p className="text-xl font-bold text-gray-600">
@@ -110,29 +87,13 @@ const LiveClassesDetails = () => {
               <FaDownload /> Meeting Transcript
             </button>
           </div>
-          <div className="my-5">
-            <p className="text-xl font-medium text-gray-600 mx-5 my-2">
-              Internal Attendees List
-            </p>
-            <div className="mx-5 bg-white rounded-md px-5">
-              <Table columns={upcomingColumns} data={upcomingData} pagination />
-            </div>
-          </div>
-          <div className="mx-5 my-5">
-            <p className="text-xl font-medium text-gray-600 mb-2">
-              External Attendees Email:
-            </p>
-            <p className="text-sm font-normal border border-gray-500 rounded-md py-5 px-4 text-center">
-              No External Attendees Invited
-            </p>
-          </div>
         </div>
         {summaryModal && (
-          <LiveClassSummaryModal onclose={() => setSummaryModal(false)} />
+          <StudentLiveClassSummaryModal onclose={() => setSummaryModal(false)} />
         )}
       </div>
     </div>
   );
 };
 
-export default LiveClassesDetails;
+export default StudentLiveClassDetails

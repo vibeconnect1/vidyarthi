@@ -25,25 +25,21 @@ const Noticeboard = () => {
       selector: (row) => row.title,
     },
     {
-      name: "Class",
-      selector: (row) => row.class,
-    },
-    {
-      name: "Division",
-      selector: (row) => row.division,
+      name: "Type",
+      selector: (row) => row.type,
     },
     {
       name: "Student",
       selector: (row) => row.student,
     },
     {
-        name: "Date",
-        selector: (row) => row.date,
+      name: "Date",
+      selector: (row) => row.date,
     },
     {
-        name: "File",
-        selector: (row) => <FaFile />,
-      },
+      name: "File",
+      selector: (row) => <FaFile />,
+    },
     {
       name: "Action",
 
@@ -63,19 +59,19 @@ const Noticeboard = () => {
   const data = [
     {
       id: 1,
-      title :'Exam',
+      title: "Exam",
       class: "9th",
       division: "A",
       student: "All Student",
-      date:'3 Sep, 2024'
+      date: "3 Sep, 2024",
     },
     {
       id: 2,
-      title :'Exam',
+      title: "Exam",
       class: "10th",
       division: "C",
       student: "Karan Singh",
-      date:'1 Sep, 2024'
+      date: "1 Sep, 2024",
     },
   ];
 

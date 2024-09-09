@@ -2,9 +2,6 @@ import React from "react";
 import InstituteDetails from "../School management/InstituteDetails";
 import Table from "../../ConfigurationFile/Table";
 import Header from "../Form/Header";
-import { Link } from "react-router-dom";
-import { IoAddCircleOutline } from "react-icons/io5";
-
 function ExamTimeTableDetails() {
   const columns = [
     { name: "Paper Code", selector: (row) => row.paperCode },

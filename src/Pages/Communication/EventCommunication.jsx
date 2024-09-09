@@ -5,8 +5,6 @@ import Header from "../Form/Header";
 import { Link } from "react-router-dom";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
-import { BiSolidEdit } from "react-icons/bi";
-import { RiDeleteBin5Line } from "react-icons/ri";
 function EventCommunication() {
   const columns = [
     {
@@ -23,33 +21,82 @@ function EventCommunication() {
       selector: (row) => row.eventTitle,
     },
     {
-        name: "Event Date",
-        selector: (row) => row.eventDate,
+      name: "Venue",
+      selector: (row) => row.venue,
     },
     {
-        name: "Event Time",
-        selector: (row) => row.eventTime,
+      name: "Description",
+      selector: (row) => row.description,
     },
     {
-        name: "Action",
-  
-        cell: (row) => (
-          <div className="flex items-center gap-4">
-            <Link to={`/student/edit-event/${row.id}`}>
-              <BiSolidEdit size={15} />
-            </Link>
-            <button><RiDeleteBin5Line size={15} /></button>
-          </div>
-        ),
-      },
+      name: "Created By",
+      selector: (row) => row.createdBy,
+    },
+    {
+      name: "Start Date",
+      selector: (row) => row.startDate,
+    },
+    {
+      name: "End Date",
+      selector: (row) => row.endDate,
+    },
+    {
+      name: "Event Type",
+      selector: (row) => row.eventType,
+    },
+    {
+      name: "Status",
+      selector: (row) => row.status,
+    },
+    {
+      name: "Expired",
+      selector: (row) => row.expired,
+    },
+    {
+      name: "Created On",
+      selector: (row) => row.createdOn,
+    },
   ];
 
   const data = [
     {
-      id:1,
+      id: 1,
       eventTitle: "TechSpark Summit",
-      eventDate:'5 Sep, 2024',
-      eventTime:'12:00pm'
+      venue: "Tech Convention Center",
+      description: "A summit on the latest in technology and innovation.",
+      createdBy: "John Doe",
+      startDate: "5 Sep, 2024",
+      endDate: "7 Sep, 2024",
+      eventType: "Conference",
+      status: "Ongoing",
+      expired: "No",
+      createdOn: "1 Aug, 2024",
+    },
+    {
+      id: 2,
+      eventTitle: "AI Expo 2024",
+      venue: "AI Innovation Hub",
+      description: "Exhibition showcasing the latest advancements in AI.",
+      createdBy: "Jane Smith",
+      startDate: "10 Sep, 2024",
+      endDate: "12 Sep, 2024",
+      eventType: "Exhibition",
+      status: "Upcoming",
+      expired: "No",
+      createdOn: "15 Aug, 2024",
+    },
+    {
+      id: 3,
+      eventTitle: "Design Thinking Workshop",
+      venue: "Creative Studio",
+      description: "Hands-on workshop on design thinking techniques.",
+      createdBy: "Alice Brown",
+      startDate: "1 Oct, 2024",
+      endDate: "2 Oct, 2024",
+      eventType: "Workshop",
+      status: "Upcoming",
+      expired: "No",
+      createdOn: "1 Sep, 2024",
     },
   ];
 
@@ -77,4 +124,4 @@ function EventCommunication() {
   );
 }
 
-export default EventCommunication
+export default EventCommunication;

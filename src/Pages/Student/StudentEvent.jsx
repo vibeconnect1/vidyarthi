@@ -1,18 +1,103 @@
-import React, { useState } from "react";
+import React from "react";
+import Table from "../../ConfigurationFile/Table";
 import Header from "../Form/Header";
-import StudentSidebar from "./StudentSidebar";
 import { Link } from "react-router-dom";
-import event from "/event.jpg";
+import { BsEye } from "react-icons/bs";
+import StudentSidebar from "./StudentSidebar";
 function StudentEvent() {
-  const [events, setEvents] = useState([
+  const columns = [
     {
-      name: "TechSpark Summit",
-      date: "4 Sep, 2024",
-      description:
-        "This name stands out by combining “Tech” to convey a focus on technology, and “Spark” to suggest innovation and inspiration. “Summit” implies a high-level gathering for tech professionals, offering valuable insights and networking opportunities.",
-      img: "/event.jpg",
+      name: "View",
+
+      cell: (row) => (
+        <Link to={`/student/student-event-details/${row.id}`}>
+          <BsEye size={15} />
+        </Link>
+      ),
     },
-  ]);
+    {
+      name: "Event Title",
+      selector: (row) => row.eventTitle,
+    },
+    {
+      name: "Venue",
+      selector: (row) => row.venue,
+    },
+    {
+      name: "Description",
+      selector: (row) => row.description,
+    },
+    {
+      name: "Created By",
+      selector: (row) => row.createdBy,
+    },
+    {
+      name: "Start Date",
+      selector: (row) => row.startDate,
+    },
+    {
+      name: "End Date",
+      selector: (row) => row.endDate,
+    },
+    {
+      name: "Event Type",
+      selector: (row) => row.eventType,
+    },
+    {
+      name: "Status",
+      selector: (row) => row.status,
+    },
+    {
+      name: "Expired",
+      selector: (row) => row.expired,
+    },
+    {
+      name: "Created On",
+      selector: (row) => row.createdOn,
+    },
+  ];
+
+  const data = [
+    {
+      id: 1,
+      eventTitle: "TechSpark Summit",
+      venue: "Tech Convention Center",
+      description: "A summit on the latest in technology and innovation.",
+      createdBy: "John Doe",
+      startDate: "5 Sep, 2024",
+      endDate: "7 Sep, 2024",
+      eventType: "Conference",
+      status: "Ongoing",
+      expired: "No",
+      createdOn: "1 Aug, 2024",
+    },
+    {
+      id: 2,
+      eventTitle: "AI Expo 2024",
+      venue: "AI Innovation Hub",
+      description: "Exhibition showcasing the latest advancements in AI.",
+      createdBy: "Jane Smith",
+      startDate: "10 Sep, 2024",
+      endDate: "12 Sep, 2024",
+      eventType: "Exhibition",
+      status: "Upcoming",
+      expired: "No",
+      createdOn: "15 Aug, 2024",
+    },
+    {
+      id: 3,
+      eventTitle: "Design Thinking Workshop",
+      venue: "Creative Studio",
+      description: "Hands-on workshop on design thinking techniques.",
+      createdBy: "Alice Brown",
+      startDate: "1 Oct, 2024",
+      endDate: "2 Oct, 2024",
+      eventType: "Workshop",
+      status: "Upcoming",
+      expired: "No",
+      createdOn: "1 Sep, 2024",
+    },
+  ];
 
   return (
     <div>
@@ -20,40 +105,9 @@ function StudentEvent() {
       <div className="flex">
         <StudentSidebar />
         <div className="flex flex-col overflow-hidden w-full">
-          <div className="flex justify-between mx-5 my-5">
-            <h2 className="text-xl font-semibold text-gray-700">Events</h2>
-            <div>
-              <button
-                className="border border-gray-500 rounded-md px-4 p-1 cursor-pointer"
-              >
-                Join
-              </button>
-            </div>
-          </div>
-          <div className="bg-white mx-5 rounded-md">
-            {events.length === 0 ? (
-              <p className="mx-5 text-red-500">No events available</p>
-            ) : (
-              <div className="mx-5">
-                {events.map((event, index) => (
-                  <div key={index} className="mb-4 py-5 space-y-2">
-                    <h3 className="text-lg font-semibold">{event.name}</h3>
-                    <p className="text-gray-600">Date: {event.date}</p>
-                    <div>
-                      <img
-                        src={event.img}
-                        alt={event.name}
-                        className="w-full rounded-md my-2 h-60"
-                      />
-                    </div>
-                    <p className="text-gray-600">{event.description}</p>
-                    <p className="text-sm text-gray-500 my-2">
-                      {event.attachment}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
+          <h2 className="text-xl font-medium text-gray-600 my-5 mx-5"> Event </h2>
+          <div className="mx-5 bg-white rounded-md px-5">
+            <Table columns={columns} data={data} pagination />
           </div>
         </div>
       </div>
