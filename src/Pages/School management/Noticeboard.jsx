@@ -59,21 +59,27 @@ const Noticeboard = () => {
   const data = [
     {
       id: 1,
-      title: "Exam",
-      class: "9th",
-      division: "A",
-      student: "All Student",
-      date: "3 Sep, 2024",
+      title: "Holiday", 
+      type: "Notice",   
+      student: "All Students", 
+      date: "Sep 6, 2024", 
     },
     {
       id: 2,
-      title: "Exam",
-      class: "10th",
-      division: "C",
-      student: "Karan Singh",
-      date: "1 Sep, 2024",
+      title: "Examination Schedule",
+      type: "Notice",
+      student: "Class 10",
+      date: "Sep 10, 2024",
+    },
+    {
+      id: 3,
+      title: "School Trip",
+      type: "Notice",
+      student: "Class 8",
+      date: "Sep 15, 2024",
     },
   ];
+  
 
   return (
     <div>

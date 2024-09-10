@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import Table from "../../ConfigurationFile/Table";
 import { CiSearch } from "react-icons/ci";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { BsEye } from "react-icons/bs";
 
 function ClassTimeTable() {
   const columns = [
+    {
+      name: "Action",
+      cell: (row) => (
+        <div className="flex items-center gap-2">
+          <Link
+            to={`/school-management/class-time-table-details/${row.id}`}
+            className="text-gray-600 hover:text-gray-900"
+          >
+            <BsEye size={15} />
+          </Link>
+        </div>
+      ),
+    },
     {
       name: "Classes",
       selector: (row) => row.classes,

@@ -152,6 +152,26 @@ import CanteenProductDetails from '../Pages/Canteen Management/CanteenProductDet
 import StudIdCard from '../Pages/School management/StudIdCard';
 import StudentNoticeDetails from '../Pages/Student/StudentNoticeDetails';
 import Asset from '../Pages/Asset/Asset';
+import AddAssets from '../Pages/Asset/AddAssets';
+import EditAssets from '../Pages/Asset/EditAssets';
+import AssetDetails from '../Pages/Asset/AssetDetails';
+import ScheduleDetails from '../Pages/Asset/ScheduleDetails';
+import EditAssetAmc from '../Pages/Asset/EditAssetAmc';
+import AssetAmcDetails from '../Pages/Asset/AssetAmcDetails';
+import AddChecklist from '../Pages/Asset/AddChecklist';
+import EditChecklist from '../Pages/Asset/EditChecklist';
+import ChecklistAssociate from '../Pages/Asset/ChecklistAssociate';
+import ClassTimeTableDetails from '../Pages/School management/ClassTimeTableDetails';
+import RoutineTaskDetails from '../Pages/Asset/RoutineTaskDetails';
+import AddPPMActivity from '../Pages/Asset/AddPPMActivity';
+import PPMChecklistDetails from '../Pages/Asset/PPMChecklistDetails';
+import AddInventory from '../Pages/Asset/AddInventory';
+import EditInventory from '../Pages/Asset/EditInventory';
+import InventoryDetails from '../Pages/Asset/InventoryDetails';
+import AddGRN from '../Pages/Asset/AddGRN';
+import GrnDetails from '../Pages/Asset/GrnDetails';
+import AddGdn from '../Pages/Asset/AddGdn';
+import GdnView from '../Pages/Asset/GdnView';
 
 const routes = [
     {
@@ -472,6 +492,10 @@ const routes = [
         path: '/school-management/stud-id-card',
         element: < StudIdCard/>,
     },
+    {
+        path: '/school-management/class-time-table-details/:id',
+        element: < ClassTimeTableDetails/>,
+    },
     
     // student section
     {
@@ -767,6 +791,82 @@ const routes = [
     {
         path: '/school-management/asset',
         element: <Asset/>,
+    },
+    {
+        path: '/school-management/add-assets',
+        element: <AddAssets/>,
+    },
+    {
+        path: '/school-management/edit-assets',
+        element: <EditAssets/>,
+    },
+    {
+        path: '/school-management/assets-details/:id',
+        element: <AssetDetails/>,
+    },
+    {
+        path: '/school-management/schedule-details/:id',
+        element: <ScheduleDetails/>,
+    },
+    {
+        path: '/school-management/edit-asset-amc/:id',
+        element: <EditAssetAmc/>,
+    },
+    {
+        path: '/school-management/asset-amc-details/:id',
+        element: <AssetAmcDetails/>,
+    },
+    {
+        path: '/school-management/add-check-list',
+        element: <AddChecklist/>,
+    },
+    {
+        path: '/school-management/edit-check-list/:id',
+        element: <EditChecklist/>,
+    },
+    {
+        path: '/school-management/check-list-associate/:id',
+        element: <ChecklistAssociate/>,
+    },
+    {
+        path: '/school-management/routine-task-details/:id',
+        element: <RoutineTaskDetails/>,
+    },
+    {
+        path: '/school-management/add-PPMActivity',
+        element: <AddPPMActivity/>,
+    },
+    {
+        path: '/school-management/ppm-checklist-details/:id',
+        element: <PPMChecklistDetails/>,
+    },
+    {
+        path: '/school-management/add-inventory',
+        element: <AddInventory/>,
+    },
+    {
+        path: '/school-management/edit-inventory/:id',
+        element: <EditInventory/>,
+    },
+    {
+        path: '/school-management/inventory-details/:id',
+        element: <InventoryDetails/>,
+    },
+    {
+        path: '/school-management/add-grn',
+        element: <AddGRN/>,
+    },
+    {
+        path: '/school-management/grn-details/:id',
+        element: <GrnDetails/>,
+    },
+    {
+        path: '/school-management/add-gdn',
+        element: <AddGdn/>,
+    },
+    {
+        path: '/school-management/gdn-view/:id',
+        element: <GdnView/>,
     },
 ];
 

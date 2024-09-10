@@ -592,7 +592,7 @@ function InstituteDetails() {
         </li>
         <li>
           <NavLink
-            to="/school-management/school-dashboard"
+            to="/school-management/asset"
             className={({ isActive }) =>
               `p-4 block hover:bg-gray-200 ${
                 isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
