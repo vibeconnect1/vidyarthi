@@ -604,6 +604,34 @@ function InstituteDetails() {
             </div>
           </NavLink>
         </li>
+        {/* <li>
+          <NavLink
+            to="/school-management/purchase"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">
+               Purchase
+            </div>
+          </NavLink>
+        </li> */}
+        <li>
+          <NavLink
+            to="/school-management/ticket"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">
+            Service Desk
+            </div>
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

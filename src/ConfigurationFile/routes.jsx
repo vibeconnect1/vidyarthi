@@ -172,6 +172,11 @@ import AddGRN from '../Pages/Asset/AddGRN';
 import GrnDetails from '../Pages/Asset/GrnDetails';
 import AddGdn from '../Pages/Asset/AddGdn';
 import GdnView from '../Pages/Asset/GdnView';
+import LOIPOTable from '../Pages/Purchase/LOIPOTable';
+import Ticket from '../Pages/Service Desk/Ticket';
+import CreateTicket from '../Pages/Service Desk/CreateTicket';
+import EditTicket from '../Pages/Service Desk/EditTicket';
+import TicketDetails from '../Pages/Service Desk/TicketDetails';
 
 const routes = [
     {
@@ -867,6 +872,26 @@ const routes = [
     {
         path: '/school-management/gdn-view/:id',
         element: <GdnView/>,
+    },
+    {
+        path: '/school-management/loipotable',
+        element: <LOIPOTable/>,
+    },
+    {
+        path: '/school-management/ticket',
+        element: <Ticket/>,
+    },
+    {
+        path: '/school-management/create-ticket',
+        element: <CreateTicket/>,
+    },
+    {
+        path: '/school-management/edit-ticket',
+        element: <EditTicket/>,
+    },
+    {
+        path: '/school-management/ticket-details/:id',
+        element: <TicketDetails/>,
     },
 ];
 
