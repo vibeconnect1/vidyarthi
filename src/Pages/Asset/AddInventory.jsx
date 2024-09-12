@@ -5,13 +5,13 @@ const AddInventory = () => {
   return (
     <section className="flex">
         <InstituteDetails/>
-      <div className="flex flex-col w-full overflow-hidden">
+      <div className="flex flex-col w-full overflow-hidden mx-5">
         <h2
-          className="text-center my-2 text-xl font-bold p-2 bg-white rounded-md text-black mx-12"
+          className="text-center my-2 text-xl font-bold p-2 bg-white rounded-md text-black"
         >
           Add Stock
         </h2>
-        <div className="md:mx-12 my-5 mb-10  p-5 px-10 rounded-lg bg-white">
+        <div className="my-5 mb-10  p-5 px-10 rounded-lg bg-white">
           <div className="flex  flex-col justify-around">
             <div className="grid md:grid-cols-3 item-start gap-x-4 gap-y-5 w-full">
               <div className="flex flex-col">

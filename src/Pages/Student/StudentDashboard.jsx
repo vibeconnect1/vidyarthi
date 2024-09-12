@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Form/Header";
 import StudentSidebar from "./StudentSidebar";
-
+import idCard from "/idCard.jpg";
 function StudentDashboard() {
   return (
     <div>
@@ -16,7 +16,7 @@ function StudentDashboard() {
                   <h2 className="text-xl font-semibold text-gray-800 mx-5 text-center">
                     Personal Information
                   </h2>
-                  <img src={''} className="h-32 w-32 rounded-full bg-gray-500 my-5"></img>
+                  <img src={idCard} className="rounded-full h-40 w-40 bg-gray-500 my-5"></img>
                   <div className="grid grid-cols-2 py-5">
                     <div className="flex gap-4">
                       <h2 className="text-lg font-medium text-gray-500">
@@ -60,9 +60,9 @@ function StudentDashboard() {
                     </div>
                     <div className="flex gap-4">
                       <h2 className="text-lg font-medium text-gray-500">
-                        Id Card:
+                      Board:
                       </h2>
-                      <p className="text-gray-500 text-base mt-1">Print</p>
+                      <p className="text-gray-500 text-base mt-1">CBSE</p>
                     </div>
                     <div className="flex gap-4">
                       <h2 className="text-lg font-medium text-gray-500">

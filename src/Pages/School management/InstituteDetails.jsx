@@ -9,8 +9,8 @@ function InstituteDetails() {
   const [communication, setCommunication] = useState(false);
   const [library, setLibrary] = useState(false);
   const [exam, setExam] = useState(false);
-  const[transport, setTransport] = useState(false)
-  const[canteen, setCanteen] = useState(false)
+  const [transport, setTransport] = useState(false);
+  const [canteen, setCanteen] = useState(false);
   const toggleBasicSetup = () => {
     setIsBasicSetup((prevState) => !prevState);
   };
@@ -53,7 +53,9 @@ function InstituteDetails() {
                   to="/school-management/school-Institution-home"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -65,7 +67,9 @@ function InstituteDetails() {
                   to="/school-management/school-song-and-prayer"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -77,7 +81,9 @@ function InstituteDetails() {
                   to="/school-management/academic-parent-recommendation"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -89,7 +95,9 @@ function InstituteDetails() {
                   to="/school-management/academic/general-rules"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -101,7 +109,9 @@ function InstituteDetails() {
                   to="/school-management/academic/csr"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -113,7 +123,9 @@ function InstituteDetails() {
                   to="/school-management/academic/discipline-code"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -125,7 +137,9 @@ function InstituteDetails() {
                   to="/school-management/academic/path-to-success"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -137,7 +151,9 @@ function InstituteDetails() {
                   to="/school-management/academic-details"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -149,33 +165,37 @@ function InstituteDetails() {
                   to="/school-management/school-students"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
                   Student
                 </NavLink>
-                
               </li>
               <li>
                 <NavLink
                   to="/school-management/stud-id-card"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
                   Student Id Card
                 </NavLink>
-                
               </li>
               <li>
                 <NavLink
                   to="/school-management/academic/applicant"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -187,7 +207,9 @@ function InstituteDetails() {
                   to="/school-management/academic/employees"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -199,7 +221,9 @@ function InstituteDetails() {
                   to="/school-management/academic/Quotas"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -211,7 +235,9 @@ function InstituteDetails() {
                   to="/school-management/staff/Role"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -223,7 +249,9 @@ function InstituteDetails() {
                   to="/school-management/academic/calendar"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -235,7 +263,9 @@ function InstituteDetails() {
                   to="/school-management/academic/noticeboard"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -247,7 +277,9 @@ function InstituteDetails() {
                   to="/school-management/academic/live-classes"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -260,7 +292,7 @@ function InstituteDetails() {
         <li>
           <div
             className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
-            onClick={() =>setIsFees(!isFees)}
+            onClick={() => setIsFees(!isFees)}
           >
             <div className="flex items-center">
               <span className="whitespace-nowrap">Fees & Payment</span>
@@ -278,7 +310,9 @@ function InstituteDetails() {
                   to="/school-management/fees-payment/feesType"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -290,25 +324,28 @@ function InstituteDetails() {
                   to="/school-management/fees-payment/fees-payment"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
-                  Fees Payment 
+                  Fees Payment
                 </NavLink>
               </li>
-              <li>
-              </li>
+              <li></li>
               <li>
                 <NavLink
                   to="/school-management/fees-payment/income"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
-                  Income 
+                  Income
                 </NavLink>
               </li>
               <li>
@@ -316,11 +353,13 @@ function InstituteDetails() {
                   to="/school-management/fees-payment/expense"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
-                   Expense
+                  Expense
                 </NavLink>
               </li>
             </ul>
@@ -329,7 +368,7 @@ function InstituteDetails() {
         <li>
           <div
             className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
-            onClick={() =>setCommunication(!communication)}
+            onClick={() => setCommunication(!communication)}
           >
             <div className="flex items-center">
               <span className="whitespace-nowrap">Communication</span>
@@ -347,7 +386,9 @@ function InstituteDetails() {
                   to="/student/event"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -359,7 +400,9 @@ function InstituteDetails() {
                   to="/student/survey"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -372,7 +415,7 @@ function InstituteDetails() {
         <li>
           <div
             className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
-            onClick={() =>setLibrary(!library)}
+            onClick={() => setLibrary(!library)}
           >
             <div className="flex items-center">
               <span className="whitespace-nowrap">Library</span>
@@ -390,7 +433,9 @@ function InstituteDetails() {
                   to="/school-management/library/book"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -402,7 +447,9 @@ function InstituteDetails() {
                   to="/school-management/library/library-card"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -414,7 +461,9 @@ function InstituteDetails() {
                   to="/school-management/library/issue-book"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -426,7 +475,9 @@ function InstituteDetails() {
                   to="/school-management/library/book-return"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -438,7 +489,9 @@ function InstituteDetails() {
                   to="/school-management/library/request-book"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -451,7 +504,7 @@ function InstituteDetails() {
         <li>
           <div
             className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
-            onClick={() =>setExam(!exam)}
+            onClick={() => setExam(!exam)}
           >
             <div className="flex items-center">
               <span className="whitespace-nowrap">Examination</span>
@@ -469,7 +522,9 @@ function InstituteDetails() {
                   to="/school-management/exam-timetable"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -478,10 +533,12 @@ function InstituteDetails() {
               </li>
               <li>
                 <NavLink
-                  to="/school-management/add-exam-result"
+                  to="/school-management/exam-result"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -494,7 +551,7 @@ function InstituteDetails() {
         <li>
           <div
             className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
-            onClick={() =>setTransport(!transport)}
+            onClick={() => setTransport(!transport)}
           >
             <div className="flex items-center">
               <span className="whitespace-nowrap">Transport</span>
@@ -512,7 +569,9 @@ function InstituteDetails() {
                   to="/school-management/transport/vehicle"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -524,7 +583,9 @@ function InstituteDetails() {
                   to="/school-management/transport/driver"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -536,7 +597,9 @@ function InstituteDetails() {
                   to="/school-management/transport/vehicle-route"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -548,7 +611,9 @@ function InstituteDetails() {
                   to="/school-management/transport/transport-allocation"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -557,12 +622,11 @@ function InstituteDetails() {
               </li>
             </ul>
           )}
-          
         </li>
         <li>
           <div
             className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
-            onClick={() =>setCanteen(!canteen)}
+            onClick={() => setCanteen(!canteen)}
           >
             <div className="flex items-center">
               <span className="whitespace-nowrap">Canteen</span>
@@ -580,7 +644,9 @@ function InstituteDetails() {
                   to="/school-management/canteen"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
-                      isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
                     }`
                   }
                 >
@@ -599,9 +665,7 @@ function InstituteDetails() {
               }`
             }
           >
-            <div className="flex gap-2">
-               Asset
-            </div>
+            <div className="flex gap-2">Asset</div>
           </NavLink>
         </li>
         {/* <li>
@@ -627,9 +691,55 @@ function InstituteDetails() {
               }`
             }
           >
-            <div className="flex gap-2">
-            Service Desk
-            </div>
+            <div className="flex gap-2">Service Desk</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/supplier"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Supplier</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/meeting"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Online Meeting</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/birthday"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Birthday</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/visitor-page"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Passes</div>
           </NavLink>
         </li>
       </ul>

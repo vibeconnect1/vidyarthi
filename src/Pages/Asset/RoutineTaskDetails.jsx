@@ -27,7 +27,7 @@ const RoutineTaskDetails = () => {
   return (
     <div className="flex">
       <InstituteDetails />
-      <div className="flex flex-col w-full overflow-hidden">
+      <div className="flex flex-col w-full overflow-hidden mx-5">
         <div className="flex flex-col justify-center items-center p-2">
           <div className="flex justify-between bg-gray-400 rounded p-2 w-full mx-20 text-white">
             <div className="grid grid-cols-2">

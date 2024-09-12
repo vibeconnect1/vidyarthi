@@ -149,7 +149,7 @@ const Ticket = () => {
             </div>
             <div className="shadow-xl sm:rounded-full rounded-xl border-4 sm:w-48 sm:px-6 px-4 flex flex-col items-center flex-shrink py-1 border-blue-500">
               <span className="font-medium text-base text-black">Complete</span>
-              <span>1</span>
+              <span>2</span>
             </div>
             <div className="shadow-xl sm:rounded-full rounded-xl border-4 sm:w-48 sm:px-6 px-4 flex flex-col items-center flex-shrink py-1 border-yellow-500">
               <span className="font-medium text-base text-black">Pending</span>
@@ -157,7 +157,7 @@ const Ticket = () => {
             </div>
             <div className="shadow-xl sm:rounded-full rounded-xl border-4 sm:w-48 sm:px-6 px-4 flex flex-col items-center flex-shrink py-1 border-red-500">
               <span className="font-medium text-base text-black">Reopened</span>
-              <span>1</span>
+              <span>2</span>
             </div>
             <div className="shadow-xl sm:rounded-full rounded-xl border-4 sm:w-48 sm:px-6 px-4 flex flex-col items-center flex-shrink py-1 border-purple-500">
               <span className="font-medium text-base text-black">
@@ -169,19 +169,19 @@ const Ticket = () => {
               <span className="font-medium text-base text-black">
                 Work In Process
               </span>
-              <span>1</span>
+              <span>3</span>
             </div>
             <div className="shadow-xl sm:rounded-full rounded-xl border-4 sm:w-48 sm:px-6 px-4 flex flex-col items-center flex-shrink py-1 border-violet-500">
               <span className="font-medium text-base text-black">
               Complaint
               </span>
-              <span>1</span>
+              <span>2</span>
             </div>
             <div className="shadow-xl sm:rounded-full rounded-xl border-4 sm:w-48 sm:px-6 px-4 flex flex-col items-center flex-shrink py-1 border-green-500">
               <span className="font-medium text-base text-black">
                 Request
               </span>
-              <span>1</span>
+              <span>3</span>
             </div>
             <div className="shadow-xl sm:rounded-full rounded-xl border-4 sm:w-48 sm:px-6 px-4 flex flex-col items-center flex-shrink py-1 border-amber-500">
               <span className="font-medium text-base text-black">

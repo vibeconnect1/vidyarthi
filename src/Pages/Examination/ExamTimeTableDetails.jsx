@@ -7,47 +7,53 @@ function ExamTimeTableDetails() {
     { name: "Paper Code", selector: (row) => row.paperCode },
     { name: "Subject", selector: (row) => row.subject },
     { name: "Date", selector: (row) => row.date },
-    { name: "Timing", selector: (row) => row.timing },
-    { name: "Room No", selector: (row) => row.roomNo },
+    { name: "Start Time", selector: (row) => row.startTime },
+    { name: "End Time", selector: (row) => row.endTime },
+    { name: "Maximum Marks", selector: (row) => row.maximumMarks },
   ];
-
+  
   const data = [
     {
       id: 1,
       paperCode: "101",
       subject: "English",
       date: "2024-09-10",
-      timing: "09:00 - 11:00",
-      roomNo: "Room No 12",
+      startTime: "09:00 Am",
+      endTime: "11:00 Am",
+      maximumMarks: 100,
     },
     {
       id: 2,
       paperCode: "102",
       subject: "Hindi",
       date: "2024-09-11",
-      timing: "09:00 - 11:00",
-      roomNo: "Room No 12",
+      startTime: "09:00 Am",
+      endTime: "11:00 Am",
+      maximumMarks: 100,
     },
     {
       id: 3,
       paperCode: "103",
       subject: "Math",
-      date: "2024-09-12",
-      timing: "13:00 - 15:00",
-      roomNo: "Room No 15",
+      date: "2024-09-13",
+      startTime: "09:00 Am",
+      endTime: "11:00 Am",
+      maximumMarks: 100,
     },
     {
       id: 4,
       paperCode: "104",
       subject: "Science",
-      date: "2024-09-13",
-      timing: "09:00 - 11:00",
-      roomNo: "Room No 10",
+      date: "2024-09-15",
+      startTime: "09:00 Am",
+      endTime: "11:00 Am",
+      maximumMarks: 100,
     },
   ];
+  
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="min-h-screen">
       <Header />
       <div className="flex">
         <InstituteDetails />
@@ -62,7 +68,7 @@ function ExamTimeTableDetails() {
               </div>
               <div className="flex space-x-4 mt-2">
                 <p className="text-sm font-medium text-gray-600">Start Date:</p>
-                <p className="text-sm text-gray-600">2024-09-01</p>
+                <p className="text-sm text-gray-600">2024-09-10</p>
                 <p className="text-sm font-medium text-gray-600">End Date:</p>
                 <p className="text-sm text-gray-600">2024-09-15</p>
               </div>

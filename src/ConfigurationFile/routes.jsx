@@ -177,6 +177,22 @@ import Ticket from '../Pages/Service Desk/Ticket';
 import CreateTicket from '../Pages/Service Desk/CreateTicket';
 import EditTicket from '../Pages/Service Desk/EditTicket';
 import TicketDetails from '../Pages/Service Desk/TicketDetails';
+import Meeting from '../Pages/Online Meeting/Meeting';
+import CreateMeeting from '../Pages/Online Meeting/CreateMeeting';
+import MeetingDetails from '../Pages/Online Meeting/MeetingDetails';
+import Supplier from '../Pages/Supplier/Supplier';
+import AddSupplier from '../Pages/Supplier/AddSupplier';
+import EditSupplier from '../Pages/Supplier/EditSupplier';
+import SupplierDetails from '../Pages/Supplier/SupplierDetails';
+import Birthday from '../Pages/SubPages/Birthday';
+import Passes from '../Pages/Visitor management/Passes';
+import VisitorPage from '../Pages/Visitor management/VisitorPage';
+import RVehicles from '../Pages/Visitor management/RVehicles';
+import Staff from '../Pages/Visitor management/Staff';
+import Patrolling from '../Pages/Visitor management/Patrolling';
+import GoodsInOut from '../Pages/Visitor management/GoodsInOut';
+import AddVisitor from '../Pages/Visitor management/AddVisitor';
+import ExamResult from '../Pages/Examination/ExamResult';
 
 const routes = [
     {
@@ -710,6 +726,10 @@ const routes = [
         path: '/school-management/add-exam-result',
         element: < AddExamResult/>,
     },
+    {
+        path: '/school-management/exam-result',
+        element: < ExamResult/>,
+    },
     // Transport management
     {
         path: '/school-management/transport/vehicle',
@@ -877,6 +897,7 @@ const routes = [
         path: '/school-management/loipotable',
         element: <LOIPOTable/>,
     },
+    // service desk
     {
         path: '/school-management/ticket',
         element: <Ticket/>,
@@ -892,6 +913,70 @@ const routes = [
     {
         path: '/school-management/ticket-details/:id',
         element: <TicketDetails/>,
+    },
+    // online meeting
+    {
+        path: '/school-management/meeting',
+        element: <Meeting/>,
+    },
+    {
+        path: '/school-management/create-meeting',
+        element: <CreateMeeting/>,
+    },
+    {
+        path: '/school-management/meeting-details/:id',
+        element: <MeetingDetails/>,
+    },
+    //Supplier
+    {
+        path: '/school-management/supplier',
+        element: <Supplier/>,
+    },
+    {
+        path: '/school-management/add-supplier',
+        element: <AddSupplier/>,
+    },
+    {
+        path: '/school-management/edit-supplier',
+        element: <EditSupplier/>,
+    },
+    {
+        path: '/school-management/supplier-details/:id',
+        element: <SupplierDetails/>,
+    },
+    // birthday
+    {
+        path: '/school-management/birthday',
+        element: <Birthday/>,
+    },
+    // visitor management
+    {
+        path: '/school-management/passes',
+        element: <Passes/>,
+    },
+    {
+        path: '/school-management/visitor-page',
+        element: <VisitorPage/>,
+    },
+    {
+        path: '/school-management/r-vehicle',
+        element: <RVehicles/>,
+    },
+    {
+        path: '/school-management/staff',
+        element: <Staff/>,
+    },
+    {
+        path: '/school-management/patrolling',
+        element: <Patrolling/>,
+    },
+    {
+        path: '/school-management/goods-in-out',
+        element: <GoodsInOut/>,
+    },
+    {
+        path: '/school-management/add-visitor',
+        element: <AddVisitor/>,
     },
 ];
 

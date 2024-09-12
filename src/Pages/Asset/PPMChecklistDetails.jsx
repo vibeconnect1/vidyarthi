@@ -49,13 +49,13 @@ const PPMChecklistDetails = () => {
   return (
     <section className="flex">
         <InstituteDetails/>
-      <div className="flex flex-col overflow-hidden w-full">
+      <div className="flex flex-col overflow-hidden w-full mx-5">
         <h2
-          className="text-center text-xl font-bold p-2  rounded-md text-black bg-white md:mx-12 my-2"
+          className="text-center text-xl font-bold p-2  rounded-md text-black bg-white my-2"
         >
           {isEditing ? "Edit Checklist Details" : "PPM Checklist Details"}
         </h2>
-        <div className="lg:mx-10 my-5 mb-10  md:p-5 md:px-10 rounded-lg bg-white">
+        <div className="my-5 mb-10  md:p-5 md:px-10 rounded-lg bg-white">
           <div className="flex justify-end">
             {!isEditing ? (
               <button

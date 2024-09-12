@@ -5,13 +5,13 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 const EditExamTimetable = () => {
   const [fields, setFields] = useState([
-    { paperCode: "", subject: "", date: "", time: "", roomNo: "" },
+    { paperCode: "", subject: "", date: "", startTime: "", endTime: "", maximumMarks: "" },
   ]);
 
   const handleAddField = () => {
     setFields([
       ...fields,
-      { paperCode: "", subject: "", date: "", time: "", roomNo: "" },
+      { paperCode: "", subject: "", date: "", startTime: "", endTime: "", maximumMarks: ""},
     ]);
   };
 
@@ -125,19 +125,29 @@ const EditExamTimetable = () => {
                 <div className="flex flex-col">
                   <input
                     type="time"
-                    name="time"
-                    value={field.time}
-                    placeholder="Time"
+                    name="startTime"
+                    value={field.startTime}
+                    placeholder="Start Time"
                     className="border-b border-gray-500 focus:outline-none"
                     onChange={(e) => handleFieldChange(index, e)}
                   />
                 </div>
                 <div className="flex flex-col">
                   <input
-                    type="text"
-                    name="roomNo"
-                    value={field.roomNo}
-                    placeholder="Room No"
+                    type="time"
+                    name="endTime"
+                    value={field.endTime}
+                    placeholder="End Time"
+                    className="border-b border-gray-500 focus:outline-none"
+                    onChange={(e) => handleFieldChange(index, e)}
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <input
+                    type="number"
+                    name="maximumMarks"
+                    value={field.maximumMarks}
+                    placeholder="Maximum Marks"
                     className="border-b border-gray-500 focus:outline-none"
                     onChange={(e) => handleFieldChange(index, e)}
                   />

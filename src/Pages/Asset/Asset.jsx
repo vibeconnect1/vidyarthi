@@ -101,7 +101,7 @@ function Asset() {
             </h2>
           </div>
         </div>
-        <div className="mx-5">
+        <div>
           {asset === "assets" && (
             <div>
               <Assets/>

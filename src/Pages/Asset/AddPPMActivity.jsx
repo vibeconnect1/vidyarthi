@@ -30,11 +30,11 @@ const AddPPMActivity = () => {
   return (
     <section className="flex">
         <InstituteDetails/>
-      <div className="w-full overflow-hidden flex flex-col">
-        <h2  className="text-center text-xl font-bold p-2 mx-20 my-2 rounded-md text-black bg-white">
+      <div className="w-full overflow-hidden flex flex-col mx-5">
+        <h2  className="text-center text-xl font-bold p-2 my-2 rounded-md text-black bg-white">
           Add PPM
         </h2>
-        <div className="md:mx-20 my-5 mb-10 sm:border border-gray-400 p-5 px-10 rounded-lg bg-white">
+        <div className="my-5 mb-10 sm:border border-gray-400 p-5 px-10 rounded-lg bg-white">
           <div className="flex  flex-col justify-around">
             <div className="grid md:grid-cols-3 item-start gap-x-4 gap-y-2 w-full">
               <div className="flex flex-col">

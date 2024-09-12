@@ -7,7 +7,7 @@ const EditAssetAmc = () => {
       <div className="hidden md:block">
         <InstituteDetails />
       </div>
-      <div className="w-full flex mx-3 flex-col overflow-hidden">
+      <div className="w-full flex mx-8 flex-col overflow-hidden">
             <h2 className="text-center text-xl font-bold p-2 rounded-md text-black bg-white my-2">
               Edit AMC
             </h2>

@@ -19,7 +19,7 @@ const AssetAmcDetails = () => {
         <h2 className="text-center text-xl font-bold p-2 rounded-md my-3 mx-5 bg-white text-black">
           AMC Details
         </h2>
-        <div className="my-2 mb-10 p-2 px-5 rounded-md md:mx-20 bg-white">
+        <div className="my-2 mb-10 p-2 px-5 rounded-md md:mx-5 bg-white">
           <div className="flex justify-center m-5">
             <h1 className="p-2 border-2 border-black md:px-28 text-xl rounded-md font-semibold">
               {amc.asset_name}

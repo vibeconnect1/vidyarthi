@@ -49,7 +49,7 @@ function Assetinfo() {
   return (
     <div>
       <div className="flex flex-col overflow-hidden w-full">
-        <div className="flex flex-col my-5 p-4 gap-4 rounded-md bg-white">
+        <div className="flex flex-col my-5 p-4 gap-4 rounded-md bg-white mx-3">
           <div className=" flex sm:flex-row flex-col gap-5 justify-between ">
             <div className="flex items-center gap-2 "></div>
             <div className="flex md:flex-row flex-col gap-2">

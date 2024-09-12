@@ -6,7 +6,7 @@ function PPM() {
     const [ppm, setPpm] = useState("schedule");
 
     return (
-        <div className="flex justify-center items-center my-10">
+        <div className="flex justify-center items-center">
             <div className="w-full my-2">
                 <div className="flex flex-wrap gap-5 mt-3 mx-5 border-b border-gray-600">
                     <div

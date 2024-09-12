@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InstituteDetails from "../School management/InstituteDetails";
 import Switch from "../../ConfigurationFile/Switch";
+import { IoCloudUploadOutline } from "react-icons/io5";
 
 function AddAssets() {
   const [meterApplicable, setMeterApplicable] = useState(false);
@@ -10,12 +11,12 @@ function AddAssets() {
     <div>
       <div className="flex">
         <InstituteDetails />
-        <div className="flex flex-col overflow-hidden w-full">
-          <div className="md:p-4 w-full flex md:mx-2 overflow-hidden flex-col">
+        <div className="flex flex-col overflow-hidden mx-2 w-full">
+          <div className="md:p-4 w-full flex overflow-hidden flex-col">
             <h2 className="text-center text-xl font-bold p-2 rounded-md text-black bg-white">
               Add Asset
             </h2>
-            <div className="md:mx-16 my-5 mb-10 p-5 px-10 rounded-lg bg-white">
+            <div className="my-5 mb-10 p-5 px-10 rounded-lg bg-white">
               <h2 className="border-b text-center text-xl border-black mb-6 font-bold">
                 Location Details
               </h2>
@@ -268,7 +269,7 @@ function AddAssets() {
               <h2 className="border-b text-center text-xl border-black mb-6 font-bold">
                 Attachments
               </h2>
-              <div className="flex flex-col gap-2">
+              <div className="grid grid-cols-4 gap-5">
                 <div>
                   <p className="border-b border-black my-1 font-semibold">
                     Purchase Invoice
@@ -276,8 +277,9 @@ function AddAssets() {
                   <div className="mt-5">
                     <label
                       htmlFor="file-upload"
-                      className="border border-dashed border-gray-500 p-4 mb-4 h-24 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
+                      className="border border-dashed border-gray-500 p-4 mb-4 h-40 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
                     >
+                      <IoCloudUploadOutline size={30}/>
                       <p>Click To Upload</p>
                     </label>
                     <input type="file" className="hidden" id="file-upload" />
@@ -290,8 +292,9 @@ function AddAssets() {
                   <div className="mt-5">
                     <label
                       htmlFor="file-upload"
-                      className="border border-dashed border-gray-500 p-4 mb-4 h-24 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
+                      className="border border-dashed border-gray-500 p-4 mb-4 h-40 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
                     >
+                      <IoCloudUploadOutline size={30}/>
                       <p>Click To Upload</p>
                     </label>
                     <input type="file" className="hidden" id="file-upload" />
@@ -304,8 +307,9 @@ function AddAssets() {
                   <div className="mt-5">
                     <label
                       htmlFor="file-upload"
-                      className="border border-dashed border-gray-500 p-4 mb-4 h-24 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
+                      className="border border-dashed border-gray-500 p-4 mb-4 h-40 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
                     >
+                      <IoCloudUploadOutline size={30}/>
                       <p>Click To Upload</p>
                     </label>
                     <input type="file" className="hidden" id="file-upload" />
@@ -318,8 +322,9 @@ function AddAssets() {
                   <div className="mt-5">
                     <label
                       htmlFor="file-upload"
-                      className="border border-dashed border-gray-500 p-4 mb-4 h-24 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
+                      className="border border-dashed border-gray-500 p-4 mb-4 h-40 w-full rounded-lg  flex items-center flex-col justify-center cursor-pointer"
                     >
+                      <IoCloudUploadOutline size={30}/>
                       <p>Click To Upload</p>
                     </label>
                     <input type="file" className="hidden" id="file-upload" />

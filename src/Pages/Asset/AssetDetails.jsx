@@ -13,8 +13,7 @@ function AssetDetails() {
       <div className="flex">
         <InstituteDetails />
         <div className="flex flex-col overflow-hidden w-full">
-          <div className="md:p-4 w-full flex md:mx-2 overflow-hidden flex-col">
-            <div className="md:p-4 w-full my-2 flex md:mx-2 overflow-hidden flex-col">
+          <div className="md:p-4 w-full flex overflow-hidden flex-col">
               <div className="md:flex justify-center ">
                 <div className="sm:flex grid grid-cols-2 flex-row gap-2 md:gap-10  font-medium p-2 rounded-md sm:rounded-full bg-gray-100">
                   <h2
@@ -75,7 +74,6 @@ function AssetDetails() {
                     <PPM/>
                 </div>
               )}
-            </div>
           </div>
         </div>
       </div>
