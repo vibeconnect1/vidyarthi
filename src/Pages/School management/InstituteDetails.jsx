@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { IoIosArrowUp } from "react-icons/io";
+import React, { useState, useEffect } from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function InstituteDetails() {
   const [isBasicSetup, setIsBasicSetup] = useState(false);
@@ -14,6 +14,42 @@ function InstituteDetails() {
   const toggleBasicSetup = () => {
     setIsBasicSetup((prevState) => !prevState);
   };
+
+  const location = useLocation();
+
+  const basicRoutes = [
+    "/school-management/school-Institution-home",
+    "/school-management/school-song-and-prayer",
+    "/school-management/academic-parent-recommendation",
+    "/school-management/academic/general-rules",
+    "/school-management/academic/csr",
+    "/school-management/academic/discipline-code",
+    "/school-management/academic/path-to-success",
+    "/school-management/academic-details",
+    "/school-management/stud-id-card",
+    "/school-management/school-students",
+    "/school-management/academic/employees",
+    "/school-management/academic/Quotas",
+    "/school-management/staff/Role",
+    "/school-management/academic/calendar",
+    "/school-management/academic/noticeboard",
+    "/school-management/academic/live-classes"
+  ];
+
+  const feeRoutes = [
+    "/school-management/fees-payment/feesType",
+    "/school-management/fees-payment/fees-payment",
+  ];
+
+  useEffect(() => {
+    if (feeRoutes.includes(location.pathname)) {
+      setIsFees(true);
+    }
+
+    if (basicRoutes.includes(location.pathname)) {
+      setIsBasicSetup(true);
+    }
+  }, [location.pathname]);
 
   return (
     <div className="h-screen w-48 text-black bg-white">
@@ -174,7 +210,7 @@ function InstituteDetails() {
                   Student
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/school-management/stud-id-card"
                   className={({ isActive }) =>
@@ -187,8 +223,8 @@ function InstituteDetails() {
                 >
                   Student Id Card
                 </NavLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <NavLink
                   to="/school-management/academic/applicant"
                   className={({ isActive }) =>
@@ -201,7 +237,7 @@ function InstituteDetails() {
                 >
                   Applicant
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/school-management/academic/employees"
@@ -297,11 +333,7 @@ function InstituteDetails() {
             <div className="flex items-center">
               <span className="whitespace-nowrap">Fees & Payment</span>
             </div>
-            <IoIosArrowUp
-              className={`transform transition-transform ${
-                isFees ? "rotate-180" : "rotate-0"
-              }`}
-            />
+            {isFees ? <IoIosArrowDown /> : <IoIosArrowUp />}
           </div>
           {isFees && (
             <ul>
@@ -334,7 +366,7 @@ function InstituteDetails() {
                 </NavLink>
               </li>
               <li></li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/school-management/fees-payment/income"
                   className={({ isActive }) =>
@@ -347,8 +379,8 @@ function InstituteDetails() {
                 >
                   Income
                 </NavLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <NavLink
                   to="/school-management/fees-payment/expense"
                   className={({ isActive }) =>
@@ -361,7 +393,7 @@ function InstituteDetails() {
                 >
                   Expense
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           )}
         </li>
@@ -740,6 +772,18 @@ function InstituteDetails() {
             }
           >
             <div className="flex gap-2">Passes</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/project-management"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Project Management</div>
           </NavLink>
         </li>
       </ul>

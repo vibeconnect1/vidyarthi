@@ -4,20 +4,6 @@ import InstituteDetails from "./InstituteDetails";
 function ClassTimeTableDetails() {
   const timetableData = [
     {
-      period: "Breakfast",
-      time: "8:50 - 9:05 am",
-      day1: "",
-      teacherDay1: "",
-      day2: "",
-      teacherDay2: "",
-      day3: "",
-      teacherDay3: "",
-      day4: "",
-      teacherDay4: "",
-      day5: "",
-      teacherDay5: "",
-    },
-    {
       period: "Assembly",
       time: "9:05 - 9:20 am",
       day1: "",
@@ -74,7 +60,7 @@ function ClassTimeTableDetails() {
       teacherDay5: "Mr. Smith",
     },
     {
-      period: "Snack",
+      period: "Breakfast",
       time: "11:05 - 11:25 am",
       day1: "",
       teacherDay1: "",

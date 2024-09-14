@@ -6,6 +6,7 @@ import { PiPlusCircle } from "react-icons/pi";
 import Table from "../../ConfigurationFile/Table";
 import { BsEye } from "react-icons/bs";
 import { BiEdit } from "react-icons/bi";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 const VisitorPage = () => {
   const [page, setPage] = useState("All");
@@ -16,10 +17,10 @@ const VisitorPage = () => {
       name: "Action",
       cell: (row) => (
         <div className="flex items-center gap-4">
-          <Link to={`/admin/passes/visitors/visitor-details/${row.id}`}>
+          <Link to={`/school-management/visitor-details/${row.id}`}>
             <BsEye size={15} />
           </Link>
-          <Link to={`/admin/passes/visitors/edit-visitor/${row.id}`}>
+          <Link to={`/school-management/edit-visitor`}>
             <BiEdit size={15} />
           </Link>
         </div>
@@ -160,10 +161,10 @@ const VisitorPage = () => {
       name: "Action",
       cell: (row) => (
         <div className="flex items-center gap-4">
-          <Link to={`/admin/passes/visitors/visitor-details/${row.id}`}>
+          <Link to={`/school-management/visitor-details/${row.id}`}>
             <BsEye size={15} />
           </Link>
-          <Link to={`/admin/passes/visitors/edit-visitor/${row.id}`}>
+          <Link to={`/school-management/edit-visitor`}>
             <BiEdit size={15} />
           </Link>
         </div>
@@ -290,10 +291,10 @@ const VisitorPage = () => {
       name: "Action",
       cell: (row) => (
         <div className="flex items-center gap-4">
-          <Link to={`/admin/passes/visitors/visitor-details/${row.id}`}>
+          <Link to={`/school-management/visitor-details/${row.id}`}>
             <BsEye size={15} />
           </Link>
-          <Link to={`/admin/passes/visitors/edit-visitor/${row.id}`}>
+          <Link to={`/school-management/edit-visitor`}>
             <BiEdit size={15} />
           </Link>
         </div>
@@ -395,6 +396,112 @@ const VisitorPage = () => {
       end_pass: "2024-09-11T05:00:00",
       status: "Pending",
       host: "Jane Smith",
+    },
+  ];
+
+  const ApprovalsColumn = [
+    {
+      name: "Action",
+      cell: (row) => (
+        <div className="">
+          <Link to={`/school-management/visitor-details/${row.id}`}>
+            <BsEye size={15} />
+          </Link>
+        </div>
+      ),
+    },
+    {
+      name: " Name",
+      selector: (row) => row.name,
+      sortable: true,
+    },
+    {
+      name: "Purpose",
+      selector: (row) => row.purpose,
+      sortable: true,
+    },
+    
+    {
+      name: "Expected Date",
+      selector: (row) => row.expected_date,
+      sortable: true,
+    },
+    {
+      name: "Expected Time",
+      selector: (row) => row.expected_time,
+      sortable: true,
+    },
+    
+    {
+      name: "Approval",
+      selector: (row) => (
+        <div className="flex gap-5">
+            <FaCheckCircle size={20} className="text-green-500" />
+            <FaTimesCircle size={20} className="text-red-500" /> 
+        </div>
+      ),
+      sortable: true,
+    },
+  ];
+  const ApprovalsData = [
+    {
+      id: 1,
+      name: "John Doe",
+      purpose: "Meeting",
+      expected_date: "2024-09-11",
+      expected_time: "10:00 AM",
+    },
+  ];
+
+  const HistoryColumn = [
+    {
+      name: "Action",
+      cell: (row) => (
+        <div className="">
+          <Link to={`/school-management/visitor-details/${row.id}`}>
+            <BsEye size={15} />
+          </Link>
+        </div>
+      ),
+    },
+    {
+      name: " Name",
+      selector: (row) => row.name,
+      sortable: true,
+    },
+    {
+      name: "Purpose",
+      selector: (row) => row.purpose,
+      sortable: true,
+    },
+    {
+      name: "Mobile No",
+      selector: (row) => row.mobileNo,
+      sortable: true,
+    },
+    {
+      name: "Approval Date",
+      selector: (row) => row.approvalDate,
+      sortable: true,
+    },
+    
+    {
+      name: "Approval",
+      selector: (row) => (
+        <div className="flex gap-5">
+            <h2 className="text-green-500">Approved</h2>
+        </div>
+      ),
+      sortable: true,
+    },
+  ];
+  const HistoryData = [
+    {
+      id: 1,
+      name: "John Doe",
+      purpose: "Meeting",
+      mobileNo: "8798878667",
+      approvalDate: "12 Sep, 2024 10:00 AM",
     },
   ];
   return (
@@ -582,27 +689,27 @@ const VisitorPage = () => {
               </div>
             )}
             {page === "Approval" && (
-              <div className="">
+              <div className=" w-full">
                 <div className="my-3">
                   <input
                     type="text"
-                    className="border border-black p-2 w-96 rounded-md placeholder:text-sm"
+                    className="border border-black p-2 w-full rounded-md placeholder:text-sm"
                     placeholder="Search using Visitor name, Host, vehicle number"
                   />
                 </div>
-                {/* <Table columns={VisitorColumns} data={visitorData} /> */}
+                <Table columns={ApprovalsColumn} data={ApprovalsData} />
               </div>
             )}
             {page === "History" && (
-              <div>
+              <div className="w-full">
                 <div className="my-3">
                   <input
                     type="text"
-                    className="border border-black p-2 w-96 rounded-md placeholder:text-sm"
+                    className="border border-black p-2 w-full rounded-md placeholder:text-sm"
                     placeholder="Search using Visitor name, Host, vehicle number"
                   />
                 </div>
-                {/* <Table columns={VisitorColumns} data={visitorData} /> */}
+                <Table columns={HistoryColumn} data={HistoryData} />
               </div>
             )}
           </div>

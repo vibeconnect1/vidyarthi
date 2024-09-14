@@ -193,6 +193,21 @@ import Patrolling from '../Pages/Visitor management/Patrolling';
 import GoodsInOut from '../Pages/Visitor management/GoodsInOut';
 import AddVisitor from '../Pages/Visitor management/AddVisitor';
 import ExamResult from '../Pages/Examination/ExamResult';
+import EditVisitor from '../Pages/Visitor management/EditVisitor';
+import VisitorDetails from '../Pages/Visitor management/VisitorDetails';
+import AddRVehicles from '../Pages/Visitor management/AddRVehicles';
+import EditRVehicles from '../Pages/Visitor management/EditRVehicles';
+import RVehicleDetails from '../Pages/Visitor management/RVehicleDetails';
+import AddStaff from '../Pages/Visitor management/AddStaff';
+import EditStaff from '../Pages/Visitor management/EditStaff';
+import StaffDetails from '../Pages/Visitor management/StaffDetails';
+import AddPatrolling from '../Pages/Visitor management/AddPatrolling';
+import EditPatrolling from '../Pages/Visitor management/EditPatrolling';
+import PatrollingDetails from '../Pages/Visitor management/PatrollingDetails';
+import AddGoodsInOut from '../Pages/Visitor management/AddGoodsInOut';
+import GoodsInOutDetails from '../Pages/Visitor management/GoodsInOutDetails';
+import ProjectManagement from '../Pages/Project/ProjectManagement';
+import ProjectDetails from '../Pages/Project/ProjectDetails';
 
 const routes = [
     {
@@ -978,6 +993,68 @@ const routes = [
         path: '/school-management/add-visitor',
         element: <AddVisitor/>,
     },
+    {
+        path: '/school-management/edit-visitor',
+        element: <EditVisitor/>,
+    },
+    {
+        path: '/school-management/visitor-details/:id',
+        element: <VisitorDetails/>,
+    },
+    {
+        path: '/school-management/add-r-vehicle',
+        element: <AddRVehicles/>,
+    },
+    {
+        path: '/school-management/edit-r-vehicle',
+        element: <EditRVehicles/>,
+    },
+    {
+        path: '/school-management/r-vehicle-details/:id',
+        element: <RVehicleDetails/>,
+    },
+    {
+        path: '/school-management/add-staff',
+        element: <AddStaff/>,
+    },
+    {
+        path: '/school-management/edit-staff/:id',
+        element: <EditStaff/>,
+    },
+    {
+        path: '/school-management/staff-details/:id',
+        element: <StaffDetails/>,
+    },
+    {
+        path: '/school-management/add-patrolling',
+        element: <AddPatrolling/>,
+    },
+    {
+        path: '/school-management/edit-patrolling',
+        element: <EditPatrolling/>,
+    },
+    {
+        path: '/school-management/patrolling-details/:id',
+        element: <PatrollingDetails/>,
+    },
+    {
+        path: '/school-management/add-good-in-out',
+        element: <AddGoodsInOut/>,
+    },
+    {
+        path: '/school-management/good-in-out-details/:id',
+        element: <GoodsInOutDetails/>,
+    },
+    //project management
+    {
+        path: '/school-management/project-management',
+        element: <ProjectManagement/>,
+    },
+    {
+        path: '/school-management/project-details',
+        element: <ProjectDetails/>,
+    },
+    
 ];
 
 export default routes;

@@ -3,7 +3,7 @@ import image from "/profile.png";
 import { FaTrash } from "react-icons/fa";
 import InstituteDetails from "../School management/InstituteDetails";
 
-const AddVisitor = () => {
+const EditVisitor = () => {
   const [behalf, setbehalf] = useState("Visitor");
   const inputRef = useRef(null);
   const [imageFile, setImageFile] = useState(null);
@@ -27,18 +27,18 @@ const AddVisitor = () => {
     setVisitors(newVisitors);
   };
 
-  const getHeadingText = () => {
-    switch (behalf) {
-      case "Visitor":
-        return "NEW VISITOR";
-      case "Delivery":
-        return "DELIVERY & SUPPORT STAFF";
-      case "Cab":
-        return "CAB";
-      default:
-        return "CREATE VISITOR";
-    }
-  };
+//   const getHeadingText = () => {
+//     switch (behalf) {
+//       case "Visitor":
+//         return "NEW VISITOR";
+//       case "Delivery":
+//         return "DELIVERY & SUPPORT STAFF";
+//       case "Cab":
+//         return "CAB";
+//       default:
+//         return "CREATE VISITOR";
+//     }
+//   };
 
   const handleImageClick = () => {
     inputRef.current.click();
@@ -54,7 +54,7 @@ const AddVisitor = () => {
       <div className="flex flex-col overflow-hidden w-full mx-5">
         <div>
           <h2 className="text-center md:text-xl font-bold p-2 bg-white rounded-md my-2 text-black w-full">
-            {getHeadingText()}
+            Edit Visitor
           </h2>
           <form className="border border-gray-300 rounded-lg p-4 w-full bg-white my-5">
             <br />
@@ -349,4 +349,4 @@ const AddVisitor = () => {
   );
 };
 
-export default AddVisitor;
+export default EditVisitor
