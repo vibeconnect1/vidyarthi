@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import InstituteDetails from "../School management/InstituteDetails";
-const EditChecklist = () => {
+const EditServiceCheckList = () => {
   const [selectedType, setSelectedType] = useState("");
 
   const handleTypeChange = (event) => {
@@ -172,4 +172,4 @@ const EditChecklist = () => {
   );
 };
 
-export default EditChecklist
+export default EditServiceCheckList;

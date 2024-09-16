@@ -5,13 +5,27 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 const EditExamTimetable = () => {
   const [fields, setFields] = useState([
-    { paperCode: "", subject: "", date: "", startTime: "", endTime: "", maximumMarks: "" },
+    {
+      paperCode: "",
+      subject: "",
+      date: "",
+      startTime: "",
+      endTime: "",
+      maximumMarks: "",
+    },
   ]);
 
   const handleAddField = () => {
     setFields([
       ...fields,
-      { paperCode: "", subject: "", date: "", startTime: "", endTime: "", maximumMarks: ""},
+      {
+        paperCode: "",
+        subject: "",
+        date: "",
+        startTime: "",
+        endTime: "",
+        maximumMarks: "",
+      },
     ]);
   };
 
@@ -42,12 +56,15 @@ const EditExamTimetable = () => {
           <div className="md:mx-5 my-3 rounded-md bg-white py-8">
             <div className="grid md:grid-cols-3 item-start gap-5 px-5 w-full">
               <div className="flex flex-col">
-                <input
-                  type="text"
-                  name="examName"
-                  placeholder="Exam Name"
+                <select
+                  name="class"
                   className="border-b border-gray-500 focus:outline-none"
-                />
+                >
+                  <option value="">Exam Type</option>
+                  <option value="">Unit Text</option>
+                  <option value="">Final Exam</option>
+                  <option value="">Practical Exam</option>
+                </select>
               </div>
               <div className="flex flex-col">
                 <select
@@ -74,14 +91,6 @@ const EditExamTimetable = () => {
                   type="date"
                   name="endDate"
                   placeholder="End Date"
-                  className="border-b border-gray-500 focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <input
-                  type="text"
-                  name="examCenter"
-                  placeholder="Exam Center"
                   className="border-b border-gray-500 focus:outline-none"
                 />
               </div>
@@ -138,16 +147,6 @@ const EditExamTimetable = () => {
                     name="endTime"
                     value={field.endTime}
                     placeholder="End Time"
-                    className="border-b border-gray-500 focus:outline-none"
-                    onChange={(e) => handleFieldChange(index, e)}
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <input
-                    type="number"
-                    name="maximumMarks"
-                    value={field.maximumMarks}
-                    placeholder="Maximum Marks"
                     className="border-b border-gray-500 focus:outline-none"
                     onChange={(e) => handleFieldChange(index, e)}
                   />

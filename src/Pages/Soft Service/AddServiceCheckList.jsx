@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import InstituteDetails from "../School management/InstituteDetails";
-const EditChecklist = () => {
+const AddServiceCheckList = () => {
   const [selectedType, setSelectedType] = useState("");
 
   const handleTypeChange = (event) => {
@@ -39,7 +39,7 @@ const EditChecklist = () => {
       <InstituteDetails />
       <div className="w-full overflow-hidden flex flex-col mx-5">
         <h2 className="text-center text-xl font-bold p-2 my-2 rounded-md text-black bg-white">
-          Edit Checklist
+          Add Checklist
         </h2>
         <div className="my-5 mb-10 sm:border border-gray-400 p-5 px-10 rounded-lg bg-white">
           <div className="flex  flex-col justify-around">
@@ -172,4 +172,4 @@ const EditChecklist = () => {
   );
 };
 
-export default EditChecklist
+export default AddServiceCheckList

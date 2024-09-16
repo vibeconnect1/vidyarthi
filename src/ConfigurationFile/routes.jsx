@@ -208,6 +208,32 @@ import AddGoodsInOut from '../Pages/Visitor management/AddGoodsInOut';
 import GoodsInOutDetails from '../Pages/Visitor management/GoodsInOutDetails';
 import ProjectManagement from '../Pages/Project/ProjectManagement';
 import ProjectDetails from '../Pages/Project/ProjectDetails';
+import ServicePage from '../Pages/Soft Service/ServicePage';
+import Services from '../Pages/Soft Service/Services';
+import AddService from '../Pages/Soft Service/AddService';
+import EditService from '../Pages/Soft Service/EditService';
+import ServiceDetails from '../Pages/Soft Service/ServiceDetails';
+import ServiceTask from '../Pages/Soft Service/ServiceTask';
+import CheckListService from '../Pages/Soft Service/CheckListService';
+import EditServiceCheckList from '../Pages/Soft Service/EditServiceCheckList';
+import AddServiceCheckList from '../Pages/Soft Service/AddServiceCheckList';
+import SoftServiceWidgets from '../Pages/Soft Service/SoftServiceWidgets';
+import HotelRequest from '../Pages/Booking Request/HotelRequest';
+import BookingRequest from '../Pages/Booking Request/BookingRequest';
+import AddHotelRequest from '../Pages/Booking Request/AddHotelRequest';
+import EditHotelRequest from '../Pages/Booking Request/EditHotelRequest';
+import HotelRequestDetails from '../Pages/Booking Request/HotelRequestDetails';
+import FlightRequest from '../Pages/Booking Request/FlightRequest';
+import AddFlightRequest from '../Pages/Booking Request/AddFlightRequest';
+import EditFlightRequest from '../Pages/Booking Request/EditFlightRequest';
+import FlightRequestDetails from '../Pages/Booking Request/FlightRequestDetails';
+import CabRequest from '../Pages/Booking Request/CabRequest';
+import AddCabRequest from '../Pages/Booking Request/AddCabRequest';
+import EditCabRequest from '../Pages/Booking Request/EditCabRequest';
+import CabRequestDetails from '../Pages/Booking Request/CabRequestDetails';
+import TransportationRequest from '../Pages/Booking Request/TransportationRequest';
+import ExamCategories from '../Pages/Examination/ExamCategories';
+import AdmitCards from '../Pages/Examination/AdmitCards';
 
 const routes = [
     {
@@ -745,6 +771,15 @@ const routes = [
         path: '/school-management/exam-result',
         element: < ExamResult/>,
     },
+    {
+        path: '/school-management/exam-category',
+        element: < ExamCategories/>,
+    },
+    {
+        path: '/school-management/admit-cards',
+        element: < AdmitCards/>,
+    },
+    
     // Transport management
     {
         path: '/school-management/transport/vehicle',
@@ -1054,7 +1089,106 @@ const routes = [
         path: '/school-management/project-details',
         element: <ProjectDetails/>,
     },
-    
+    // Soft Service
+    {
+        path: '/school-management/service-page',
+        element: <ServicePage/>,
+    }, 
+    {
+        path: '/school-management/service',
+        element: <Services/>,
+    }, 
+    {
+        path: '/school-management/service-add',
+        element: <AddService/>,
+    }, 
+    {
+        path: '/school-management/edit-service/:id',
+        element: <EditService/>,
+    },
+    {
+        path: '/school-management/service-details/:id',
+        element: <ServiceDetails/>,
+    }, 
+    {
+        path: '/school-management/service-task',
+        element: <ServiceTask/>,
+    },
+    {
+        path: '/school-management/checklist-service',
+        element: <CheckListService/>,
+    },
+    {
+        path: '/school-management/edit-checklist-service/:id',
+        element: <EditServiceCheckList/>,
+    },
+    {
+        path: '/school-management/add-check-list-service',
+        element: <AddServiceCheckList/>,
+    },
+    {
+        path: '/school-management/soft-service-widgets',
+        element: <SoftServiceWidgets/>,
+    },
+
+    // Booking Request
+    {
+        path: '/school-management/booking-request',
+        element: <BookingRequest/>,
+    },
+
+    {
+        path: '/school-management/hotel-request',
+        element: <HotelRequest/>,
+    },
+    {
+        path: '/school-management/add-hotel-request',
+        element: <AddHotelRequest/>,
+    },
+    {
+        path: '/school-management/edit-hotel-request/:id',
+        element: <EditHotelRequest/>,
+    },
+    {
+        path: '/school-management/hotel-request-details/:id',
+        element: <HotelRequestDetails/>,
+    },
+    {
+        path: '/school-management/flight-request',
+        element: <FlightRequest/>,
+    },
+    {
+        path: '/school-management/add-flight-request',
+        element: <AddFlightRequest/>,
+    },
+    {
+        path: '/school-management/edit-flight-request/:id',
+        element: <EditFlightRequest/>,
+    },
+    {
+        path: '/school-management/flight-request-details/:id',
+        element: <FlightRequestDetails/>,
+    },
+    {
+        path: '/school-management/cab-request',
+        element: <CabRequest/>,
+    },
+    {
+        path: '/school-management/add-cab-request',
+        element: <AddCabRequest/>,
+    },
+    {
+        path: '/school-management/edit-cab-request/:id',
+        element: <EditCabRequest/>,
+    },
+    {
+        path: '/school-management/cab-request-details/:id',
+        element: <CabRequestDetails/>,
+    },
+    {
+        path: '/school-management/transportation-request',
+        element: <TransportationRequest/>,
+    },
 ];
 
 export default routes;

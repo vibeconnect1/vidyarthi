@@ -1,570 +1,334 @@
-// import React from "react";
-
-// const ExamResult = () => {
-//   return (
-//     <div className="bg-gray-100 min-h-screen p-6">
-//       {/* Header */}
-//       <header className="mb-6">
-//         <div className="flex justify-between items-center">
-//           <h1 className="text-3xl font-bold text-gray-800">Exam Dashboard</h1>
-//           <div className="space-x-4">
-//             <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
-//               Manage Schedules
-//             </button>
-//             <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
-//               Manage Results
-//             </button>
-//             <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg">
-//               Generate Reports
-//             </button>
-//           </div>
-//         </div>
-//       </header>
-
-//       {/* Tiles Section */}
-//       <section className="grid grid-cols-3 gap-6 mb-6">
-//         {/* Upcoming Exams Tile */}
-//         <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-//           <h2 className="text-xl font-semibold text-gray-700">Upcoming Exams</h2>
-//           <p className="text-4xl font-bold text-indigo-500 my-4">5</p>
-//           <button className="bg-indigo-500 text-white px-4 py-2 rounded-md">
-//             View All Exams
-//           </button>
-//         </div>
-
-//         {/* Results Pending Tile */}
-//         <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-//           <h2 className="text-xl font-semibold text-gray-700">Results Pending</h2>
-//           <p className="text-4xl font-bold text-red-500 my-4">3</p>
-//           <div className="w-full bg-gray-200 h-2 rounded-full my-4">
-//             <div className="bg-red-500 h-2 rounded-full" style={{ width: "50%" }}></div>
-//           </div>
-//           <button className="bg-red-500 text-white px-4 py-2 rounded-md">
-//             Publish Results
-//           </button>
-//         </div>
-
-//         {/* Recent Exams Tile */}
-//         <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-//           <h2 className="text-xl font-semibold text-gray-700">Recent Exams</h2>
-//           <ul className="my-4 space-y-2">
-//             <li className="text-gray-600">Math Midterm - Class 8</li>
-//             <li className="text-gray-600">Science Final - Class 9</li>
-//           </ul>
-//           <button className="bg-green-500 text-white px-4 py-2 rounded-md">
-//             View Recent Results
-//           </button>
-//         </div>
-//       </section>
-
-//       {/* Graph Section */}
-//       <section className="bg-white shadow-lg rounded-lg p-6 mb-6">
-//         <h2 className="text-xl font-semibold text-gray-700 mb-4">Student Performance Trends</h2>
-//         <div className="h-64">
-//           {/* Insert Graph Component Here */}
-//         </div>
-//       </section>
-
-//       {/* Recent Results Table */}
-//       <section className="bg-white shadow-lg rounded-lg p-6">
-//         <h2 className="text-xl font-semibold text-gray-700 mb-4">Recent Results</h2>
-//         <table className="min-w-full table-auto">
-//           <thead>
-//             <tr>
-//               <th className="px-4 py-2 text-left text-gray-500">Exam Name</th>
-//               <th className="px-4 py-2 text-left text-gray-500">Class</th>
-//               <th className="px-4 py-2 text-left text-gray-500">Date</th>
-//               <th className="px-4 py-2 text-left text-gray-500">Status</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             <tr>
-//               <td className="border px-4 py-2">Math Midterm</td>
-//               <td className="border px-4 py-2">Class 8</td>
-//               <td className="border px-4 py-2">2024-09-10</td>
-//               <td className="border px-4 py-2">Published</td>
-//             </tr>
-//           </tbody>
-//         </table>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default ExamResult
-
 // import React, { useState } from "react";
-// import DatePicker from "react-datepicker";
-// import Select from "react-select";
-// import "react-datepicker/dist/react-datepicker.css";
-// import { format } from "date-fns";
-
-// const classOptions = [
-//   { value: "class8", label: "Class 8" },
-//   { value: "class9", label: "Class 9" },
-//   { value: "class10", label: "Class 10" },
-// ];
-
-// const subjectOptions = [
-//   { value: "math", label: "Math" },
-//   { value: "science", label: "Science" },
-//   { value: "history", label: "History" },
-// ];
 
 // const ExamResult = () => {
-//   const [examName, setExamName] = useState("");
-//   const [selectedClass, setSelectedClass] = useState(null);
-//   const [selectedSubject, setSelectedSubject] = useState(null);
-//   const [examDate, setExamDate] = useState(null);
-//   const [examTime, setExamTime] = useState(null);
-//   const [examDuration, setExamDuration] = useState("");
-
 //   const [exams, setExams] = useState([]);
+//   const [showModal, setShowModal] = useState(false);
+//   const [newExam, setNewExam] = useState({
+//     class: "",
+//     subject: "",
+//     examDate: "",
+//     startTime: "",
+//     duration: "",
+//   });
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const newExam = {
-//       examName,
-//       class: selectedClass.label,
-//       subject: selectedSubject.label,
-//       date: format(examDate, "yyyy-MM-dd"),
-//       time: examTime,
-//       duration: examDuration,
-//     };
+//   const handleInputChange = (e) => {
+//     const { name, value } = e.target;
+//     setNewExam({ ...newExam, [name]: value });
+//   };
+
+//   const handleAddExam = () => {
 //     setExams([...exams, newExam]);
-//     resetForm();
+//     setNewExam({
+//       class: "",
+//       subject: "",
+//       examDate: "",
+//       startTime: "",
+//       duration: "",
+//     });
+//     setShowModal(false);
 //   };
 
-//   const resetForm = () => {
-//     setExamName("");
-//     setSelectedClass(null);
-//     setSelectedSubject(null);
-//     setExamDate(null);
-//     setExamTime(null);
-//     setExamDuration("");
-//   };
-
-//   return (
-//     <div className="p-6 bg-gray-100 min-h-screen">
-//       <header className="mb-6">
-//         <h1 className="text-3xl font-bold text-gray-800">Exam Schedule Management</h1>
-//       </header>
-
-//       {/* Form Section */}
-//       <section className="mb-8">
-//         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Add/Edit Exam Schedule</h2>
-//         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg grid grid-cols-2 gap-6">
-//           {/* Exam Name */}
-//           <div className="col-span-2">
-//             <label className="block text-gray-700 mb-2">Exam Name</label>
-//             <input
-//               type="text"
-//               value={examName}
-//               onChange={(e) => setExamName(e.target.value)}
-//               className="w-full px-4 py-2 border rounded-lg"
-//               placeholder="Enter exam name"
-//               required
-//             />
-//           </div>
-
-//           {/* Class Dropdown */}
-//           <div>
-//             <label className="block text-gray-700 mb-2">Class</label>
-//             <Select
-//               options={classOptions}
-//               value={selectedClass}
-//               onChange={setSelectedClass}
-//               placeholder="Select Class"
-//               className="w-full"
-//               required
-//             />
-//           </div>
-
-//           {/* Subject Dropdown */}
-//           <div>
-//             <label className="block text-gray-700 mb-2">Subject</label>
-//             <Select
-//               options={subjectOptions}
-//               value={selectedSubject}
-//               onChange={setSelectedSubject}
-//               placeholder="Select Subject"
-//               className="w-full"
-//               required
-//             />
-//           </div>
-
-//           {/* Exam Date */}
-//           <div>
-//             <label className="block text-gray-700 mb-2">Exam Date</label>
-//             <DatePicker
-//               selected={examDate}
-//               onChange={(date) => setExamDate(date)}
-//               className="w-full px-4 py-2 border rounded-lg"
-//               placeholderText="Select date"
-//               dateFormat="yyyy-MM-dd"
-//               required
-//             />
-//           </div>
-
-//           {/* Exam Time */}
-//           <div>
-//             <label className="block text-gray-700 mb-2">Exam Time</label>
-//             <input
-//               type="time"
-//               value={examTime}
-//               onChange={(e) => setExamTime(e.target.value)}
-//               className="w-full px-4 py-2 border rounded-lg"
-//               required
-//             />
-//           </div>
-
-//           {/* Exam Duration */}
-//           <div className="col-span-2">
-//             <label className="block text-gray-700 mb-2">Duration (hours)</label>
-//             <input
-//               type="number"
-//               value={examDuration}
-//               onChange={(e) => setExamDuration(e.target.value)}
-//               className="w-full px-4 py-2 border rounded-lg"
-//               placeholder="Enter duration"
-//               required
-//             />
-//           </div>
-
-//           {/* Submit Button */}
-//           <div className="col-span-2 flex justify-end">
-//             <button
-//               type="submit"
-//               className="bg-blue-500 text-white px-6 py-2 rounded-lg"
-//             >
-//               Add Exam
-//             </button>
-//           </div>
-//         </form>
-//       </section>
-
-//       {/* Exam Table Section */}
-//       <section className="bg-white p-6 rounded-lg shadow-lg">
-//         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Scheduled Exams</h2>
-//         <table className="min-w-full table-auto">
-//           <thead>
-//             <tr>
-//               <th className="px-4 py-2 text-left text-gray-600">Exam Name</th>
-//               <th className="px-4 py-2 text-left text-gray-600">Class</th>
-//               <th className="px-4 py-2 text-left text-gray-600">Subject</th>
-//               <th className="px-4 py-2 text-left text-gray-600">Date</th>
-//               <th className="px-4 py-2 text-left text-gray-600">Time</th>
-//               <th className="px-4 py-2 text-left text-gray-600">Duration</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {exams.length > 0 ? (
-//               exams.map((exam, index) => (
-//                 <tr key={index}>
-//                   <td className="border px-4 py-2">{exam.examName}</td>
-//                   <td className="border px-4 py-2">{exam.class}</td>
-//                   <td className="border px-4 py-2">{exam.subject}</td>
-//                   <td className="border px-4 py-2">{exam.date}</td>
-//                   <td className="border px-4 py-2">{exam.time}</td>
-//                   <td className="border px-4 py-2">{exam.duration} hours</td>
-//                 </tr>
-//               ))
-//             ) : (
-//               <tr>
-//                 <td className="border px-4 py-2 text-center" colSpan="6">
-//                   No exams scheduled
-//                 </td>
-//               </tr>
-//             )}
-//           </tbody>
-//         </table>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default ExamResult
-
-
-// import React, { useState } from "react";
-// import Select from "react-select";
-
-// const examTypeOptions = [
-//   { value: "midterm", label: "Mid-term" },
-//   { value: "final", label: "Final" },
-//   { value: "practical", label: "Practical" },
-//   { value: "quiz", label: "Quiz" },
-// ];
-
-// const ExamResult = () => {
-//   const [selectedExamType, setSelectedExamType] = useState(null);
-//   const [examDuration, setExamDuration] = useState("");
-//   const [numberOfPapers, setNumberOfPapers] = useState("");
-
-//   const handleSave = (e) => {
-//     e.preventDefault();
-//     const newExamType = {
-//       examType: selectedExamType?.label,
-//       duration: examDuration,
-//       papers: numberOfPapers,
-//     };
-
-//     console.log("Saved Exam Type: ", newExamType);
-
-//     // Reset form fields after saving
-//     resetForm();
-//   };
-
-//   const resetForm = () => {
-//     setSelectedExamType(null);
-//     setExamDuration("");
-//     setNumberOfPapers("");
+//   const handleDeleteExam = (index) => {
+//     const updatedExams = exams.filter((_, i) => i !== index);
+//     setExams(updatedExams);
 //   };
 
 //   return (
-//     <div className="p-6 bg-gray-100 min-h-screen">
-//       <header className="mb-6">
-//         <h1 className="text-3xl font-bold text-gray-800">Add Exam Type</h1>
-//       </header>
+//     <div className="container mx-auto p-6">
+//       <div className="flex justify-between items-center mb-6">
+//         <h1 className="text-2xl font-bold">Exam Scheduling</h1>
+//         <button
+//           className="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600"
+//           onClick={() => setShowModal(true)}
+//         >
+//           + Create New Exam
+//         </button>
+//       </div>
 
-//       {/* Form Section */}
-//       <section className="mb-8">
-//         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Define New Exam Type</h2>
-//         <form onSubmit={handleSave} className="bg-white p-6 rounded-lg shadow-lg grid grid-cols-2 gap-6">
-//           {/* Exam Type Dropdown */}
-//           <div className="col-span-2">
-//             <label className="block text-gray-700 mb-2">Exam Type</label>
-//             <Select
-//               options={examTypeOptions}
-//               value={selectedExamType}
-//               onChange={setSelectedExamType}
-//               placeholder="Select Exam Type"
-//               className="w-full"
-//               required
-//             />
-//           </div>
-
-//           {/* Exam Duration */}
-//           <div className="col-span-1">
-//             <label className="block text-gray-700 mb-2">Exam Duration (hours)</label>
-//             <input
-//               type="number"
-//               value={examDuration}
-//               onChange={(e) => setExamDuration(e.target.value)}
-//               className="w-full px-4 py-2 border rounded-lg"
-//               placeholder="Enter duration"
-//               required
-//             />
-//           </div>
-
-//           {/* Number of Papers */}
-//           <div className="col-span-1">
-//             <label className="block text-gray-700 mb-2">Number of Papers</label>
-//             <input
-//               type="number"
-//               value={numberOfPapers}
-//               onChange={(e) => setNumberOfPapers(e.target.value)}
-//               className="w-full px-4 py-2 border rounded-lg"
-//               placeholder="Enter number of papers"
-//               required
-//             />
-//           </div>
-
-//           {/* Save Button */}
-//           <div className="col-span-2 flex justify-end">
-//             <button
-//               type="submit"
-//               className="bg-blue-500 text-white px-6 py-2 rounded-lg"
-//             >
-//               Save Exam Type
-//             </button>
-//           </div>
-//         </form>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default ExamResult
-
-// import React, { useState } from "react";
-
-// const exams = [
-//   { id: 1, name: "Mathematics Mid-term", date: "2024-09-20", registered: false },
-//   { id: 2, name: "Science Final", date: "2024-10-10", registered: true },
-//   { id: 3, name: "English Practical", date: "2024-09-25", registered: false },
-// ];
-
-// const ExamResult = () => {
-//   const [examList, setExamList] = useState(exams);
-
-//   const handleRegister = (id) => {
-//     setExamList((prevExams) =>
-//       prevExams.map((exam) =>
-//         exam.id === id ? { ...exam, registered: !exam.registered } : exam
-//       )
-//     );
-//   };
-
-//   return (
-//     <div className="p-6 bg-gray-100 min-h-screen">
-//       <header className="mb-6">
-//         <h1 className="text-3xl font-bold text-gray-800">Student Exam Registration</h1>
-//       </header>
-
-//       {/* List of Exams */}
-//       <section>
-//         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Available Exams</h2>
-//         <table className="w-full bg-white rounded-lg shadow-lg">
-//           <thead className="bg-gray-200">
-//             <tr>
-//               <th className="px-4 py-2 text-left text-gray-600">Exam Name</th>
-//               <th className="px-4 py-2 text-left text-gray-600">Date</th>
-//               <th className="px-4 py-2 text-left text-gray-600">Status</th>
-//               <th className="px-4 py-2 text-center text-gray-600">Actions</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {examList.map((exam) => (
-//               <tr key={exam.id} className="border-b">
-//                 {/* Exam Name */}
-//                 <td className="px-4 py-3">{exam.name}</td>
-
-//                 {/* Exam Date */}
-//                 <td className="px-4 py-3">{exam.date}</td>
-
-//                 {/* Registration Status */}
-//                 <td className="px-4 py-3">
-//                   <span
-//                     className={`px-3 py-1 rounded-full text-sm ${
-//                       exam.registered ? "bg-green-200 text-green-800" : "bg-red-200 text-red-800"
-//                     }`}
-//                   >
-//                     {exam.registered ? "Registered" : "Not Registered"}
-//                   </span>
-//                 </td>
-
-//                 {/* Actions */}
-//                 <td className="px-4 py-3 text-center">
+//       {/* Exam Table */}
+//       <table className="w-full table-auto border-collapse">
+//         <thead>
+//           <tr className="bg-gray-100 text-left">
+//             <th className="border p-2">Class</th>
+//             <th className="border p-2">Subject</th>
+//             <th className="border p-2">Exam Date</th>
+//             <th className="border p-2">Start Time</th>
+//             <th className="border p-2">Duration</th>
+//             <th className="border p-2">Actions</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {exams.length > 0 ? (
+//             exams.map((exam, index) => (
+//               <tr key={index}>
+//                 <td className="border p-2">{exam.class}</td>
+//                 <td className="border p-2">{exam.subject}</td>
+//                 <td className="border p-2">{exam.examDate}</td>
+//                 <td className="border p-2">{exam.startTime}</td>
+//                 <td className="border p-2">{exam.duration}</td>
+//                 <td className="border p-2">
 //                   <button
-//                     onClick={() => handleRegister(exam.id)}
-//                     className={`px-4 py-2 rounded-lg text-white ${
-//                       exam.registered ? "bg-red-500" : "bg-blue-500"
-//                     }`}
+//                     className="text-red-500 hover:underline ml-2"
+//                     onClick={() => handleDeleteExam(index)}
 //                   >
-//                     {exam.registered ? "Unregister" : "Register"}
+//                     Delete
 //                   </button>
 //                 </td>
 //               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </section>
+//             ))
+//           ) : (
+//             <tr>
+//               <td className="border p-2 text-center" colSpan="6">
+//                 No exams scheduled.
+//               </td>
+//             </tr>
+//           )}
+//         </tbody>
+//       </table>
+
+//       {/* Modal for adding new exam */}
+//       {showModal && (
+//         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+//           <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
+//             <h2 className="text-xl font-bold mb-4">Create New Exam</h2>
+
+//             <div className="mb-4">
+//               <label className="block text-gray-700">Class</label>
+//               <input
+//                 type="text"
+//                 name="class"
+//                 value={newExam.class}
+//                 onChange={handleInputChange}
+//                 className="w-full border px-4 py-2 rounded"
+//               />
+//             </div>
+
+//             <div className="mb-4">
+//               <label className="block text-gray-700">Subject</label>
+//               <input
+//                 type="text"
+//                 name="subject"
+//                 value={newExam.subject}
+//                 onChange={handleInputChange}
+//                 className="w-full border px-4 py-2 rounded"
+//               />
+//             </div>
+
+//             <div className="mb-4">
+//               <label className="block text-gray-700">Exam Date</label>
+//               <input
+//                 type="date"
+//                 name="examDate"
+//                 value={newExam.examDate}
+//                 onChange={handleInputChange}
+//                 className="w-full border px-4 py-2 rounded"
+//               />
+//             </div>
+
+//             <div className="mb-4">
+//               <label className="block text-gray-700">Start Time</label>
+//               <input
+//                 type="time"
+//                 name="startTime"
+//                 value={newExam.startTime}
+//                 onChange={handleInputChange}
+//                 className="w-full border px-4 py-2 rounded"
+//               />
+//             </div>
+
+//             <div className="mb-4">
+//               <label className="block text-gray-700">Duration (in hours)</label>
+//               <input
+//                 type="number"
+//                 name="duration"
+//                 value={newExam.duration}
+//                 onChange={handleInputChange}
+//                 className="w-full border px-4 py-2 rounded"
+//               />
+//             </div>
+
+//             <div className="flex justify-end">
+//               <button
+//                 className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
+//                 onClick={() => setShowModal(false)}
+//               >
+//                 Cancel
+//               </button>
+//               <button
+//                 className="bg-blue-500 text-white px-4 py-2 rounded"
+//                 onClick={handleAddExam}
+//               >
+//                 Save
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       )}
 //     </div>
 //   );
 // };
 
 // export default ExamResult
 
-// 
-
-// 
-
-import React, { useState } from 'react';
-
-const students = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-  { id: 3, name: "Bob Johnson" },
-];
-
-const subjects = [
-  { id: 1, name: "Mathematics" },
-  { id: 2, name: "Science" },
-  { id: 3, name: "English" },
-];
+//11
+import React, { useState } from "react";
 
 const ExamResult = () => {
-  const [results, setResults] = useState(
-    students.reduce((acc, student) => {
-      acc[student.id] = subjects.reduce((subAcc, subject) => {
-        subAcc[subject.id] = { marks: '', remarks: '' };
-        return subAcc;
-      }, {});
-      return acc;
-    }, {})
-  );
+  // Sample data
+  const [requests, setRequests] = useState([
+    {
+      id: 1,
+      studentName: "John Doe",
+      rollNumber: "101",
+      subject: "Math",
+      currentMarks: 85,
+      requestedMarks: 90,
+      status: "Pending",
+      comments: "",
+    },
+    {
+      id: 2,
+      studentName: "Jane Smith",
+      rollNumber: "102",
+      subject: "Science",
+      currentMarks: 72,
+      requestedMarks: 80,
+      status: "Reviewed",
+      comments: "No change in marks.",
+    },
+  ]);
 
-  const handleInputChange = (studentId, subjectId, field, value) => {
-    setResults(prevResults => ({
-      ...prevResults,
-      [studentId]: {
-        ...prevResults[studentId],
-        [subjectId]: {
-          ...prevResults[studentId][subjectId],
-          [field]: value
-        }
-      }
-    }));
+  const [newRequest, setNewRequest] = useState({
+    rollNumber: "",
+    subject: "",
+    currentMarks: "",
+    requestedMarks: "",
+  });
+
+  const handleRequestChange = (e) => {
+    const { name, value } = e.target;
+    setNewRequest((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSave = () => {
-    // Logic to save results, e.g., API call
-    console.log('Results saved:', results);
+  const handleSubmitRequest = () => {
+    // Logic to submit new request
+    console.log("Submitting new re-evaluation request:", newRequest);
+    setRequests([
+      ...requests,
+      {
+        id: requests.length + 1,
+        ...newRequest,
+        status: "Pending",
+        comments: "",
+      },
+    ]);
+    setNewRequest({
+      rollNumber: "",
+      subject: "",
+      currentMarks: "",
+      requestedMarks: "",
+    });
+  };
+
+  const handleUpdateRequest = (id, status, comments) => {
+    // Logic to update request status and comments
+    setRequests((prevRequests) =>
+      prevRequests.map((request) =>
+        request.id === id ? { ...request, status, comments } : request
+      )
+    );
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <header className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">Student Result Entry</h1>
-      </header>
+    <div className="container mx-auto p-6">
+      <h1 className="text-2xl font-bold mb-6">Re-evaluation Requests</h1>
 
-      <section className="bg-white p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-4">Enter Exam Results</h2>
-
-        <table className="w-full bg-white rounded-lg shadow-lg border border-gray-200">
-          <thead className="bg-gray-200">
-            <tr>
-              <th className="px-4 py-2 text-left text-gray-600">Student</th>
-              {subjects.map(subject => (
-                <th key={subject.id} className="px-4 py-2 text-left text-gray-600">{subject.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {students.map(student => (
-              <tr key={student.id} className="border-b">
-                <td className="px-4 py-2 font-medium text-gray-800">{student.name}</td>
-                {subjects.map(subject => (
-                  <td key={subject.id} className="px-4 py-2">
-                    <input
-                      type="number"
-                      placeholder="Marks"
-                      value={results[student.id][subject.id].marks}
-                      onChange={(e) => handleInputChange(student.id, subject.id, 'marks', e.target.value)}
-                      className="w-20 px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Remarks"
-                      value={results[student.id][subject.id].remarks}
-                      onChange={(e) => handleInputChange(student.id, subject.id, 'remarks', e.target.value)}
-                      className="w-40 px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-indigo-500 ml-2"
-                    />
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-
+      {/* Re-evaluation Request Form */}
+      <div className="mb-6">
+        <h2 className="text-xl font-bold mb-4">Submit Re-evaluation Request</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <input
+            type="text"
+            name="rollNumber"
+            value={newRequest.rollNumber}
+            onChange={handleRequestChange}
+            placeholder="Roll Number"
+            className="border rounded px-4 py-2"
+          />
+          <input
+            type="text"
+            name="subject"
+            value={newRequest.subject}
+            onChange={handleRequestChange}
+            placeholder="Subject"
+            className="border rounded px-4 py-2"
+          />
+          <input
+            type="number"
+            name="currentMarks"
+            value={newRequest.currentMarks}
+            onChange={handleRequestChange}
+            placeholder="Current Marks"
+            className="border rounded px-4 py-2"
+          />
+          <input
+            type="number"
+            name="requestedMarks"
+            value={newRequest.requestedMarks}
+            onChange={handleRequestChange}
+            placeholder="Requested Marks"
+            className="border rounded px-4 py-2"
+          />
+        </div>
         <button
-          onClick={handleSave}
-          className="mt-6 w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          onClick={handleSubmitRequest}
         >
-          Save Results
+          Submit Request
         </button>
-      </section>
+      </div>
+
+      {/* Requests Management */}
+      <h2 className="text-xl font-bold mb-4">Manage Re-evaluation Requests</h2>
+      <table className="table-auto w-full mb-6">
+        <thead>
+          <tr>
+            <th className="px-4 py-2 border">Roll Number</th>
+            <th className="px-4 py-2 border">Student Name</th>
+            <th className="px-4 py-2 border">Subject</th>
+            <th className="px-4 py-2 border">Current Marks</th>
+            <th className="px-4 py-2 border">Requested Marks</th>
+            <th className="px-4 py-2 border">Status</th>
+            <th className="px-4 py-2 border">Comments</th>
+            <th className="px-4 py-2 border">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {requests.map((request) => (
+            <tr key={request.id}>
+              <td className="border px-4 py-2">{request.rollNumber}</td>
+              <td className="border px-4 py-2">{request.studentName}</td>
+              <td className="border px-4 py-2">{request.subject}</td>
+              <td className="border px-4 py-2">{request.currentMarks}</td>
+              <td className="border px-4 py-2">{request.requestedMarks}</td>
+              <td className="border px-4 py-2">{request.status}</td>
+              <td className="border px-4 py-2">{request.comments}</td>
+              <td className="border px-4 py-2">
+                {request.status === "Pending" ? (
+                  <button
+                    className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                    onClick={() => handleUpdateRequest(request.id, "Reviewed", "Marks updated after re-evaluation.")}
+                  >
+                    Review
+                  </button>
+                ) : (
+                  <span>Reviewed</span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

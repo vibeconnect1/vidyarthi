@@ -9,7 +9,6 @@ function ExamTimeTableDetails() {
     { name: "Date", selector: (row) => row.date },
     { name: "Start Time", selector: (row) => row.startTime },
     { name: "End Time", selector: (row) => row.endTime },
-    { name: "Maximum Marks", selector: (row) => row.maximumMarks },
   ];
   
   const data = [
@@ -20,7 +19,6 @@ function ExamTimeTableDetails() {
       date: "2024-09-10",
       startTime: "09:00 Am",
       endTime: "11:00 Am",
-      maximumMarks: 100,
     },
     {
       id: 2,
@@ -29,7 +27,6 @@ function ExamTimeTableDetails() {
       date: "2024-09-11",
       startTime: "09:00 Am",
       endTime: "11:00 Am",
-      maximumMarks: 100,
     },
     {
       id: 3,
@@ -38,7 +35,6 @@ function ExamTimeTableDetails() {
       date: "2024-09-13",
       startTime: "09:00 Am",
       endTime: "11:00 Am",
-      maximumMarks: 100,
     },
     {
       id: 4,
@@ -47,7 +43,6 @@ function ExamTimeTableDetails() {
       date: "2024-09-15",
       startTime: "09:00 Am",
       endTime: "11:00 Am",
-      maximumMarks: 100,
     },
   ];
   

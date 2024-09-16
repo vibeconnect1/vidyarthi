@@ -551,6 +551,20 @@ function InstituteDetails() {
             <ul>
               <li>
                 <NavLink
+                  to="/school-management/exam-category"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
+                    }`
+                  }
+                >
+                  Exam Category
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/school-management/exam-timetable"
                   className={({ isActive }) =>
                     `p-4 block hover:bg-gray-200 ${
@@ -561,6 +575,20 @@ function InstituteDetails() {
                   }
                 >
                   Exam Time Table
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/school-management/admit-cards"
+                  className={({ isActive }) =>
+                    `p-4 block hover:bg-gray-200 ${
+                      isActive
+                        ? "custom-bg text-black mx-2 my-3 rounded-md"
+                        : ""
+                    }`
+                  }
+                >
+                  Admit Card
                 </NavLink>
               </li>
               <li>
@@ -577,6 +605,7 @@ function InstituteDetails() {
                   Exam Result
                 </NavLink>
               </li>
+              
             </ul>
           )}
         </li>
@@ -784,6 +813,30 @@ function InstituteDetails() {
             }
           >
             <div className="flex gap-2">Project Management</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/service-page"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Soft Service</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/hotel-request"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Booking Request</div>
           </NavLink>
         </li>
       </ul>

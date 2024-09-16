@@ -33,6 +33,16 @@ const Supplier = () => {
       sortable: true,
     },
     {
+      name: "Supplier",
+      selector: (row) => row.supplier,
+      sortable: true,
+    },
+    {
+      name: "Product",
+      selector: (row) => row.product,
+      sortable: true,
+    },
+    {
       name: "Mobile Number",
       selector: (row) => row.mobile,
       sortable: true,
@@ -72,6 +82,8 @@ const Supplier = () => {
       email: "johndoe@example.com",
       gstin_number: "27AAAAA0000A1Z5",
       pan_number: "ABCDE1234F",
+      supplier:'supplier Name',
+      product:"Book",
       active: true,
     },
     {
@@ -82,6 +94,8 @@ const Supplier = () => {
       email: "janesmith@example.com",
       gstin_number: "27AAAAA0000A1Z6",
       pan_number: "XYZDE1234G",
+      product:"Table",
+      supplier:'supplier Name',
       active: false,
     },
     {
@@ -92,6 +106,8 @@ const Supplier = () => {
       email: "markjohnson@example.com",
       gstin_number: "27AAAAA0000A1Z7",
       pan_number: "LMNDE1234H",
+      product: "Computer",
+      supplier:'supplier Name',
       active: true,
     },
     // Add more rows as needed
