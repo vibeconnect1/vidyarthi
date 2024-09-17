@@ -234,6 +234,38 @@ import CabRequestDetails from '../Pages/Booking Request/CabRequestDetails';
 import TransportationRequest from '../Pages/Booking Request/TransportationRequest';
 import ExamCategories from '../Pages/Examination/ExamCategories';
 import AdmitCards from '../Pages/Examination/AdmitCards';
+import AddTransportationRequest from '../Pages/Booking Request/AddTransportationRequest';
+import EditTransportationRequest from '../Pages/Booking Request/EditTransportationRequest';
+import TransportationRequestDetails from '../Pages/Booking Request/TransportationRequestDetails';
+import TravelingAllowanceRequest from '../Pages/Booking Request/TravelingAllowanceRequest';
+import AddTravelingAllowanceRequest from '../Pages/Booking Request/AddTravelingAllowanceRequest';
+import EditTravelingAllowanceRequest from '../Pages/Booking Request/EditTravelingAllowanceRequest';
+import TravelingAllowanceRequestDetails from '../Pages/Booking Request/TravelingAllowanceRequestDetails';
+import Audit from '../Pages/SubPages/Audit';
+import AddScheduleAudit from '../Pages/SubPages/AddScheduleAudit';
+import EditScheduleAudit from '../Pages/SubPages/EditScheduleAudit';
+import ScheduleAuditDetails from '../Pages/SubPages/ScheduleAuditDetails';
+import ConductedAuditDetails from '../Pages/SubPages/ConductedAuditDetails';
+import EditConductedAuditDetails from '../Pages/SubPages/EditConductedAuditDetails';
+import AddAuditChecklist from '../Pages/SubPages/AddAuditChecklist';
+import AuditChecklistDetails from '../Pages/SubPages/AuditChecklistDetails';
+import AddScheduleVendorAudit from '../Pages/SubPages/AddScheduleVendorAudit';
+import EditScheduleVendorAudit from '../Pages/SubPages/EditScheduleVendorAudit';
+import ScheduleVendorAuditDetails from '../Pages/SubPages/ScheduleVendorAuditDetails';
+import Permit from '../Pages/SubPages/Permit';
+import AddNewPermit from '../Pages/SubPages/AddNewPermit';
+import EditPermit from '../Pages/SubPages/EditPermit';
+import PermitDetails from '../Pages/SubPages/PermitDetails';
+import PermitPendingApprovalDetails from '../Pages/SubPages/PermitPendingApprovalDetails';
+import Incidents from '../Pages/SubPages/Incidents';
+import AddIncidents from '../Pages/SubPages/AddIncidents';
+import EditIncidents from '../Pages/SubPages/EditIncidents';
+import IncidentsDetails from '../Pages/SubPages/IncidentsDetails';
+import MailRoom from '../Pages/SubPages/MailRoom';
+import CreateInbound from '../Pages/SubPages/CreateInbound';
+import InBoundDetails from '../Pages/SubPages/InBoundDetails';
+import CreateOutbound from '../Pages/SubPages/CreateOutbound';
+import OutBoundDetails from '../Pages/SubPages/OutBoundDetails';
 
 const routes = [
     {
@@ -1188,6 +1220,140 @@ const routes = [
     {
         path: '/school-management/transportation-request',
         element: <TransportationRequest/>,
+    },
+    {
+        path: '/school-management/add-transportation-request',
+        element: <AddTransportationRequest/>,
+    },
+    {
+        path: '/school-management/edit-transportation-request/:id',
+        element: <EditTransportationRequest/>,
+    },
+    {
+        path: '/school-management/transportation-request-details/:id',
+        element: <TransportationRequestDetails/>,
+    },
+    {
+        path: '/school-management/traveling-allowance-request',
+        element: <TravelingAllowanceRequest/>,
+    },
+    {
+        path: '/school-management/add-traveling-allowance-request',
+        element: <AddTravelingAllowanceRequest/>,
+    },
+    {
+        path: '/school-management/edit-traveling-allowance-request/:id',
+        element: <EditTravelingAllowanceRequest/>,
+    },
+    {
+        path: '/school-management/traveling-allowance-request-details/:id',
+        element: <TravelingAllowanceRequestDetails/>,
+    },
+    // Audit
+    {
+        path: '/school-management/audit',
+        element: <Audit/>,
+    },
+    {
+        path: '/school-management/add-schedule-audit',
+        element: <AddScheduleAudit/>,
+
+    },
+    {
+        path: '/school-management/edit-schedule-audit/:id',
+        element: <EditScheduleAudit/>,
+
+    },
+    {
+        path: '/school-management/schedule-audit-details/:id',
+        element: <ScheduleAuditDetails/>,
+    },
+    {
+        path: '/school-management/conducted-audit-details/:id',
+        element: <ConductedAuditDetails/>,
+    },
+    {
+        path: '/school-management/edit-conducted-audit-details',
+        element: <EditConductedAuditDetails/>,
+    },
+    {
+        path: '/school-management/add-audit-checklist',
+        element: <AddAuditChecklist/>,
+    },
+    {
+        path: '/school-management/audit-checklist-details/:id',
+        element: <AuditChecklistDetails/>,
+    },
+    {
+        path: '/school-management/add-schedule-vendor-audit',
+        element: <AddScheduleVendorAudit/>,
+    },
+    {
+        path: '/school-management/edit-schedule-vendor-audit/:id',
+        element: <EditScheduleVendorAudit/>,
+    },
+    {
+        path: '/school-management/schedule-vendor-audit-details/:id',
+        element: <ScheduleVendorAuditDetails/>,
+    },
+    //Permit
+    {
+        path: '/school-management/Permit',
+        element: <Permit/>,
+    },
+    {
+        path: '/school-management/add-new-permit',
+        element: <AddNewPermit/>,
+    },
+    {
+        path: '/school-management/edit-permit/:id',
+        element: <EditPermit/>,
+    },
+    {
+        path: '/school-management/permit-details/:id',
+        element: <PermitDetails/>,
+    },
+    {
+        path: '/school-management/permit-pending-approval-details/:id',
+        element: <PermitPendingApprovalDetails/>,
+    },
+    //
+    {
+        path: '/school-management/incidents',
+        element: <Incidents/>,
+    },
+    {
+        path: '/school-management/add-incidents',
+        element: <AddIncidents/>,
+    },
+    {
+        path: '/school-management/edit-incidents/:id',
+        element: <EditIncidents/>,
+    },
+    {
+        path: '/school-management/incidents-details/:id',
+        element: <IncidentsDetails/>,
+    },
+    // Mail Room
+    {
+        path: '/school-management/mail-room',
+        element: <MailRoom/>,
+    },
+    {
+        path: '/school-management/create-inbound',
+        element: <CreateInbound/>,
+    },
+    {
+        path: '/school-management/inbound-details/:id',
+        element: <InBoundDetails/>,
+    },
+    {
+        path: '/school-management/create-outbound',
+        element: <CreateOutbound/>,
+    },
+    {
+        path: '/school-management/outBound-details/:id',
+        element: <OutBoundDetails/>,
     },
 ];
 

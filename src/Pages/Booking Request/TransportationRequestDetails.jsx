@@ -2,23 +2,20 @@ import React from "react";
 import Header from "../Form/Header";
 import InstituteDetails from "../School management/InstituteDetails";
 
-function CabRequestDetails() {
+function TransportationRequestDetails() {
   const request = {
-    employeeName: "John Doe",
-    employeeId: "12345",
-    pickupLocation: "123 Main Street, New York, NY",
-    dropoffLocation: "456 Elm Street, New York, NY",
-    date: "2024-07-10",
-    time: "10:00 AM",
-    numberOfPassengers: 3,
-    transportationType: "Shuttle",
-    specialRequirements: "Wheelchair Accessible",
-    driverContactInformation: "Jane Smith, Phone: 555-1234",
-    vehicleDetails: "Toyota Sienna, License Plate: ABC-1234",
-    bookingConfirmationNumber: "ABC123XYZ",
+    employeeName: "Alice Johnson",
+    employeeId: "98765",
+    destination: "Conference Center, Downtown",
+    date: "2024-08-15",
+    time: "09:00 AM",
+    specialRequirements: "VIP Transport, Black SUV",
+    driverContactInformation: "John Doe, Phone: 555-6789",
+    vehicleDetails: "Mercedes-Benz GLS, License Plate: XYZ-456",
+    bookingConfirmationNumber: "DEF456GHI",
     bookingStatus: "Confirmed",
     managerApproval: "Yes",
-    confirmationEmail: "john.doe@example.com",
+    confirmationEmail: "alice.johnson@example.com",
   };
   return (
     <div>
@@ -27,9 +24,9 @@ function CabRequestDetails() {
         <InstituteDetails />
         <div className="flex flex-col overflow-hidden w-full">
           <h2 className="text-center md:text-xl font-bold p-2 bg-white rounded-md my-3 mx-5 text-black">
-           Cab Request Details
+            Transport Request Details
           </h2>
-          <div className="grid md:grid-cols-2 gap-5 mt-5 bg-white mx-5 p-8 rounded-md">
+          <div className="grid md:grid-cols-2 gap-5 mt-5 bg-white p-8 mx-5 rounded-md">
             <div className="flex gap-2 items-center w-full">
               <label className="font-semibold">Employee Name:</label>
               <p>{request.employeeName}</p>
@@ -41,13 +38,8 @@ function CabRequestDetails() {
             </div>
 
             <div className="flex gap-2 items-center w-full">
-              <label className="font-semibold">Pickup Location:</label>
-              <p>{request.pickupLocation}</p>
-            </div>
-
-            <div className="flex gap-2 items-center w-full">
-              <label className="font-semibold">Drop-off Location:</label>
-              <p>{request.dropoffLocation}</p>
+              <label className="font-semibold">Destination:</label>
+              <p>{request.destination}</p>
             </div>
 
             <div className="flex gap-2 items-center w-full">
@@ -58,16 +50,6 @@ function CabRequestDetails() {
             <div className="flex gap-2 items-center w-full">
               <label className="font-semibold">Time:</label>
               <p>{request.time}</p>
-            </div>
-
-            <div className="flex gap-2 items-center w-full">
-              <label className="font-semibold">Number of Passengers:</label>
-              <p>{request.numberOfPassengers}</p>
-            </div>
-
-            <div className="flex gap-2 items-center w-full">
-              <label className="font-semibold">Transportation Type:</label>
-              <p>{request.transportationType}</p>
             </div>
 
             <div className="flex gap-2 items-center w-full">
@@ -117,4 +99,4 @@ function CabRequestDetails() {
   );
 }
 
-export default CabRequestDetails;
+export default TransportationRequestDetails;

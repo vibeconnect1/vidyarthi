@@ -839,6 +839,54 @@ function InstituteDetails() {
             <div className="flex gap-2">Booking Request</div>
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/school-management/audit"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Audit</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/Permit"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Permit</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/incidents"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Incidents</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/mail-room"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Mail Room</div>
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

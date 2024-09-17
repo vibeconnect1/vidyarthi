@@ -10,7 +10,7 @@ import { IoClose } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
 import { BiEdit } from "react-icons/bi";
 
-function TransportationRequest() {
+function TravelingAllowanceRequest() {
   const [selectedStatus, setSelectedStatus] = useState("all");
 
   const columns = [
@@ -18,10 +18,10 @@ function TransportationRequest() {
       name: "Action",
       cell: (row) => (
         <div className="flex items-center gap-4">
-          <Link to={`/school-management/transportation-request-details/${row.id}`}>
+          <Link to={`/school-management/traveling-allowance-request-details/${row.id}`}>
             <BsEye size={15} />
           </Link>
-          <Link to={`/school-management/edit-transportation-request/${row.id}`}>
+          <Link to={`/school-management/edit-traveling-allowance-request/${row.id}`}>
             <BiEdit size={15} />
           </Link>
         </div>
@@ -38,38 +38,38 @@ function TransportationRequest() {
       sortable: true,
     },
     {
-      name: "Destination",
-      selector: (row) => row.Destination,
+      name: "Expense Category",
+      selector: (row) => row.Expense_Category,
       sortable: true,
     },
     {
-      name: "Date",
+      name: "Date of Expense",
       selector: (row) => row.date,
       sortable: true,
     },
     {
-      name: "Time",
-      selector: (row) => row.time,
+      name: "Description of Expense",
+      selector: (row) => row.expense,
       sortable: true,
     },
     {
-      name: "Driver Information",
-      selector: (row) => row.driver,
+      name: "Amount Spent",
+      selector: (row) => row.spent,
       sortable: true,
     },
     {
-      name: "Transportation Type",
-      selector: (row) => row.type,
+      name: "Supporting Documents",
+      selector: (row) => row.document,
       sortable: true,
     },
     {
-      name: "Special Requirements",
-      selector: (row) => row.req,
+      name: "Reimbursement Amount",
+      selector: (row) => row.amount,
       sortable: true,
     },
     {
-      name: "Vehicle Details",
-      selector: (row) => row.Passport_Information,
+      name: "Reimbursement Method",
+      selector: (row) => row.method,
       sortable: true,
     },
     {
@@ -83,7 +83,7 @@ function TransportationRequest() {
       sortable: true,
     },
     {
-      name: "Confirmation Email",
+      name: "Reimbursement Confirmation Email",
       selector: (row) => row.email,
       sortable: true,
     },
@@ -93,20 +93,20 @@ function TransportationRequest() {
       sortable: true,
     },
     {
-      name: "Approval",
-      selector: (row) =>
-        row.status === "Upcoming" && (
-          <div className="flex justify-center gap-2">
-            <button className="text-green-400 font-medium hover:bg-green-400 hover:text-white transition-all duration-200 p-1 rounded-full">
-              <TiTick size={20} />
-            </button>
-            <button className="text-red-400 font-medium hover:bg-red-400 hover:text-white transition-all duration-200 p-1 rounded-full">
-              <IoClose size={20} />
-            </button>
-          </div>
-        ),
-      sortable: true,
-    },
+        name: "Approval",
+        selector: (row) =>
+          row.status === "Upcoming" && (
+            <div className="flex justify-center gap-2">
+              <button className="text-green-400 font-medium hover:bg-green-400 hover:text-white transition-all duration-200 p-1 rounded-full">
+                <TiTick size={20} />
+              </button>
+              <button className="text-red-400 font-medium hover:bg-red-400 hover:text-white transition-all duration-200 p-1 rounded-full">
+                <IoClose size={20} />
+              </button>
+            </div>
+          ),
+        sortable: true,
+      },
   ];
 
   const data = [
@@ -114,18 +114,18 @@ function TransportationRequest() {
       id: 1,
       Id: "55",
       name: "Mi",
-      Destination: "Mumbai",
+      Expense_Category: "Meals",
       Arrival_City: "abc",
-      time: "5:00AM",
+      Departure: "",
       date: "15/02/2024",
-      driver: "abc",
-      type: "abc",
-      req: "VIP Transport",
-      Class: "Economy",
-      Passenger_Name: "abc",
-      Passport_Information: "ab",
+      time: "5:00pm",
+      expense: "ghj",
+      spent: "jkl",
+      amount: "567",
+      document: "abc",
+      method: "ab",
       Manager_Approval: "Upcoming",
-      status: "pending",
+      status: "Upcoming",
     },
   ];
   return (
@@ -188,7 +188,7 @@ function TransportationRequest() {
             </div>
             <span className="flex gap-4">
               <Link
-                to={"/school-management/add-transportation-request"}
+                to={"/school-management/add-traveling-allowance-request"}
                 className="border-2 font-semibold hover:bg-black hover:text-white transition-all border-black p-2 rounded-md text-black cursor-pointer text-center flex items-center gap-2 justify-center"
                 style={{ height: "1cm" }}
               >
@@ -206,4 +206,4 @@ function TransportationRequest() {
   );
 }
 
-export default TransportationRequest
+export default TravelingAllowanceRequest
