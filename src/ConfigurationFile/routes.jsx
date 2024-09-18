@@ -266,6 +266,23 @@ import CreateInbound from '../Pages/SubPages/CreateInbound';
 import InBoundDetails from '../Pages/SubPages/InBoundDetails';
 import CreateOutbound from '../Pages/SubPages/CreateOutbound';
 import OutBoundDetails from '../Pages/SubPages/OutBoundDetails';
+import BusinessCard from '../Pages/SubPages/BusinessCard';
+import WorkSpaceBooking from '../Pages/SubPages/WorkSpaceBooking';
+import FacilityBooking from '../Pages/SubPages/FacilityBooking';
+import BookingDetails from '../Pages/SubPages/BookingDetails';
+import AddSeatBooking from '../Pages/SubPages/AddSeatBooking';
+import SeatBookingDetails from '../Pages/SubPages/SeatBookingDetails';
+import DoctorAppointment from '../Pages/SubPages/DoctorAppointment';
+import BookDocAppointment from '../Pages/SubPages/BookDocAppointment';
+import Insurance from '../Pages/SubPages/Insurance';
+import AddInsurancePolicy from '../Pages/SubPages/AddInsurancePolicy';
+import InsurancePolicyList from '../Pages/SubPages/InsurancePolicyList';
+import InsurancePolicyDetails from '../Pages/SubPages/InsurancePolicyDetails';
+import Parkings from '../Pages/SubPages/Parkings';
+import AddParking from '../Pages/SubPages/AddParking';
+import StudentOnlineFees from '../Pages/Student/StudentOnlineFees';
+import ParkingDetails from '../Pages/SubPages/ParkingDetails';
+import DocumentMain from '../Pages/SubPages/DocumentMain';
 
 const routes = [
     {
@@ -667,6 +684,10 @@ const routes = [
     {
         path: '/student/student-notice-details',
         element: < StudentNoticeDetails/>,
+    },
+    {
+        path: '/student/student-online-fees',
+        element: < StudentOnlineFees/>,
     },
     // event
     {
@@ -1354,6 +1375,75 @@ const routes = [
     {
         path: '/school-management/outBound-details/:id',
         element: <OutBoundDetails/>,
+    },
+    // BusinessCard
+    {
+        path: '/school-management/business-card',
+        element: <BusinessCard/>,
+    },
+    // Work Space Booking
+    {
+        path: '/school-management/work-space-booking',
+        element: <WorkSpaceBooking/>,
+    },
+    {
+        path: '/school-management/work-space-booking/facility-booking',
+        element: <FacilityBooking/>,
+    },
+    {
+        path: '/school-management/work-space-booking/booking-details/:id',
+        element: <BookingDetails/>,
+    },
+    {
+        path: '/school-management/work-space-booking/add-seat-booking',
+        element: <AddSeatBooking/>,
+    },
+    {
+        path: '/school-management/work-space-booking/seat-booking-details/:id',
+        element: <SeatBookingDetails/>,
+    },
+    // DoctorAppointment
+    {
+        path: '/school-management/doctor-appointment',
+        element: <DoctorAppointment/>,
+    },
+    {
+        path: '/school-management/book-doctor-appointment',
+        element: <BookDocAppointment/>,
+    },
+    //Insurance
+    {
+        path: '/school-management/insurance',
+        element: <Insurance/>,
+    },
+    {
+        path: '/school-management/add-insurance-policy',
+        element: <AddInsurancePolicy/>,
+    },
+    {
+        path: '/school-management/insurance-policy-list',
+        element: <InsurancePolicyList/>,
+    },
+    {
+        path: '/school-management/insurance-policy-details',
+        element: <InsurancePolicyDetails/>,
+    },
+    //Parkings
+    {
+        path: '/school-management/parkings',
+        element: <Parkings/>,
+    },
+    {
+        path: '/school-management/add-parking',
+        element: <AddParking/>,
+    },
+    {
+        path: '/school-management/parking-details/:id',
+        element: <ParkingDetails/>,
+    },
+    {
+        path: '/school-management/document-main',
+        element: <DocumentMain/>,
     },
 ];
 

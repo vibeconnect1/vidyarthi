@@ -38,12 +38,12 @@ const StudentSidebar = () => {
           Attendance
         </NavLink>
         <NavLink 
-          to="/student/student-fees-invoice" 
+          to="/student/student-online-fees" 
           className={({ isActive }) => 
             isActive ? 'text-black p-2 rounded-md custom-bg' : 'p-2 text-gray-800 hover:my-custom-class hover:text-black rounded-md'
           }
         >
-          Fees Invoice
+          Online Fees
         </NavLink>
         <NavLink 
           to="/student/student-fees-history" 

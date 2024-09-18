@@ -887,6 +887,78 @@ function InstituteDetails() {
             <div className="flex gap-2">Mail Room</div>
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/school-management/business-card"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Business Card</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/work-space-booking"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">WorkSpace Booking</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/doctor-appointment"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Doctor Appointment</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/insurance"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Insurance</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/parkings"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Parkings</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/school-management/document-main"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">Document Pro</div>
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
