@@ -685,37 +685,16 @@ function InstituteDetails() {
           )}
         </li>
         <li>
-          <div
-            className="p-4 cursor-pointer hover:bg-gray-300 flex justify-between items-center"
-            onClick={() => setCanteen(!canteen)}
+          <NavLink
+            to="/canteen/canteen-info"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
           >
-            <div className="flex items-center">
-              <span className="whitespace-nowrap">Canteen</span>
-            </div>
-            <IoIosArrowUp
-              className={`transform transition-transform ${
-                canteen ? "rotate-180" : "rotate-0"
-              }`}
-            />
-          </div>
-          {canteen && (
-            <ul>
-              <li>
-                <NavLink
-                  to="/school-management/canteen"
-                  className={({ isActive }) =>
-                    `p-4 block hover:bg-gray-200 ${
-                      isActive
-                        ? "custom-bg text-black mx-2 my-3 rounded-md"
-                        : ""
-                    }`
-                  }
-                >
-                  Canteen
-                </NavLink>
-              </li>
-            </ul>
-          )}
+            <div className="flex gap-2">Canteen</div>
+          </NavLink>
         </li>
         <li>
           <NavLink
@@ -957,6 +936,18 @@ function InstituteDetails() {
             }
           >
             <div className="flex gap-2">Document Pro</div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/hrms/hrms-Dashboard"
+            className={({ isActive }) =>
+              `p-4 block hover:bg-gray-200 ${
+                isActive ? "custom-bg text-black mx-2 my-3 rounded-md" : ""
+              }`
+            }
+          >
+            <div className="flex gap-2">HRMS</div>
           </NavLink>
         </li>
       </ul>

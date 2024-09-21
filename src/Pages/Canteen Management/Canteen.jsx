@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import { IoAddCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Table from "../../ConfigurationFile/Table";
 import { BsEye } from "react-icons/bs";
 import Header from "../Form/Header";
-import { CiSearch } from "react-icons/ci";
 import InstituteDetails from "../School management/InstituteDetails";
 import { BiSolidEdit } from "react-icons/bi";
+import CanteenNavbar from "./CanteenNavbar";
+import { PiPlusCircle } from "react-icons/pi";
 
 const Canteen = () => {
+  const [selectedStatus, setSelectedStatus] = useState("all");
+  const handleStatusChange = (status) => {
+    setSelectedStatus(status);
+  };
+
   const columns = [
     {
       name: "Action",
@@ -16,11 +21,11 @@ const Canteen = () => {
       cell: (row) => (
         <div className="flex gap-3">
           <Link
-            to={`/school-management/canteen-product-details/${row.id}`}
+            to={`/canteen/canteen-product-details/${row.id}`}
           >
             <BsEye size={15} />
           </Link>
-          <Link to={`/school-management/edit-canteen-product/${row.id}`}>
+          <Link to={`/canteen/edit-canteen-product/${row.id}`}>
             <BiSolidEdit size={15} />
           </Link>
         </div>
@@ -103,24 +108,67 @@ const Canteen = () => {
       <div className="flex">
         <InstituteDetails />
         <div className="flex flex-col overflow-hidden w-full">
-          <p className="text-xl font-bold text-gray-600 mx-5 my-5">Canteen</p>
-          <div className="flex justify-between mx-5 my-5">
-            <div className="relative">
-              <input
-                type="search"
-                placeholder="Search"
-                className="border bg-white rounded-md pl-10 pr-4 py-2 w-full focus:outline-none"
-              />
-              <CiSearch className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500" />
+          <CanteenNavbar/>
+          <div className="flex md:flex-row flex-col gap-5 justify-between mt-10 my-2 mx-5">
+            <div className="sm:flex grid grid-cols-2 items-center justify-center gap-4 border border-gray-300 rounded-md px-3 p-2 w-auto bg-white">
+              <div className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  id="all"
+                  name="status"
+                  checked={selectedStatus === "all"}
+                  onChange={() => handleStatusChange("all")}
+                />
+                <label htmlFor="all" className="text-sm">
+                  All
+                </label>
+              </div>
+              <div className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  id="upcoming"
+                  name="status"
+                  checked={selectedStatus === "upcoming"}
+                  onChange={() => handleStatusChange("upcoming")}
+                />
+                <label htmlFor="upcoming" className="text-sm">
+                  Upcoming
+                </label>
+              </div>
+              <div className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  id="completed"
+                  name="status"
+                  checked={selectedStatus === "completed"}
+                  onChange={() => handleStatusChange("completed")}
+                />
+                <label htmlFor="completed" className="text-sm">
+                  Completed
+                </label>
+              </div>
+              <div className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  id="cancelled"
+                  name="status"
+                  checked={selectedStatus === "cancelled"}
+                  onChange={() => handleStatusChange("cancelled")}
+                />
+                <label htmlFor="cancelled" className="text-sm">
+                  Cancelled
+                </label>
+              </div>
             </div>
-            <div>
-              <Link
-                to={`/school-management/add-canteen-product`}
-                className="border border-gray-500 rounded-md px-4 p-2 flex gap-2 justify-center items-center text-gray-800 text-base"
+            <span className="flex gap-4">
+              <Link to={`/canteen/add-canteen-product`}
+                className="border-2 font-semibold hover:bg-black hover:text-white transition-all border-black p-2 rounded-md text-black cursor-pointer text-center flex items-center gap-2 justify-center"
+                style={{ height: "1cm" }}
               >
-                <IoAddCircleOutline size={20} /> Add
+                <PiPlusCircle size={20} />
+                Add
               </Link>
-            </div>
+            </span>
           </div>
           <div className="mx-5 bg-white rounded-md px-5">
             <Table columns={columns} data={data} pagination />

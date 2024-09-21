@@ -283,6 +283,60 @@ import AddParking from '../Pages/SubPages/AddParking';
 import StudentOnlineFees from '../Pages/Student/StudentOnlineFees';
 import ParkingDetails from '../Pages/SubPages/ParkingDetails';
 import DocumentMain from '../Pages/SubPages/DocumentMain';
+import HRMSDashboard from '../Pages/HRMS/HRMSDashboard';
+import PendingRequest from '../Pages/HRMS/PendingRequest';
+import RegularizationRequest from '../Pages/HRMS/RegularizationRequest';
+import EmployeeDirectory from '../Pages/HRMS/EmployeeDirectory';
+import AddEmployee from '../Pages/HRMS/AddEmployee';
+import SetupIssues from '../Pages/HRMS/SetupIssues';
+import AttendanceGeneralSetting from '../Pages/HRMS/AttendanceGeneralSetting';
+import RegularizationReason from '../Pages/HRMS/RegularizationReason';
+import AttendanceTemplate from '../Pages/HRMS/AttendanceTemplate';
+import AttAddTemplate from '../Pages/HRMS/AttAddTemplate';
+import AttendanceTemplateAssign from '../Pages/HRMS/AttendanceTemplateAssign';
+import GeneralSettings from '../Pages/HRMS/GeneralSettings';
+import LeaveCategories from '../Pages/HRMS/LeaveCategories';
+import AddLeaveCategory from '../Pages/HRMS/AddLeaveCategory';
+import EditLeaveCategory from '../Pages/HRMS/EditLeaveCategory';
+import Templates from '../Pages/HRMS/Templates';
+import AddTemplates from '../Pages/HRMS/AddTemplates';
+import EditTemplates from '../Pages/HRMS/EditTemplates';
+import TemplateAssignment from '../Pages/HRMS/TemplateAssignment';
+import ProcessAlert from '../Pages/HRMS/ProcessAlert';
+import Payslip from '../Pages/HRMS/Payslip';
+import PayslipDetailsPage from '../Pages/HRMS/PayslipDetailsPage';
+import PayslipDetails1 from '../Pages/HRMS/PayslipDetails1';
+import PayslipDetails2 from '../Pages/HRMS/PayslipDetails2';
+import PayslipDetails3 from '../Pages/HRMS/PayslipDetails3';
+import PayslipDetails4 from '../Pages/HRMS/PayslipDetails4';
+import PayrollForm16 from '../Pages/HRMS/PayrollForm16';
+import AlertTasks from '../Pages/HRMS/AlertTasks';
+import BasicInformation from '../Pages/HRMS/Organization/BasicInformation';
+import AddressInformation from '../Pages/HRMS/Organization/AddressInformation';
+import GeographicalSetting from '../Pages/HRMS/Organization/GeographicalSetting';
+import Location from '../Pages/HRMS/Organization/Location';
+import Department from '../Pages/HRMS/Organization/Department';
+import HolidayCalendar from '../Pages/HRMS/Organization/HolidayCalendar';
+import CanteenInfo from '../Pages/Canteen Management/CanteenInfo';
+import CanteenStatusSetup from '../Pages/Canteen Management/CanteenStatusSetup';
+import CanteenCategory from '../Pages/Canteen Management/CanteenCategory';
+import CanteenSubCategory from '../Pages/Canteen Management/CanteenSubCategory';
+import CanteenBookingItem from '../Pages/Canteen Management/CanteenBookingItem';
+import PersonalInformation from '../Pages/HRMS/Organization/PersonalInformation';
+import EmployeeInformation from '../Pages/HRMS/Organization/EmployeeInformation';
+import OtherInformation from '../Pages/HRMS/Organization/OtherInformation';
+import EmployeeDocument from '../Pages/HRMS/Organization/EmployeeDocument';
+import BankAccounts from '../Pages/HRMS/Organization/BankAccounts';
+import CalendarSettings from '../Pages/HRMS/Organization/CalendarSettings';
+import ManageAdministrators from '../Pages/HRMS/Organization/ManageAdministrators';
+import ThirdPartyUsers from '../Pages/HRMS/Organization/ThirdPartyUsers';
+import EmployeePermissions from '../Pages/HRMS/Organization/EmployeePermissions';
+import EmployeeNewsFeedPermissions from '../Pages/HRMS/Organization/EmployeeNewsFeedPermissions';
+import CompanyPolicyDocuments from '../Pages/HRMS/Organization/CompanyPolicyDocuments';
+import LetterTemplates from '../Pages/HRMS/Organization/LetterTemplates';
+import AddLetterTemplates from '../Pages/HRMS/Organization/AddLetterTemplates';
+import EditLetterTemplates from '../Pages/HRMS/Organization/EditLetterTemplates';
+import OldLetterTemplates from '../Pages/HRMS/Organization/OldLetterTemplates';
 
 const routes = [
     {
@@ -898,22 +952,42 @@ const routes = [
         path: '/school-management/transport/transport-allocation-details/:id',
         element: <TransportAllocationDetails/>,
     },
-    // canteen 
+    // canteen
     {
-        path: '/school-management/canteen',
+        path: '/canteen/canteen-info',
+        element: <CanteenInfo/>,
+    }, 
+    {
+        path: '/canteen/canteen-status-setup',
+        element: <CanteenStatusSetup/>,
+    }, 
+    {
+        path: '/canteen/canteen-category',
+        element: <CanteenCategory/>,
+    }, 
+    {
+        path: '/canteen/canteen-sub-category',
+        element: <CanteenSubCategory/>,
+    }, 
+    {
+        path: '/canteen/canteen-menu',
         element: <Canteen/>,
     },
     {
-        path: '/school-management/add-canteen-product',
+        path: '/canteen/add-canteen-product',
         element: <AddCanteenProduct/>,
     },
     {
-        path: '/school-management/edit-canteen-product/:id',
+        path: '/canteen/edit-canteen-product/:id',
         element: <EditCanteenProduct/>,
     },
     {
-        path: '/school-management/canteen-product-details/:id',
+        path: '/canteen/canteen-product-details/:id',
         element: <CanteenProductDetails/>,
+    },
+    {
+        path: '/canteen/booking',
+        element: <CanteenBookingItem/>,
     },
     // asset
     {
@@ -1441,10 +1515,209 @@ const routes = [
         path: '/school-management/parking-details/:id',
         element: <ParkingDetails/>,
     },
+    // Document pro
     {
         path: '/school-management/document-main',
         element: <DocumentMain/>,
     },
+    // HRMS
+    {
+        path: '/hrms/hrms-Dashboard',
+        element: <HRMSDashboard/>,
+    },
+    {
+        path: '/hrms/alerts/pending-request',
+        element: <PendingRequest/>,
+    }, 
+    {
+        path: '/hrms/alerts/regularization-request',
+        element: <RegularizationRequest/>,
+    }, 
+    {
+        path: '/hrms/alerts/employee-directory',
+        element: <EmployeeDirectory/>,
+    }, 
+    {
+        path: '/hrms/alerts/add-employee',
+        element: <AddEmployee/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues',
+        element: <SetupIssues/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/attendance-general-setting',
+        element: <AttendanceGeneralSetting/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/regularization-reason',
+        element: <RegularizationReason/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/attendance-template',
+        element: <AttendanceTemplate/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/att-add-template',
+        element: <AttAddTemplate/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/attendance-template-assign',
+        element: <AttendanceTemplateAssign/>,
+    },
+    {
+        path: '/hrms/alerts/setup-issues/general-settings',
+        element: <GeneralSettings/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/leave-categories',
+        element: <LeaveCategories/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/add-leave-categories',
+        element: <AddLeaveCategory/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/edit-leave-categories/:id',
+        element: <EditLeaveCategory/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/templates',
+        element: <Templates/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/add-templates',
+        element: <AddTemplates/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/edit-templates/:id',
+        element: <EditTemplates/>,
+    }, 
+    {
+        path: '/hrms/alerts/setup-issues/template-assignment',
+        element: <TemplateAssignment/>,
+    }, 
+    {
+        path: '/hrms/alerts/process-alert',
+        element: <ProcessAlert/>,
+    }, 
+    {
+        path: '/hrms/alerts/payslip',
+        element: <Payslip/>,
+    },
+    {
+        path: '/hrms/alerts/payslip-details-page/:id',
+        element: <PayslipDetailsPage/>,
+    }, 
+    {
+        path: '/hrms/alerts/payslip-details1',
+        element: <PayslipDetails1/>,
+    }, 
+    {
+        path: '/hrms/alerts/payslip-details2',
+        element: <PayslipDetails2/>,
+    }, 
+    {
+        path: '/hrms/alerts/payslip-details3',
+        element: <PayslipDetails3/>,
+    }, 
+    {
+        path: '/hrms/alerts/payslip-details4',
+        element: <PayslipDetails4/>,
+    }, 
+    {
+        path: '/hrms/alerts/payroll-form16',
+        element: <PayrollForm16/>,
+    }, 
+    {
+        path: '/hrms/alerts/alert-tasks',
+        element: <AlertTasks/>,
+    }, 
+    // hrms organization
+    {
+        path: '/hrms/organization/basic-information',
+        element: <BasicInformation/>,
+    }, 
+    {
+        path: '/hrms/organization/address-information',
+        element: <AddressInformation/>,
+    }, 
+    {
+        path: '/hrms/organization/geographical-setting',
+        element: <GeographicalSetting/>,
+    }, 
+    {
+        path: '/hrms/organization/location',
+        element: <Location/>,
+    }, 
+    {
+        path: '/hrms/organization/department',
+        element: <Department/>,
+    }, 
+    {
+        path: '/hrms/organization/holiday-calendar',
+        element: <HolidayCalendar/>,
+    }, 
+    {
+        path: '/hrms/organization/personal-information',
+        element: <PersonalInformation/>,
+    }, 
+    {
+        path: '/hrms/organization/employee-information',
+        element: <EmployeeInformation/>,
+    }, 
+    {
+        path: '/hrms/organization/other-information',
+        element: <OtherInformation/>,
+    }, 
+    {
+        path: '/hrms/organization/employee-document',
+        element: <EmployeeDocument/>,
+    }, 
+    {
+        path: '/hrms/organization/bank-accounts',
+        element: <BankAccounts/>,
+    }, 
+    {
+        path: '/hrms/organization/calendar-settings',
+        element: <CalendarSettings/>,
+    }, 
+    {
+        path: '/hrms/organization/manage-administrators',
+        element: <ManageAdministrators/>,
+    }, 
+    {
+        path: '/hrms/organization/third-party-users',
+        element: <ThirdPartyUsers/>,
+    }, 
+    {
+        path: '/hrms/organization/employee-permissions',
+        element: <EmployeePermissions/>,
+    }, 
+    {
+        path: '/hrms/organization/employee-news-feed-permissions',
+        element: <EmployeeNewsFeedPermissions/>,
+    },
+    {
+        path: '/hrms/organization/company-policy-documents',
+        element: <CompanyPolicyDocuments/>,
+    }, 
+    {
+        path: '/hrms/organization/letter-templates',
+        element: <LetterTemplates/>,
+    }, 
+    {
+        path: '/hrms/organization/add-letter-templates',
+        element: <AddLetterTemplates/>,
+    }, 
+    {
+        path: '/hrms/organization/edit-letter-templates/:id',
+        element: <EditLetterTemplates/>,
+    }, 
+    {
+        path: '/hrms/organization/old-letter-templates',
+        element: <OldLetterTemplates/>,
+    }, 
 ];
 
 export default routes;
