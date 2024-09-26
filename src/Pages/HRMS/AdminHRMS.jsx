@@ -144,7 +144,7 @@ const AdminHRMS = () => {
   const employeePaths = [
     "/admin/hrms/employee-directory",
     "/hrms/employee-directory-Personal",
-    "/admin/hrms/employee-directory",
+    "/hrms/organization/employee-directory-page",
     "/admin/employee-directory-Employment",
     "/admin/employee-directory-Statutory",
     "/admin/employee-directory/Salary",
@@ -288,7 +288,7 @@ const AdminHRMS = () => {
   ];
   const routes9 = [
     "/hrms/employee-directory-Personal",
-    "/admin/hrms/employee-directory",
+    "/hrms/organization/employee-directory-page",
     "/admin/employee-directory-Employment",
     "/admin/employee-directory-Statutory",
     "/admin/employee-directory/Salary",
@@ -308,7 +308,7 @@ const AdminHRMS = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className={`py-3 flex ${open ? "justify-end" : "justify-center"}`}>
+        <div className={`py-3 flex text-black ${open ? "justify-end" : "justify-center"}`}>
           <HiMenuAlt3
             size={26}
             className="cursor-pointer "
@@ -456,8 +456,8 @@ const AdminHRMS = () => {
                     className={() =>
                       `${
                         isActiveLink(location, routes2)
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -480,12 +480,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/onboarding-setting"
+                    to="/hrms/organization/onboarding-general-setting"
                     className={() =>
                       `${
                         isActiveLink(location, routes3)
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -507,70 +507,13 @@ const AdminHRMS = () => {
                       HR Workflow Setting
                     </h2>
                   </NavLink>
-                  {/* <NavLink
-            to="/admin/hrms/investment-setting"
-            className={({ isActive }) =>
-              `${
-                isActive
-                  ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                  : "group flex items-center text-sm gap-3.5 font-medium p-2 "
-              }`
-            }
-          >
-            <div>
-              {React.createElement(IoCashOutline, { size: "20" })}
-            </div>
-            <h2
-              className={`whitespace-pre duration-300 ${
-                !open && "opacity-0 translate-x-28 overflow-hidden"
-              }`}
-            >
-              Investment Setting
-            </h2>
-            <h2
-              className={`${
-                open && "hidden"
-              } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
-            >
-              Investment Setting
-            </h2>
-          </NavLink> */}
                 </div>
               )}
             </div>
-            {/* <NavLink
-                to="/hrms/dashboard"
-                className={({ isActive }) =>
-                  `${
-                    isActive
-                      ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                      : "group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md"
-                  }`
-                }
-              >
-                <div>
-                  {React.createElement(FaUser, { size: "20" })}
-                </div>
-                <h2
-                  className={`whitespace-pre duration-300 ${
-                    !open && "opacity-0 translate-x-28 overflow-hidden"
-                  }`}
-                >
-                  Employees
-                </h2>
-                <h2
-                  className={`${
-                    open && "hidden"
-                  } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
-                >
-                  Employees
-                </h2>
-              </NavLink> */}
-
             <div>
               <div
                 onClick={toggleEmpMenu}
-                className="cursor-pointer flex items-center text-sm gap-3.5 font-medium p-2  rounded-md"
+                className="cursor-pointer text-black flex items-center text-sm gap-3.5 font-medium p-2  rounded-md"
               >
                 <div>
                   {React.createElement(IoPeopleOutline, { size: "20" })}
@@ -591,11 +534,11 @@ const AdminHRMS = () => {
               {isEmpOpen && (
                 <div className="">
                   <NavLink
-                    to="/admin/hrms/employee-directory"
+                    to="/hrms/organization/employee-directory-page"
                     className={({ isActive }) =>
                       `${
                         isActiveLink(location, routes9)
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
                           : "group flex items-center text-sm gap-3.5 font-medium p-2 "
                       }`
                     }

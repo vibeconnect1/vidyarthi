@@ -337,6 +337,23 @@ import LetterTemplates from '../Pages/HRMS/Organization/LetterTemplates';
 import AddLetterTemplates from '../Pages/HRMS/Organization/AddLetterTemplates';
 import EditLetterTemplates from '../Pages/HRMS/Organization/EditLetterTemplates';
 import OldLetterTemplates from '../Pages/HRMS/Organization/OldLetterTemplates';
+import OnboardingGeneralSetting from '../Pages/HRMS/Organization/OnboardingGeneralSetting';
+import FirstDayInformationTemplates from '../Pages/HRMS/Organization/FirstDayInformationTemplates';
+import CompanyInduction from '../Pages/HRMS/Organization/CompanyInduction';
+import InductionTemplates from '../Pages/HRMS/Organization/InductionTemplates';
+import OnboardingCategories from '../Pages/HRMS/Organization/OnboardingCategories';
+import OnboardingTasks from '../Pages/HRMS/Organization/OnboardingTasks';
+import OnboardingChecklistTemplates from '../Pages/HRMS/Organization/OnboardingChecklistTemplates';
+import WelcomeMessage from '../Pages/HRMS/Organization/WelcomeMessage';
+import EmployeeDirectoryPage from '../Pages/HRMS/Employee/EmployeeDirectoryPage';
+import EditEmployeeDirectoryPage from '../Pages/HRMS/Employee/EditEmployeeDirectoryPage';
+import InitiateSeparation from '../Pages/HRMS/Employee/InitiateSeparation';
+import AttendanceDetails from '../Pages/School management/AttendanceDetails';
+import PersonalEmployeeDirectory from '../Pages/HRMS/Employee/PersonalEmployeeDirectory';
+import EmploymentDirectory from '../Pages/HRMS/Employee/EmploymentDirectory';
+import StatutoryDirectory from '../Pages/HRMS/Employee/StatutoryDirectory';
+import SalaryDirectory from '../Pages/HRMS/Employee/SalaryDirectory';
+import AddNewCTC from '../Pages/HRMS/Employee/AddNewCTC';
 
 const routes = [
     {
@@ -660,6 +677,10 @@ const routes = [
     {
         path: '/school-management/class-time-table-details/:id',
         element: < ClassTimeTableDetails/>,
+    },
+    {
+        path: '/school-management/attendance-details/:id',
+        element: < AttendanceDetails/>,
     },
     
     // student section
@@ -1718,6 +1739,69 @@ const routes = [
         path: '/hrms/organization/old-letter-templates',
         element: <OldLetterTemplates/>,
     }, 
+    {
+        path: '/hrms/organization/onboarding-general-setting',
+        element: <OnboardingGeneralSetting/>,
+    }, 
+    {
+        path: '/hrms/organization/first-day-information-templates',
+        element: <FirstDayInformationTemplates/>,
+    }, 
+    {
+        path: '/hrms/organization/company-induction',
+        element: <CompanyInduction/>,
+    }, 
+    {
+        path: '/hrms/organization/induction-templates',
+        element: <InductionTemplates/>,
+    }, 
+    {
+        path: '/hrms/organization/onboarding-categories',
+        element: <OnboardingCategories/>,
+    }, 
+    {
+        path: '/hrms/organization/onboarding-tasks',
+        element: <OnboardingTasks/>,
+    }, 
+    {
+        path: '/hrms/organization/onboarding-checklist-templates',
+        element: <OnboardingChecklistTemplates/>,
+    }, 
+    {
+        path: '/hrms/organization/welcome-message',
+        element: <WelcomeMessage/>,
+    },
+    {
+        path: '/hrms/organization/employee-directory-page',
+        element: <EmployeeDirectoryPage/>,
+    },
+    {
+        path: '/hrms/organization/edit-employee-directory-page',
+        element: <EditEmployeeDirectoryPage/>,
+    },
+    {
+        path: '/hrms/organization/initiate-separation',
+        element: <InitiateSeparation/>,
+    },
+    {
+        path: '/hrms/employee-directory/personal',
+        element: <PersonalEmployeeDirectory/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/employment',
+        element: <EmploymentDirectory/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/statutory',
+        element: <StatutoryDirectory/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/salary',
+        element: <SalaryDirectory/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/salary/add-new-ctc',
+        element: <AddNewCTC/>,
+    }, 
 ];
-
 export default routes;

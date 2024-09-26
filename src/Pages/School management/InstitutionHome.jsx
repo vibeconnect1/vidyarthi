@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InstituteDetails from "./InstituteDetails";
 import institute from "/institute.webp";
 import { BiSolidEdit } from "react-icons/bi";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { IoAddCircleOutline } from "react-icons/io5";
 
 function InstitutionHome() {
+  const [isEditing, setIsEditing] = useState(false);
   return (
     <section className="flex">
       <div className="bg-white mb-10">
@@ -47,26 +48,51 @@ function InstitutionHome() {
             </div>
           </header>
           <div className="mt-10 mb-3 flex justify-end">
-            <Link to={`/school-management/school-add-Institution-home`} className="bg-white rounded-md px-4 p-1 flex gap-2 justify-center items-center"><IoAddCircleOutline size={20} /> Add</Link>
+            <Link
+              to={`/school-management/school-add-Institution-home`}
+              className="bg-white rounded-md px-4 p-1 flex gap-2 justify-center items-center"
+            >
+              <IoAddCircleOutline size={20} /> Add
+            </Link>
           </div>
           <div className="bg-white shadow-md rounded-lg p-6">
             <section className="mb-8">
               <div className="text-2xl font-bold mb-4 text-gray-600 border-b-2 border-gray-500 pb-2">
                 <div className="flex justify-between">
                   <h2> About Us</h2>
-                  <BiSolidEdit size={20} />
+                  {!isEditing ? (
+                    <button onClick={() => setIsEditing(!isEditing)}>
+                      <BiSolidEdit size={20} />
+                    </button>
+                  ) : (
+                    <button
+                      className="text-base font-normal text-gray-500 bg-gray-200 rounded-md px-5 py-1 "
+                      onClick={() => setIsEditing(!isEditing)}
+                    >
+                      save
+                    </button>
+                  )}
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed">
-                Our school has a rich history of academic excellence and a
-                commitment to holistic education. We strive to foster a
-                nurturing environment where students can thrive both
-                academically and personally. Our dedicated faculty and staff are
-                committed to providing high-quality education and
-                extracurricular opportunities that help students develop their
-                full potential. Join us in our journey of shaping the leaders of
-                tomorrow.
-              </p>
+              {!isEditing ? (
+                <button>
+                  <p className="text-gray-700 leading-relaxed text-left">
+                    Our school has a rich history of academic excellence and a
+                    commitment to holistic education. We strive to foster a
+                    nurturing environment where students can thrive both
+                    academically and personally. Our dedicated faculty and staff
+                    are committed to providing high-quality education and
+                    extracurricular opportunities that help students develop
+                    their full potential. Join us in our journey of shaping the
+                    leaders of tomorrow.
+                  </p>
+                </button>
+              ) : (
+                <textarea
+                  className="border-b border-gray-500 focus:outline-none w-full"
+                  rows="3"
+                />
+              )}
             </section>
 
             <section className="mb-8">
