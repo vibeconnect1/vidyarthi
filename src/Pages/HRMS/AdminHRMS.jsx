@@ -154,11 +154,11 @@ const AdminHRMS = () => {
     "/admin/employee-directory-LoansAdvances",
     "/admin/employee-directory-Transaction",
     "/admin/employee-directory-Change-logs",
-    "/hrms/organization-tree-setting",
+    "/hrms/organisation-tree",
     "/admin/organisation-view2",
     "/admin/organisation-view3",
     "/admin/organisation-view1",
-    "/hrms/employee-transaction",
+    "/hrms/employee-transactions/data-change-request",
     "/admin/ctc-basket",
     "/hrms/investment",
     "/admin/add-employee/",
@@ -249,12 +249,12 @@ const AdminHRMS = () => {
     "/admin/workflow-trigger",
   ];
   const routes4 = [
-    "/hrms/organization-tree-setting",
+    "/hrms/organisation-tree",
     "/admin/organisation-view2",
     "/admin/organisation-view3",
     "/admin/organisation-view1",
   ];
-  const routes5 = ["/hrms/employee-transaction", "/admin/ctc-basket"];
+  const routes5 = ["/hrms/employee-transactions/data-change-request", "/admin/ctc-basket"];
   const routes6 = [
     "/admin/hrms/setting",
     "/admin/attendance/Regularization-Reason",
@@ -539,7 +539,7 @@ const AdminHRMS = () => {
                       `${
                         isActiveLink(location, routes9)
                           ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -562,12 +562,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/hrms/organization-tree-setting"
+                    to="/hrms/organisation-tree"
                     className={() =>
                       `${
                         isActiveLink(location, routes4)
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -590,12 +590,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/hrms/employee-transaction"
+                    to="/hrms/employee-transactions/data-change-request"
                     className={() =>
                       `${
                         isActiveLink(location, routes5)
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >

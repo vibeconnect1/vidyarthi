@@ -354,6 +354,23 @@ import EmploymentDirectory from '../Pages/HRMS/Employee/EmploymentDirectory';
 import StatutoryDirectory from '../Pages/HRMS/Employee/StatutoryDirectory';
 import SalaryDirectory from '../Pages/HRMS/Employee/SalaryDirectory';
 import AddNewCTC from '../Pages/HRMS/Employee/AddNewCTC';
+import EmployeeDirectoryTax from '../Pages/HRMS/Employee/EmployeeDirectoryTax';
+import Deductions80C from '../Pages/HRMS/Employee/Deductions80C';
+import ExemptionsDeductionsTax from '../Pages/HRMS/Employee/ExemptionsDeductionsTax';
+import RentInformationTax from '../Pages/HRMS/Employee/RentInformationTax';
+import PerquisitesInformationTax from '../Pages/HRMS/Employee/PerquisitesInformationTax';
+import OtherIncomeInfoTax from '../Pages/HRMS/Employee/OtherIncomeInfoTax';
+import HousingLoanInfoTax from '../Pages/HRMS/Employee/HousingLoanInfoTax';
+import EmployeeDirectoryDocuments from '../Pages/HRMS/Employee/EmployeeDirectoryDocuments';
+import EmployeeDirectoryOtherDetails from '../Pages/HRMS/Employee/EmployeeDirectoryOtherDetails';
+import EmployeeDirectoryOffboarding from '../Pages/HRMS/Employee/EmployeeDirectoryOffboarding';
+import EmployeeDirectoryTransaction from '../Pages/HRMS/Employee/EmployeeDirectoryTransaction';
+import EmployeeDirectoryTransactionCheck from '../Pages/HRMS/Employee/EmployeeDirectoryTransactionCheck';
+import EmployeeDirectoryChangeLogs from '../Pages/HRMS/Employee/EmployeeDirectoryChangeLogs';
+import OrganisationTree from '../Pages/HRMS/Employee/OrganisationTree';
+import OrganisationTreeDetails from '../Pages/HRMS/Employee/OrganisationTreeDetails';
+import OrganisationTreeSettings from '../Pages/HRMS/Employee/OrganisationTreeSettings';
+import DataChangeRequests from '../Pages/HRMS/Employee/DataChangeRequests';
 
 const routes = [
     {
@@ -1803,5 +1820,74 @@ const routes = [
         path: '/hrms/employee-directory/salary/add-new-ctc',
         element: <AddNewCTC/>,
     }, 
+    {
+        path: '/hrms/employee-directory/employee-directory-tax',
+        element: <EmployeeDirectoryTax/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/tax/deductions-80C',
+        element: <Deductions80C/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/tax/exemptions-deductions-tax',
+        element: <ExemptionsDeductionsTax/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/tax/rent-information-tax',
+        element: <RentInformationTax/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/tax/perquisites-information-tax',
+        element: <PerquisitesInformationTax/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/tax/other-income-info-tax',
+        element: <OtherIncomeInfoTax/>,
+    },
+    {
+        path: '/hrms/employee-directory/tax/housing-loan-info-tax',
+        element: <HousingLoanInfoTax/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/document',
+        element: <EmployeeDirectoryDocuments/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/other-details',
+        element: <EmployeeDirectoryOtherDetails/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/off-boarding',
+        element: <EmployeeDirectoryOffboarding/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/transaction',
+        element: <EmployeeDirectoryTransaction/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/transaction-check',
+        element: <EmployeeDirectoryTransactionCheck/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/change-log',
+        element: <EmployeeDirectoryChangeLogs/>,
+    }, 
+    {
+        path: '/hrms/organisation-tree',
+        element: <OrganisationTree/>,
+    }, 
+    {
+        path: '/hrms/organisation-tree-details',
+        element: <OrganisationTreeDetails/>,
+    }, 
+    {
+        path: '/hrms/organisation-tree-details/setting',
+        element: <OrganisationTreeSettings/>,
+    }, 
+    {
+        path: '/hrms/employee-transactions/data-change-request',
+        element: <DataChangeRequests/>,
+    }, 
+    
 ];
 export default routes;

@@ -4,7 +4,7 @@ import EditEmployeeDirectoryPage from "./EditEmployeeDirectoryPage";
 import { PiAddressBookThin } from "react-icons/pi";
 import { BiEdit } from "react-icons/bi";
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoMdClose } from "react-icons/io";
 import { MdNewspaper, MdOutlineFamilyRestroom } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import Select from "react-select";
@@ -22,6 +22,8 @@ function PersonalEmployeeDirectory() {
 
   const [payment, SetPayment] = useState(true);
   const [editPaymentModal, setEditPaymentModal] = useState(false);
+
+  const [isBankTransfer ,setIsBankTransfer] = useState(false);
   const customStyles = {
     control: (provided) => ({
       ...provided,

@@ -12,6 +12,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-pdf/renderer": "^4.0.0",
     "apexcharts": "^3.53.0",
     "chart.js": "^4.4.4",
     "date-fns": "^3.6.0",

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaChevronDown, FaDownload, FaTrash, FaUpload } from "react-icons/fa";
+import { FaChevronDown, FaDownload, FaTrash, FaUpload, FaUserEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { PiPlusCircle } from "react-icons/pi";
 import AdminHRMS from "../AdminHRMS";
@@ -7,6 +7,8 @@ import { IoMdClose } from "react-icons/io";
 import Switch from "../../../ConfigurationFile/Switch";
 import { BiSolidEdit } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import noData from "/noData.png";
+import profile3 from "/profile3.jpg"
 function EmployeeDirectoryPage() {
   const [filterModal, setFilterModal] = useState(false);
   const [isAction, setIsAction] = useState(false);
@@ -25,6 +27,8 @@ function EmployeeDirectoryPage() {
   const [inviteEmployee, setInviteEmployee] = useState(false);
   const [isSwitch1, setIsSwitch1] = useState(false);
   const [isSwitch2, setIsSwitch2] = useState(false);
+
+  const [employeeDetails, setEmployeeDetails] = useState(false);
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsOpen(false);
@@ -78,24 +82,10 @@ function EmployeeDirectoryPage() {
     },
   ];
 
-  // Sort employees by name
   const sortedEmployees = employees.sort((a, b) =>
     a.name.localeCompare(b.name)
   );
   const [selectedLetter, setSelectedLetter] = useState(null);
-
-  const getColorClass = (emp) => {
-    switch (emp.status) {
-      case "Active":
-        return "bg-green-500";
-      case "Inactive":
-        return "bg-red-500";
-      case "Pending":
-        return "bg-yellow-500";
-      default:
-        return "bg-gray-300";
-    }
-  };
 
   return (
     <div className=" w-full">
@@ -1091,7 +1081,14 @@ function EmployeeDirectoryPage() {
                                 </span>
                               </div>
                               <div>
-                                <div className="font-semibold">{emp.name}</div>
+                                <div
+                                  className="font-semibold"
+                                  onClick={() =>
+                                    setEmployeeDetails(!employeeDetails)
+                                  }
+                                >
+                                  {emp.name}
+                                </div>
                                 <div className="text-sm text-gray-600">
                                   {emp.employeeID} | {emp.doj}
                                 </div>
@@ -1105,8 +1102,11 @@ function EmployeeDirectoryPage() {
                                 </div>
                                 <div>
                                   <div className=" my-3 border border-gray-500 p-1 rounded-md inline-flex gap-2 text-red-400">
-                                    <Link to={`/hrms/employee-directory/personal`} className="">
-                                      <BiSolidEdit size={18}/>
+                                    <Link
+                                      to={`/hrms/employee-directory/personal`}
+                                      className=""
+                                    >
+                                      <BiSolidEdit size={18} />
                                     </Link>
                                     <button className="">
                                       <RiDeleteBin5Line size={18} />
@@ -1125,6 +1125,71 @@ function EmployeeDirectoryPage() {
           </div>
           <div className="w-96 p-4 bg-gray-50">
             <h1 className="text-2xl font-semibold mb-4">Employee Details</h1>
+            <div>
+              {!employeeDetails ? (
+                <div className="flex justify-center items-center flex-col">
+                  <img src={noData}></img>
+                  <p className="text-center my-5">
+                    Select employee from the list to get employee details.
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <div className="flex gap-3 border-t border-gray-300 py-3">
+                    <div className="flex items-center">
+                      <img src={profile3} className="h-14 w-14 rounded-full"></img>
+                    </div>
+                    <div>
+                      <h2 className="text-lg font-medium">Ankit Gaurav</h2>
+                      <p className="text-gray-500">Marketing Head</p>
+                      <p className="text-gray-500">Department: Marketing</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-l-green-300 py-1">
+                    <h2 className="font-medium text-gray-500">Status</h2>
+                  </div>
+                  <div className="border-t border-l-green-300 py-1">
+                    <div className="grid grid-cols-2 my-1">
+                      <h2 className="text-gray-500 text-base">Enrollment:</h2>
+                      <p className="text-green-500 text-right text-base">Complete</p>
+                    </div>
+                    <div className="grid grid-cols-2">
+                      <h2 className="text-gray-500 text-base">Employment:</h2>
+                      <p className="text-green-500 text-right text-base">Active
+                      </p>
+                    </div>
+                  </div>
+                  <div className="border-t border-l-green-300 py-1">
+                    <h2 className="font-medium text-gray-500">Other Information</h2>
+                  </div>
+                  <div className="border-t border-l-green-300 py-1">
+                    <div className="grid grid-cols-2 my-1">
+                      <h2 className="text-gray-500 text-base">Branch Lo...:</h2>
+                      <p className="text-gray-500 text-right text-base">Mumbai; Mumbai; Mahara.</p>
+                    </div>
+                    <div className="grid grid-cols-2 my-1">
+                      <h2 className="text-gray-500 text-base">Phone No:</h2>
+                      <p className="text-gray-500 text-right text-base">7985778907
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-2 my-1">
+                      <h2 className="text-gray-500 text-base">Email Id:</h2>
+                      <p className="text-gray-500 text-right text-base">ankit@gmail.com
+                      Copyright © 2024 Quikchex
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <Link to={`/hrms/employee-directory/personal`} className="border border-gray-500 rounded-md py-1 w-full flex items-center justify-center gap-2"><FaUserEdit /> View Profile</Link>
+                  </div>
+                  <div className="flex gap-2 my-5">
+                    <button className=" bg-orange-500 text-white rounded-md py-1 w-full flex items-center justify-center gap-2">Separate</button>
+                    <button className="bg-yellow-500 text-white rounded-md py-1 w-full flex items-center justify-center gap-2">Hold</button>
+                    <button className="bg-red-500 text-white rounded-md py-1 w-full flex items-center justify-center gap-2">Deactivate</button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
