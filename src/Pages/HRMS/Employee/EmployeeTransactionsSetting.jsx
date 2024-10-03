@@ -38,7 +38,7 @@ const EmployeeTransactionsSetting = () => {
           </li>
           <li>
             <NavLink
-              to="/hrms/employee-directory/employment"
+              to="/hrms/employee-transactions/ctc-basket-requests"
               className={({ isActive }) =>
                 `${
                   isActive

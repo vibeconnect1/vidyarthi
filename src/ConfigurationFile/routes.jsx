@@ -371,6 +371,18 @@ import OrganisationTree from '../Pages/HRMS/Employee/OrganisationTree';
 import OrganisationTreeDetails from '../Pages/HRMS/Employee/OrganisationTreeDetails';
 import OrganisationTreeSettings from '../Pages/HRMS/Employee/OrganisationTreeSettings';
 import DataChangeRequests from '../Pages/HRMS/Employee/DataChangeRequests';
+import EditDataChangeRequests from '../Pages/HRMS/Employee/EditDataChangeRequests';
+import CTCBasketRequests from '../Pages/HRMS/Employee/CTCBasketRequests';
+import InvestmentApprovals from '../Pages/HRMS/Employee/InvestmentApprovals';
+import InvestmentUnder80C from '../Pages/HRMS/Employee/InvestmentUnder80C';
+import InvestmentUnder80Others from '../Pages/HRMS/Employee/InvestmentUnder80Others';
+import RentInformation from '../Pages/HRMS/Employee/RentInformation';
+import Exemption10LTA from '../Pages/HRMS/Employee/Exemption10LTA';
+import OtherIncome from '../Pages/HRMS/Employee/OtherIncome';
+import HousingLoan from '../Pages/HRMS/Employee/HousingLoan';
+import Onboarding from '../Pages/HRMS/Employee/Onboarding';
+import OnboardingDetails from '../Pages/HRMS/Employee/OnboardingDetails';
+import LetterTemplateCreation from '../Pages/HRMS/Employee/LetterTemplateCreation';
 
 const routes = [
     {
@@ -1888,6 +1900,53 @@ const routes = [
         path: '/hrms/employee-transactions/data-change-request',
         element: <DataChangeRequests/>,
     }, 
-    
+    {
+        path: '/hrms/employee-transactions/edit-data-change-request/:id',
+        element: <EditDataChangeRequests/>,
+    },
+    {
+        path: '/hrms/employee-transactions/ctc-basket-requests',
+        element: <CTCBasketRequests/>,
+    }, 
+    {
+        path: '/hrms/investment-approvals',
+        element: <InvestmentApprovals/>,
+    }, 
+    {
+        path: '/hrms/investment-approvals/investment-under-80C',
+        element: <InvestmentUnder80C/>,
+    }, 
+    {
+        path: '/hrms/investment-approvals/investment-under80-other',
+        element: <InvestmentUnder80Others/>,
+    }, 
+    {
+        path: '/hrms/investment-approvals/rent-information',
+        element: <RentInformation/>,
+    }, 
+    {
+        path: '/hrms/investment-approvals/exemption10LTA',
+        element: <Exemption10LTA/>,
+    }, 
+    {
+        path: '/hrms/investment-approvals/other-income',
+        element: <OtherIncome/>,
+    }, 
+    {
+        path: '/hrms/investment-approvals/housing-loan',
+        element: <HousingLoan/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/onboarding',
+        element: <Onboarding/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/onboarding-details/:id',
+        element: <OnboardingDetails/>,
+    }, 
+    {
+        path: '/hrms/letter-template-creation',
+        element: <LetterTemplateCreation/>,
+    }, 
 ];
 export default routes;

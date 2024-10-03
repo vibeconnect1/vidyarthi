@@ -160,8 +160,8 @@ const AdminHRMS = () => {
     "/admin/organisation-view1",
     "/hrms/employee-transactions/data-change-request",
     "/admin/ctc-basket",
-    "/hrms/investment",
-    "/admin/add-employee/",
+    "/hrms/investment-approvals",
+    "/hrms/employee-directory/onboarding",
     "/hrms/pending-contract-renewal",
 
     "/hrms/separation/separation-request",
@@ -618,12 +618,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/hrms/investment"
+                    to="/hrms/investment-approvals"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -646,12 +646,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/add-employee/"
+                    to="/hrms/employee-directory/onboarding"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >

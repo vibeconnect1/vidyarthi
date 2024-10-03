@@ -1,7 +1,7 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
 
-const Table = ({columns, data}) => {
+const Table = ({columns, data, selectableRows}) => {
     const customStyles = {
         header: {
             style: {
@@ -41,6 +41,7 @@ const Table = ({columns, data}) => {
             data={data}
             pagination
             customStyles={customStyles}
+            selectableRows={selectableRows}
         />
     );
 };

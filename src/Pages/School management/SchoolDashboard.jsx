@@ -2,12 +2,21 @@ import React, { useState } from "react";
 import InstituteDetails from "./InstituteDetails";
 import { BiEdit } from "react-icons/bi";
 import { LuRefreshCw } from "react-icons/lu";
-import { FaChevronLeft, FaChevronRight, FaPlus } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaFileAlt,
+  FaPlus,
+  FaRegCalendarAlt,
+} from "react-icons/fa";
 import { PiCalendarDotLight } from "react-icons/pi";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoMdArrowDropdown } from "react-icons/io";
 import Chart from "react-apexcharts";
-import { TbCalendarShare } from "react-icons/tb";
-
+import { TbCalendarShare, TbReportSearch } from "react-icons/tb";
+import { GiHexagonalNut } from "react-icons/gi";
+import { SlNotebook } from "react-icons/sl";
+import { IoAddCircleOutline } from "react-icons/io5";
+import { MdNotifications } from "react-icons/md";
 function SchoolDashboard() {
   const daysOfWeek = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   const [currentDate, setCurrentDate] = useState(new Date(2024, 8, 29)); // September 29, 2024
@@ -128,6 +137,37 @@ function SchoolDashboard() {
   });
 
   const [chartSeriesStaff] = useState([88.6, 12.4]);
+
+  const [performance, setPerformance] = useState(false);
+
+  const [chartPerformance] = useState({
+    chart: {
+      type: "donut",
+    },
+    labels: [], 
+    colors: ["#1E90FF", "#32CD32", "#FF6347"], 
+    legend: {
+      position: "bottom",
+    },
+    legend: {
+      show: false, // Hide the legend entirely
+    },
+    dataLabels: {
+      enabled: false, 
+    },
+    stroke: {
+      width: 2, 
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          size: '70%', 
+        },
+      },
+    },
+  });
+ 
+  const [chartSeriesPerformance] = useState([45, 11, 2]);
 
   return (
     <div className="flex">
@@ -535,7 +575,7 @@ function SchoolDashboard() {
                     onClick={toggleDropdown}
                     className="flex items-center gap-2 bg-white px-3 py-2 rounded-md"
                   >
-                    <PiCalendarDotLight size={15} /> Today{" "}
+                    <PiCalendarDotLight size={15} /> Today
                     <IoIosArrowDown size={20} />
                   </button>
 
@@ -743,11 +783,244 @@ function SchoolDashboard() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <div className="sm:w-1/2 flex flex-col">
-              <div className="bg-green-800 p-4 rounded-lg text-center flex-grow mb-6 pb-0 h-[your_custom_height] bg-your-custom-color">
-                
+            <div className="flex">
+              <div className=""></div>
+            </div>
+          </div>
+          <div className="col-span-4">
+            <div className="bg-white rounded-md p-2">
+              <div className="flex items-center px-5 pt-1">
+                <h2 className="text-lg font-semibold">Quick Links</h2>
               </div>
+              <div className="border-t my-5">
+                <div className="grid grid-cols-3 gap-5 my-5 mx-5">
+                  <div className="bg-green-50 rounded p-2 text-center mb-3">
+                    <div className="flex justify-center">
+                      <div className="w-14 h-14 border p-1 border-green-400 rounded-full mb-2">
+                        <div className="inline-flex items-center justify-center w-full h-full bg-green-400 rounded-full">
+                          <button>
+                            <FaRegCalendarAlt className="text-xl text-white" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-sm">Calender</h2>
+                  </div>
+                  <div className="bg-blue-50 rounded p-2 text-center mb-3">
+                    <div className="flex justify-center">
+                      <div className="w-14 h-14 border p-1 border-blue-400 rounded-full mb-2">
+                        <div className="inline-flex items-center justify-center w-full h-full bg-blue-400 rounded-full">
+                          <button>
+                            <GiHexagonalNut className="text-xl text-white" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-sm">Exam Result</h2>
+                  </div>
+                  <div className="bg-yellow-50 rounded p-2 text-center mb-3">
+                    <div className="flex justify-center">
+                      <div className="w-14 h-14 border p-1 border-yellow-400 rounded-full mb-2">
+                        <div className="inline-flex items-center justify-center w-full h-full bg-yellow-400 rounded-full">
+                          <button>
+                            <TbCalendarShare className="text-xl text-white" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-sm">Attendance</h2>
+                  </div>
+                  <div className="bg-cyan-50 rounded p-2 text-center mb-3">
+                    <div className="flex justify-center">
+                      <div className="w-14 h-14 border p-1 border-cyan-400 rounded-full mb-2">
+                        <div className="inline-flex items-center justify-center w-full h-full bg-cyan-400 rounded-full">
+                          <button>
+                            <FaFileAlt className="text-xl text-white" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-sm">Fees</h2>
+                  </div>
+                  <div className="bg-red-50 rounded p-2 text-center mb-3">
+                    <div className="flex justify-center">
+                      <div className="w-14 h-14 border p-1 border-red-400 rounded-full mb-2">
+                        <div className="inline-flex items-center justify-center w-full h-full bg-red-400 rounded-full">
+                          <button>
+                            <SlNotebook className="text-xl text-white" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-sm">Home Work</h2>
+                  </div>
+                  <div className="bg-sky-50 rounded p-2 text-center mb-3">
+                    <div className="flex justify-center">
+                      <div className="w-14 h-14 border p-1 border-sky-400 rounded-full mb-2">
+                        <div className="inline-flex items-center justify-center w-full h-full bg-sky-400 rounded-full">
+                          <button>
+                            <TbReportSearch className="text-xl text-white" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 className="text-sm">Report</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-md p-2 my-5">
+              <div className="flex items-center justify-between px-5">
+                <h2 className="text-lg font-semibold">Class Routine</h2>
+                <div className="flex gap-1 items-center  text-blue-500">
+                  <span>
+                    <IoAddCircleOutline />
+                  </span>
+                  <h2 className="text-sm font-medium">Add New</h2>
+                </div>
+              </div>
+              <div className="border-t my-5">
+                <div className="flex items-center border rounded-md p-3 my-3">
+                  <span className="flex-shrink-0 border rounded me-2">
+                    <img
+                      src="/teacher-01.jpg"
+                      className="h-10 w-10 rounded-md"
+                      alt="Profile"
+                    />
+                  </span>
+                  <div className="w-full">
+                    <p className="mb-1">Oct 2024</p>
+                    <div className="progress progress-xs flex-grow mb-1">
+                      <div className="bg-gray-200 h-1">
+                        <div
+                          className="bg-blue-500 h-full"
+                          style={{ width: "80%" }}
+                          role="progressbar"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center border rounded-md  p-3 mb-3">
+                  <span className="flex-shrink-0 border rounded me-2">
+                    <img
+                      src="/teacher-02.jpg"
+                      className="h-10 w-10 rounded-md"
+                      alt="Profile"
+                    />
+                  </span>
+                  <div className="w-full">
+                    <p className="mb-1">Oct 2024</p>
+                    <div className="progress progress-xs flex-grow mb-1">
+                      <div className="bg-gray-200  h-1">
+                        <div
+                          className="bg-green-500 h-full"
+                          style={{ width: "60%" }}
+                          role="progressbar"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center border rounded-md  p-3 mb-3">
+                  <span className="flex-shrink-0 border rounded me-2">
+                    <img
+                      src="/teacher-03.jpg"
+                      className="h-10 w-10 rounded-md"
+                      alt="Profile"
+                    />
+                  </span>
+                  <div className="w-full">
+                    <p className="mb-1">Nov 2024</p>
+                    <div className="progress progress-xs flex-grow mb-1">
+                      <div className="bg-gray-200 h-1">
+                        <div
+                          className="bg-yellow-500 h-full"
+                          style={{ width: "50%" }}
+                          role="progressbar"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-md p-2 my-5">
+              <div className="flex items-center justify-between px-5">
+                <h2 className="text-lg font-semibold">Performance</h2>
+                <div className="relative">
+                  <button
+                    className="flex items-center gap-1 text-gray-500"
+                    onClick={() => setPerformance(!performance)}
+                  >
+                    <MdNotifications className="transform rotate-45" />
+                    <h2>Class</h2>
+                    <IoIosArrowDown size={20} />
+                  </button>
+                  {performance && (
+                    <ul className="absolute -right-7  mt-2  p-3 w-40 bg-white shadow-lg rounded-md z-20">
+                      <li>
+                        <button className="block w-full text-left px-3 py-2 rounded-md hover:bg-gray-100">
+                          Class I
+                        </button>
+                      </li>
+                      <li>
+                        <button className="block w-full text-left px-3 py-2 rounded-md hover:bg-gray-100">
+                          Class II
+                        </button>
+                      </li>
+                      <li>
+                        <button className="block w-full text-left px-3 py-2 rounded-md hover:bg-gray-100">
+                          Class III
+                        </button>
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </div>
+              <div className="border-t my-5 py-2">
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="mb-3 w-full">
+                    <div className="border border-dashed p-3 rounded flex items-center justify-between mb-1">
+                      <p className="mb-0 me-2 flex items-center">
+                        <IoMdArrowDropdown
+                          size={20}
+                          className="ti ti-arrow-badge-down-filled me-2 text-blue-500"
+                        />
+                        Top
+                      </p>
+                      <h5>45</h5>
+                    </div>
+                    <div className="border border-dashed p-3 rounded flex items-center justify-between mb-1">
+                      <p className="mb-0 me-2 flex items-center">
+                        <IoMdArrowDropdown
+                          size={20}
+                          className="ti ti-arrow-badge-down-filled me-2 text-yellow-500"
+                        />
+                        Average
+                      </p>
+                      <h5>11</h5>
+                    </div>
+                    <div className="border border-dashed p-3 rounded flex items-center justify-between mb-0">
+                      <p className="mb-0 me-2 flex items-center">
+                        <IoMdArrowDropdown
+                          size={20}
+                          className="ti ti-arrow-badge-down-filled me-2 text-red-500"
+                        />
+                        Below Avg
+                      </p>
+                      <h5>02</h5>
+                    </div>
+                  </div>
+                  <div id="student-chart" className="mb-4">
+                    <Chart
+                      options={chartPerformance}
+                      series={chartSeriesPerformance}
+                      type="donut"
+                      height="300"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
