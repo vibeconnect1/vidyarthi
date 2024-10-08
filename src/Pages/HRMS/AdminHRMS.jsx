@@ -32,8 +32,8 @@ const AdminHRMS = () => {
   const [isLeaveOpen, setIsLeaveOpen] = useState(false);
   const [ispayOpen, setIspayOpen] = useState(false);
   const [isRosterOpen, setIsRosterOpen] = useState(false);
+  const [isExpenses, setIsExpenses] = useState(false);
   const navigate = useNavigate();
-  
 
   const handleMouseEnter = () => {
     setOpen(true);
@@ -44,6 +44,9 @@ const AdminHRMS = () => {
   };
   const toggleRosterMenu = () => {
     setIsRosterOpen(!isRosterOpen);
+  };
+  const toggleExpensesMenu = () => {
+    setIsExpenses(!isExpenses);
   };
 
   useEffect(() => {
@@ -105,6 +108,7 @@ const AdminHRMS = () => {
     "/admin/hrms/investment-setting",
   ];
   const rosterPaths = ["/admin/hrms/roaster", "/admin/hrms/roaster-shift"];
+  const expensesPaths = ["/hrms/expense/expense-reports", "/hrms/expense/expense-process-history" , "/hrms/expense/expense-categories"];
   const leavePaths = [
     "/admin/hrms/leave-application",
     "/admin/hrms/leave-balance",
@@ -162,11 +166,12 @@ const AdminHRMS = () => {
     "/admin/ctc-basket",
     "/hrms/investment-approvals",
     "/hrms/employee-directory/onboarding",
-    "/hrms/pending-contract-renewal",
+    "/hrms/employee-directory/pending-contract-renewal",
 
-    "/hrms/separation/separation-request",
-    "/hrms/separation/separate-application/resignation",
-    "/hrms/generated-letter",
+    "/hrms/employee-directory/separation-request",
+    "/hrms/employee-directory/exit-interview-requests",
+    "/hrms/employee-directory/generated-letter",
+    "/hrms/employee-directory/calendar",
     "/admin/add-employee/onboarding",
     "/admin/add-employee/basics",
     "/admin/add-employee/Employment",
@@ -176,17 +181,17 @@ const AdminHRMS = () => {
     "/admin/add-employee/Invite",
   ];
   const attendancePaths = [
-    "/admin/hrms/attendance-records",
-    "/admin/hrms/Regularization-Requests",
-    "/admin/hrms/Attendance-Audit",
-    "/admin/hrms/Attendance-Process",
-    "/admin/hrms/setting",
+    "/hrms/attendance/attendance-records",
+    "/hrms/attendance/regularization-requests",
+    "/hrms/attendance/attendance-audit",
+    "/hrms/attendance/attendance-process",
+    "/hrms/attendance/setting/attendance-general-setting",
     "/admin/attendance/Regularization-Reason",
     "/admin/att/template",
     "/admin/att/template-assign",
-    "/admin/hrms/Device-Request",
-    "/admin/hrms/Attendance-Validation",
-    "/admin/hrms/Attendance-Log",
+    "/hrms/attendance/device-registration-request",
+    "/hrms/attendance/attendance-validations",
+    "/hrms/attendance/attendance-logs",
   ];
   useEffect(() => {
     const savedState = JSON.parse(localStorage.getItem("menuState"));
@@ -208,6 +213,7 @@ const AdminHRMS = () => {
     setIspayOpen(payrollPaths.includes(currentPath));
     setIsEmpOpen(employeePaths.includes(currentPath));
     setIsAttOpen(attendancePaths.includes(currentPath));
+    setIsExpenses(expensesPaths.includes(currentPath));
   }, [location.pathname]);
   const isActiveLink = (location, routes) => {
     return routes.includes(location.pathname);
@@ -254,9 +260,12 @@ const AdminHRMS = () => {
     "/admin/organisation-view3",
     "/admin/organisation-view1",
   ];
-  const routes5 = ["/hrms/employee-transactions/data-change-request", "/admin/ctc-basket"];
+  const routes5 = [
+    "/hrms/employee-transactions/data-change-request",
+    "/admin/ctc-basket",
+  ];
   const routes6 = [
-    "/admin/hrms/setting",
+    "/hrms/attendance/setting/attendance-general-setting",
     "/admin/attendance/Regularization-Reason",
     "/admin/att/template",
     "/admin/att/template-assign",
@@ -308,7 +317,11 @@ const AdminHRMS = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className={`py-3 flex text-black ${open ? "justify-end" : "justify-center"}`}>
+        <div
+          className={`py-3 flex text-black ${
+            open ? "justify-end" : "justify-center"
+          }`}
+        >
           <HiMenuAlt3
             size={26}
             className="cursor-pointer "
@@ -398,7 +411,6 @@ const AdminHRMS = () => {
                 <div className="flex flex-col gap-2">
                   <NavLink
                     to="/hrms/organization/basic-information"
-                    
                     className={() =>
                       `${
                         isActiveLink(location, routes)
@@ -672,12 +684,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/hrms/pending-contract-renewal"
+                    to="/hrms/employee-directory/pending-contract-renewal"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -700,12 +712,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/hrms/separation/"
+                    to="/hrms/employee-directory/separation-request"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -728,12 +740,40 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/hrms/generated-letter"
+                    to="/hrms/employee-directory/exit-interview-requests"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
+                      }`
+                    }
+                  >
+                    <div>
+                      {React.createElement(RiFileListLine, { size: "20" })}
+                    </div>
+                    <h2
+                      className={`whitespace-pre duration-300 ${
+                        !open && "opacity-0 translate-x-28 overflow-hidden"
+                      }`}
+                    >
+                      Exit Interview Requests
+                    </h2>
+                    <h2
+                      className={`${
+                        open && "hidden"
+                      } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
+                    >
+                      Exit Interview Requests
+                    </h2>
+                  </NavLink>
+                  <NavLink
+                    to="/hrms/employee-directory/generated-letter"
+                    className={({ isActive }) =>
+                      `${
+                        isActive
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -755,34 +795,34 @@ const AdminHRMS = () => {
                       Generated Letter
                     </h2>
                   </NavLink>
-                  {/* <NavLink
-                      to="/hrms/calendar"
-                      className={({ isActive }) =>
-                        `${
-                          isActive
-                            ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                            : "group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md"
-                        }`
-                      }
+                  <NavLink
+                    to="/hrms/employee-directory/calendar"
+                    className={({ isActive }) =>
+                      `${
+                        isActive
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2  text-black"
+                      }`
+                    }
+                  >
+                    <div>
+                      {React.createElement(FaRegCalendarAlt, { size: "20" })}
+                    </div>
+                    <h2
+                      className={`whitespace-pre duration-300 ${
+                        !open && "opacity-0 translate-x-28 overflow-hidden"
+                      }`}
                     >
-                      <div>
-                        {React.createElement(FaRegCalendarAlt, { size: "20" })}
-                      </div>
-                      <h2
-                        className={`whitespace-pre duration-300 ${
-                          !open && "opacity-0 translate-x-28 overflow-hidden"
-                        }`}
-                      >
-                        Calendar
-                      </h2>
-                      <h2
-                        className={`${
-                          open && "hidden"
-                        } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
-                      >
-                        Calendar
-                      </h2>
-                    </NavLink> */}
+                      Calendar
+                    </h2>
+                    <h2
+                      className={`${
+                        open && "hidden"
+                      } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
+                    >
+                      Calendar
+                    </h2>
+                  </NavLink>
                 </div>
               )}
             </div>
@@ -818,7 +858,7 @@ const AdminHRMS = () => {
             <div>
               <div
                 onClick={toggleAttMenu}
-                className="cursor-pointer flex items-center text-sm gap-3.5 font-medium p-2 "
+                className="cursor-pointer flex items-center text-sm gap-3.5 font-medium p-2 text-black"
               >
                 <div>{React.createElement(HiCheck, { size: "20" })}</div>
                 <h2
@@ -837,12 +877,12 @@ const AdminHRMS = () => {
               {isAttOpen && (
                 <div className="">
                   <NavLink
-                    to="/admin/hrms/attendance-records"
+                    to="/hrms/attendance/attendance-records"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -865,12 +905,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/hrms/Regularization-Requests"
+                    to="/hrms/attendance/regularization-requests"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -893,12 +933,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/hrms/Attendance-Audit"
+                    to="/hrms/attendance/attendance-audit"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -919,12 +959,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/hrms/Attendance-Process"
+                    to="/hrms/attendance/attendance-process"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -947,12 +987,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/hrms/setting"
+                    to="/hrms/attendance/setting/attendance-general-setting"
                     className={() =>
                       `${
                         isActiveLink(location, routes6)
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -975,12 +1015,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/hrms/Device-Request"
+                    to="/hrms/attendance/device-registration-request"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -1003,12 +1043,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/hrms/Attendance-Validation"
+                    to="/hrms/attendance/attendance-validations"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -1031,12 +1071,12 @@ const AdminHRMS = () => {
                     </h2>
                   </NavLink>
                   <NavLink
-                    to="/admin/hrms/Attendance-Log"
+                    to="/hrms/attendance/attendance-logs"
                     className={({ isActive }) =>
                       `${
                         isActive
-                          ? "text-black bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
-                          : "group flex items-center text-sm gap-3.5 font-medium p-2 "
+                          ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                          : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
                       }`
                     }
                   >
@@ -1061,7 +1101,108 @@ const AdminHRMS = () => {
                 </div>
               )}
             </div>
-
+            <div
+              onClick={toggleExpensesMenu}
+              className="cursor-pointer flex items-center text-sm gap-3 font-medium p-2 text-black"
+            >
+              <div>{React.createElement(FaRegRegistered, { size: "20" })}</div>
+              <h2
+                className={`whitespace-pre duration-300 ${
+                  !open && "opacity-0 translate-x-28 overflow-hidden"
+                }`}
+              >
+                Expenses
+              </h2>
+              <div className="ml-auto">
+                {isExpenses
+                  ? React.createElement(MdExpandLess, { size: "20" })
+                  : React.createElement(MdExpandMore, { size: "20" })}
+              </div>
+            </div>
+            {isExpenses && (
+              <div className="">
+                <NavLink
+                  to="/hrms/expense/expense-reports"
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                        : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
+                    }`
+                  }
+                >
+                  <div>
+                    {React.createElement(AiOutlineFieldTime, { size: "20" })}
+                  </div>
+                  <h2
+                    className={`whitespace-pre duration-300 ${
+                      !open && "opacity-0 translate-x-28 overflow-hidden"
+                    }`}
+                  >
+                    Expense Reports
+                  </h2>
+                  <h2
+                    className={`${
+                      open && "hidden"
+                    } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
+                  >
+                    Expense Reports
+                  </h2>
+                </NavLink>
+                <NavLink
+                  to="/hrms/expense/expense-process-history"
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                        : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
+                    }`
+                  }
+                >
+                  <div>{React.createElement(MdAlarm, { size: "20" })}</div>
+                  <h2
+                    className={`whitespace-pre duration-300 ${
+                      !open && "opacity-0 translate-x-28 overflow-hidden"
+                    }`}
+                  >
+                    Process History
+                  </h2>
+                  <h2
+                    className={`${
+                      open && "hidden"
+                    } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
+                  >
+                    Process History
+                  </h2>
+                </NavLink>
+                <NavLink
+                  to="/hrms/expense/expense-categories"
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "text-blue-500 bg-white flex p-2 gap-3.5 rounded-md group items-center text-sm font-medium"
+                        : "group flex items-center text-sm gap-3.5 font-medium p-2 text-black"
+                    }`
+                  }
+                >
+                  <div>{React.createElement(MdAlarm, { size: "20" })}</div>
+                  <h2
+                    className={`whitespace-pre duration-300 ${
+                      !open && "opacity-0 translate-x-28 overflow-hidden"
+                    }`}
+                  >
+                    Settings
+                  </h2>
+                  <h2
+                    className={`${
+                      open && "hidden"
+                    } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
+                  >
+                    Settings
+                  </h2>
+                </NavLink>
+              </div>
+            )}
             <div
               onClick={toggleRosterMenu}
               className="cursor-pointer flex items-center text-sm gap-3 font-medium p-2 "
@@ -1530,4 +1671,4 @@ const AdminHRMS = () => {
   );
 };
 
-export default AdminHRMS
+export default AdminHRMS;

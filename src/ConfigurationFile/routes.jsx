@@ -289,11 +289,10 @@ import RegularizationRequest from '../Pages/HRMS/RegularizationRequest';
 import EmployeeDirectory from '../Pages/HRMS/EmployeeDirectory';
 import AddEmployee from '../Pages/HRMS/AddEmployee';
 import SetupIssues from '../Pages/HRMS/SetupIssues';
-import AttendanceGeneralSetting from '../Pages/HRMS/AttendanceGeneralSetting';
-import RegularizationReason from '../Pages/HRMS/RegularizationReason';
-import AttendanceTemplate from '../Pages/HRMS/AttendanceTemplate';
+import RegularizationReason from '../Pages/HRMS/Attendance/RegularizationReason';
+import AttendanceTemplate from '../Pages/HRMS/Attendance/AttendanceTemplate';
 import AttAddTemplate from '../Pages/HRMS/AttAddTemplate';
-import AttendanceTemplateAssign from '../Pages/HRMS/AttendanceTemplateAssign';
+import AttendanceTemplateAssign from '../Pages/HRMS/Attendance/AttendanceTemplateAssign';
 import GeneralSettings from '../Pages/HRMS/GeneralSettings';
 import LeaveCategories from '../Pages/HRMS/LeaveCategories';
 import AddLeaveCategory from '../Pages/HRMS/AddLeaveCategory';
@@ -383,7 +382,31 @@ import HousingLoan from '../Pages/HRMS/Employee/HousingLoan';
 import Onboarding from '../Pages/HRMS/Employee/Onboarding';
 import OnboardingDetails from '../Pages/HRMS/Employee/OnboardingDetails';
 import LetterTemplateCreation from '../Pages/HRMS/Employee/LetterTemplateCreation';
-
+import PendingContractRenewal from '../Pages/HRMS/Employee/PendingContractRenewal';
+import SeparationRequest from '../Pages/HRMS/Employee/SeparationRequest';
+import SeparationApplications from '../Pages/HRMS/Employee/SeparationApplications';
+import ExitInterviewRequests from '../Pages/HRMS/Employee/ExitInterviewRequests';
+import EditExitInterviewRequests from '../Pages/HRMS/Employee/EditExitInterviewRequests';
+import GeneratedLetter from '../Pages/HRMS/Employee/GeneratedLetter';
+import EmployeeDirectoryCalendar from '../Pages/HRMS/Employee/EmployeeDirectoryCalendar';
+import AttendanceRecords from '../Pages/HRMS/Attendance/AttendanceRecords';
+import RegularizationRequests from '../Pages/HRMS/Attendance/RegularizationRequests';
+import AttendanceAudit from '../Pages/HRMS/Attendance/AttendanceAudit';
+import AttendanceProcess from '../Pages/HRMS/Attendance/AttendanceProcess';
+import RunningAttendanceProcess from '../Pages/HRMS/Attendance/RunningAttendanceProcess';
+import AttendanceGeneralSetting from '../Pages/HRMS/Attendance/AttendanceGeneralSetting';
+import DeviceRegistrationRequest from '../Pages/HRMS/Attendance/DeviceRegistrationRequest';
+import AttendanceValidations from '../Pages/HRMS/Attendance/AttendanceValidations';
+import AttendanceLogs from '../Pages/HRMS/Attendance/AttendanceLogs';
+import ExpenseReports from '../Pages/HRMS/Expenses/ExpenseReports';
+import AdvanceExpenseReports from '../Pages/HRMS/Expenses/AdvanceExpenseReports';
+import ExpenseProcessHistory from '../Pages/HRMS/Expenses/ExpenseProcessHistory';
+import ProcessExpense from '../Pages/HRMS/Expenses/ProcessExpense';
+import AdvanceExpenseProcessHistory from '../Pages/HRMS/Expenses/AdvanceExpenseProcessHistory';
+import ExpenseCategories from '../Pages/HRMS/Expenses/ExpenseCategories';
+import ExpenseTemplates from '../Pages/HRMS/Expenses/ExpenseTemplates';
+import ExpenseTemplateAssignments from '../Pages/HRMS/Expenses/ExpenseTemplateAssignments';
+import ExpenseGeneralSettings from '../Pages/HRMS/Expenses/ExpenseGeneralSettings';
 const routes = [
     {
         path: '/',
@@ -1594,27 +1617,11 @@ const routes = [
     {
         path: '/hrms/alerts/setup-issues',
         element: <SetupIssues/>,
-    }, 
-    {
-        path: '/hrms/alerts/setup-issues/attendance-general-setting',
-        element: <AttendanceGeneralSetting/>,
-    }, 
-    {
-        path: '/hrms/alerts/setup-issues/regularization-reason',
-        element: <RegularizationReason/>,
-    }, 
-    {
-        path: '/hrms/alerts/setup-issues/attendance-template',
-        element: <AttendanceTemplate/>,
-    }, 
+    },  
     {
         path: '/hrms/alerts/setup-issues/att-add-template',
         element: <AttAddTemplate/>,
     }, 
-    {
-        path: '/hrms/alerts/setup-issues/attendance-template-assign',
-        element: <AttendanceTemplateAssign/>,
-    },
     {
         path: '/hrms/alerts/setup-issues/general-settings',
         element: <GeneralSettings/>,
@@ -1948,5 +1955,119 @@ const routes = [
         path: '/hrms/letter-template-creation',
         element: <LetterTemplateCreation/>,
     }, 
+    {
+        path: '/hrms/employee-directory/pending-contract-renewal',
+        element: <PendingContractRenewal/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/separation-request',
+        element: <SeparationRequest/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/separation-applications/:id',
+        element: <SeparationApplications/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/exit-interview-requests',
+        element: <ExitInterviewRequests/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/edit-exit-interview-requests/:id',
+        element: <EditExitInterviewRequests/>,
+    },
+    {
+        path: '/hrms/employee-directory/generated-letter',
+        element: <GeneratedLetter/>,
+    }, 
+    {
+        path: '/hrms/employee-directory/calendar',
+        element: <EmployeeDirectoryCalendar/>,
+    }, 
+    //Attendance
+    {
+        path: '/hrms/attendance/attendance-records',
+        element: <AttendanceRecords/>,
+    }, 
+    {
+        path: '/hrms/attendance/regularization-requests',
+        element: <RegularizationRequests/>,
+    }, 
+    {
+        path: '/hrms/attendance/attendance-audit',
+        element: <AttendanceAudit/>,
+    }, 
+    {
+        path: '/hrms/attendance/attendance-process',
+        element: <AttendanceProcess/>,
+    },
+    {
+        path: '/hrms/attendance/attendance-process/running-attendance-process',
+        element: <RunningAttendanceProcess/>,
+    },
+    {
+        path: '/hrms/attendance/setting/attendance-general-setting',
+        element: <AttendanceGeneralSetting/>,
+    },
+    {
+        path: '/hrms/attendance/setting/regularization-reason',
+        element: <RegularizationReason/>,
+    }, 
+    {
+        path: '/hrms/attendance/setting/attendance-template',
+        element: <AttendanceTemplate/>,
+    }, 
+    {
+        path: '/hrms/attendance/setting/attendance-template-assign',
+        element: <AttendanceTemplateAssign/>,
+    },
+    {
+        path: '/hrms/attendance/device-registration-request',
+        element: <DeviceRegistrationRequest/>,
+    },
+    {
+        path: '/hrms/attendance/attendance-validations',
+        element: <AttendanceValidations/>,
+    },
+    {
+        path: '/hrms/attendance/attendance-logs',
+        element: <AttendanceLogs/>,
+    },
+    //Expense 
+    {
+        path: '/hrms/expense/expense-reports',
+        element: <ExpenseReports/>,
+    },
+    {
+        path: '/hrms/expense/advance-expense-reports',
+        element: <AdvanceExpenseReports/>,
+    },
+    {
+        path: '/hrms/expense/expense-process-history',
+        element: <ExpenseProcessHistory/>,
+    },
+    {
+        path: '/hrms/expense/expense-process-history/process-expense',
+        element: <ProcessExpense/>,
+    },
+    {
+        path: '/hrms/expense/advance-expense-process-history',
+        element: <AdvanceExpenseProcessHistory/>,
+    },
+    {
+        path: '/hrms/expense/expense-categories',
+        element: <ExpenseCategories/>,
+    },
+    {
+        path: '/hrms/expense/expense-templates',
+        element: <ExpenseTemplates/>,
+    },
+    {
+        path: '/hrms/expense/expense-template-assignments',
+        element: <ExpenseTemplateAssignments/>,
+    },
+    {
+        path: '/hrms/expense/expense-general-settings',
+        element: <ExpenseGeneralSettings/>,
+    },
 ];
 export default routes;

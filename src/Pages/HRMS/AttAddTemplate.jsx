@@ -1,10 +1,9 @@
 import React from 'react';
-import AttendanceDetailsList from './AttendanceDetailsList';
 
 const AttAddTemplate = () => {
   return (
     <div className='flex ml-20'>
-        <AttendanceDetailsList/>
+
 
     <div className="container p-4 bg-white mx-5 my-9 rounded-md">
       <h1 className="text-xl font-bold mb-4">General Template Settings</h1>

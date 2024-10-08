@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ImFileText2 } from "react-icons/im";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"; // Import the necessary icon
-import AdminHRMS from "./AdminHRMS";
+import AdminHRMS from "../AdminHRMS";
+
 
 const AttendanceDetailsList = () => {
   const [open, setOpen] = useState(true);
@@ -20,14 +21,14 @@ const AttendanceDetailsList = () => {
   useEffect(() => {
     const currentPath = window.location.pathname;
     setDropdownOpen(
-      currentPath === "/admin/hrms/setting" ||
-        currentPath === "/admin/attendance/Regularization-Reason"
+      currentPath === "/hrms/attendance/setting/attendance-general-setting" ||
+        currentPath === "/hrms/attendance/setting/regularization-reason"
     );
   }, []);
   return (
     <div className="flex">
       <AdminHRMS />
-      <div className="w-72 h-screen bg-white border-r p-4 mt-9">
+      <div className="w-72 h-auto bg-white rounded-md border-r p-4 mt-9">
         <ul className="space-y-4">
           <li className="font-bold text-lg">Details List</li>
           <li>
@@ -62,7 +63,7 @@ const AttendanceDetailsList = () => {
               <ul className="pl-8 space-y-2 mt-2">
                 <li>
                   <NavLink
-                    to="/hrms/alerts/setup-issues/attendance-general-setting"
+                    to="/hrms/attendance/setting/attendance-general-setting"
                     className={({ isActive }) =>
                       `${
                         isActive
@@ -82,7 +83,7 @@ const AttendanceDetailsList = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/hrms/alerts/setup-issues/regularization-reason"
+                    to="/hrms/attendance/setting/regularization-reason"
                     className={({ isActive }) =>
                       `${
                         isActive
@@ -105,7 +106,7 @@ const AttendanceDetailsList = () => {
           </li>
           <li>
             <NavLink
-              to="/hrms/alerts/setup-issues/attendance-template"
+              to="/hrms/attendance/setting/attendance-template"
               className={({ isActive }) =>
                 `${
                   isActive
@@ -133,7 +134,7 @@ const AttendanceDetailsList = () => {
           </li>
           <li>
             <NavLink
-              to="/hrms/alerts/setup-issues/attendance-template-assign"
+              to="/hrms/attendance/setting/attendance-template-assign"
               className={({ isActive }) =>
                 `${
                   isActive
