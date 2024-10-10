@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PiPlusCircle } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { BiEdit } from "react-icons/bi";
-import LeaveSetting from "./LeaveSetting";
+import LeaveSetting from "./Leave/LeaveSetting";
 import Table from "../../ConfigurationFile/Table";
 
 const Templates = () => {

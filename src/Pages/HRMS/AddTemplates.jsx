@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LeaveSetting from './LeaveSetting';
+import LeaveSetting from './Leave/LeaveSetting';
 
 const AddTemplates = () => {
   // State variables to manage form inputs

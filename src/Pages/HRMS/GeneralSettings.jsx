@@ -1,8 +1,6 @@
 import React, { useState} from "react";
-
 import { GrHelpBook } from "react-icons/gr";
-import LeaveSetting from "./LeaveSetting";
-
+import LeaveSetting from "./Leave/LeaveSetting";
 const GeneralSettings = () => {
   const [isEditing, setIsEditing] = useState(false);
   const listItemStyle = {

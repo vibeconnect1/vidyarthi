@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ImFileText2 } from "react-icons/im"; 
-import AdminHRMS from "./AdminHRMS";
+import AdminHRMS from "../AdminHRMS";
 
 
 const LeaveSetting = () => {
@@ -15,7 +15,7 @@ const LeaveSetting = () => {
           <li className="font-bold text-lg">Details List</li>
           <li>
             <NavLink
-              to="/hrms/alerts/setup-issues/general-settings"
+              to="/hrms/leave/settings/leave-general-settings"
               className={({ isActive }) =>
                 `${
                   isActive
@@ -45,7 +45,7 @@ const LeaveSetting = () => {
           </li>
           <li>
             <NavLink
-              to="/hrms/alerts/setup-issues/leave-categories"
+              to="/hrms/leave/settings/leave-categories"
               className={({ isActive }) =>
                 `${
                   isActive
@@ -75,7 +75,7 @@ const LeaveSetting = () => {
           </li>
           <li>
             <NavLink
-              to="/hrms/alerts/setup-issues/templates"
+              to="/hrms/leave/settings/leave-policies-templates"
               className={({ isActive }) =>
                 `${
                   isActive
@@ -105,7 +105,7 @@ const LeaveSetting = () => {
           </li>
           <li>
             <NavLink
-              to="/hrms/alerts/setup-issues/template-assignment"
+              to="/hrms/leave/settings/leave-template-assignment"
               className={({ isActive }) =>
                 `${
                   isActive

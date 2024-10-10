@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { PiPlusCircle } from "react-icons/pi";
-import LeaveSetting from "./LeaveSetting";
+import LeaveSetting from "./Leave/LeaveSetting";
 import { BiEdit } from "react-icons/bi";
 import Table from "../../ConfigurationFile/Table";
-
 const Modal = ({ isOpen, onClose, onSave }) => {
   if (!isOpen) return null;
-
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white p-6 rounded-md w-1/3">

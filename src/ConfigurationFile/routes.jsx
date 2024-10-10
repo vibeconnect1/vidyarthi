@@ -294,7 +294,6 @@ import AttendanceTemplate from '../Pages/HRMS/Attendance/AttendanceTemplate';
 import AttAddTemplate from '../Pages/HRMS/AttAddTemplate';
 import AttendanceTemplateAssign from '../Pages/HRMS/Attendance/AttendanceTemplateAssign';
 import GeneralSettings from '../Pages/HRMS/GeneralSettings';
-import LeaveCategories from '../Pages/HRMS/LeaveCategories';
 import AddLeaveCategory from '../Pages/HRMS/AddLeaveCategory';
 import EditLeaveCategory from '../Pages/HRMS/EditLeaveCategory';
 import Templates from '../Pages/HRMS/Templates';
@@ -407,6 +406,39 @@ import ExpenseCategories from '../Pages/HRMS/Expenses/ExpenseCategories';
 import ExpenseTemplates from '../Pages/HRMS/Expenses/ExpenseTemplates';
 import ExpenseTemplateAssignments from '../Pages/HRMS/Expenses/ExpenseTemplateAssignments';
 import ExpenseGeneralSettings from '../Pages/HRMS/Expenses/ExpenseGeneralSettings';
+import TimeSheetRequest from '../Pages/HRMS/Timesheet/TimeSheetRequest';
+import EditTimeSheetRequest from '../Pages/HRMS/Timesheet/EditTimeSheetRequest';
+import TimesheetRecords from '../Pages/HRMS/Timesheet/TimesheetRecords';
+import TimesheetGeneralSettings from '../Pages/HRMS/Timesheet/TimesheetGeneralSettings';
+import TimesheetClients from '../Pages/HRMS/Timesheet/TimesheetClients';
+import TimesheetProject from '../Pages/HRMS/Timesheet/TimesheetProject';
+import TimesheetTask from '../Pages/HRMS/Timesheet/TimesheetTask';
+import TimesheetCustomFields from '../Pages/HRMS/Timesheet/TimesheetCustomFields';
+import TimesheetTemplates from '../Pages/HRMS/Timesheet/TimesheetTemplates';
+import TimesheetAssignment from '../Pages/HRMS/Timesheet/TimesheetAssignment';
+import LeaveApplication from '../Pages/HRMS/Leave/LeaveApplication';
+import CompOffEarnings from '../Pages/HRMS/Leave/CompOffEarnings';
+import LeaveBalances from '../Pages/HRMS/Leave/LeaveBalances';
+import Rollovers from '../Pages/HRMS/Leave/Rollovers';
+import LeaveGeneralSettings from '../Pages/HRMS/Leave/LeaveGeneralSettings';
+import LeaveCategories from '../Pages/HRMS/Leave/LeaveCategories';
+import LeavePoliciesTemplates from '../Pages/HRMS/Leave/LeavePoliciesTemplates';
+import LeaveTemplateAssignment from '../Pages/HRMS/Leave/LeaveTemplateAssignment';
+import PerformanceDashboard from '../Pages/HRMS/Performance/PerformanceDashboard';
+import PerformanceEmployeeReview from '../Pages/HRMS/Performance/PerformanceEmployeeReview';
+import PerformanceEmployeeSelection from '../Pages/HRMS/Performance/PerformanceEmployeeSelection';
+import PerformanceCycleSettings from '../Pages/HRMS/Performance/PerformanceCycleSettings';
+import StudentClassTimeTable from '../Pages/Student/StudentClassTimeTable';
+import PerformanceAssessment from '../Pages/HRMS/Performance/PerformanceAssessment';
+import PerformanceFinalRecommendation from '../Pages/HRMS/Performance/PerformanceFinalRecommendation';
+import PerformanceEmployeeReviewDetailsSummary from '../Pages/HRMS/Performance/PerformanceEmployeeReviewDetailsSummary';
+import PerformanceEmployeeReviewDetailsSubmissions from '../Pages/HRMS/Performance/PerformanceEmployeeReviewDetailsSubmissions';
+import PerformanceEmployeeReviewDetailsAssessments from '../Pages/HRMS/Performance/PerformanceEmployeeReviewDetailsAssessments';
+import PerformanceAssignAssessorAssessment from '../Pages/HRMS/Performance/PerformanceAssignAssessorAssessment';
+import PerformanceViewAssessmentMaster from '../Pages/HRMS/Performance/PerformanceViewAssessmentMaster';
+import PerformanceAssessmentViewAllSubmissions from '../Pages/HRMS/Performance/PerformanceAssessmentViewAllSubmissions';
+import PerformanceAssignFinalRecommendation from '../Pages/HRMS/Performance/PerformanceAssignFinalRecommendation';
+import PerformanceFinalRecommendationViewAll from '../Pages/HRMS/Performance/PerformanceFinalRecommendationViewAll';
 const routes = [
     {
         path: '/',
@@ -815,6 +847,10 @@ const routes = [
     {
         path: '/student/student-online-fees',
         element: < StudentOnlineFees/>,
+    },
+    {
+        path: '/student/student-class-time-table',
+        element: < StudentClassTimeTable/>,
     },
     // event
     {
@@ -1627,10 +1663,6 @@ const routes = [
         element: <GeneralSettings/>,
     }, 
     {
-        path: '/hrms/alerts/setup-issues/leave-categories',
-        element: <LeaveCategories/>,
-    }, 
-    {
         path: '/hrms/alerts/setup-issues/add-leave-categories',
         element: <AddLeaveCategory/>,
     }, 
@@ -2069,5 +2101,140 @@ const routes = [
         path: '/hrms/expense/expense-general-settings',
         element: <ExpenseGeneralSettings/>,
     },
+    //TimeSheetRequests
+    {
+        path: '/hrms/time-sheet/time-sheet-requests',
+        element: <TimeSheetRequest/>,
+    },
+    {
+        path: '/hrms/time-sheet/edit-time-sheet-requests/:id',
+        element: <EditTimeSheetRequest/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-records',
+        element: <TimesheetRecords/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-general-settings',
+        element: <TimesheetGeneralSettings/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-clients',
+        element: <TimesheetClients/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-project',
+        element: <TimesheetProject/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-task',
+        element: <TimesheetTask/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-custom-fields',
+        element: <TimesheetCustomFields/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-templates',
+        element: <TimesheetTemplates/>,
+    },
+    {
+        path: '/hrms/time-sheet/time-sheet-assignment',
+        element: <TimesheetAssignment/>,
+    },
+    //Leave
+    {
+        path: '/hrms/leave/leave-application',
+        element: <LeaveApplication/>,
+    },
+    {
+        path: '/hrms/leave/comp-off-earnings',
+        element: <CompOffEarnings/>,
+    },
+    {
+        path: '/hrms/leave/leave-balances',
+        element: <LeaveBalances/>,
+    },
+    {
+        path: '/hrms/leave/roll-overs',
+        element: <Rollovers/>,
+    },
+    {
+        path: '/hrms/leave/settings/leave-general-settings',
+        element: <LeaveGeneralSettings/>,
+    },
+    {
+        path: '/hrms/leave/settings/leave-categories',
+        element: <LeaveCategories/>,
+    },
+    {
+        path: '/hrms/leave/settings/leave-policies-templates',
+        element: <LeavePoliciesTemplates/>,
+    }, 
+    {
+        path: '/hrms/leave/settings/leave-template-assignment',
+        element: <LeaveTemplateAssignment/>,
+    }, 
+    //Performance
+    {
+        path: '/hrms/performance/performance-dashboard',
+        element: <PerformanceDashboard/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-employee-review',
+        element: <PerformanceEmployeeReview/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-employee-selection',
+        element: <PerformanceEmployeeSelection/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-cycle-settings',
+        element: <PerformanceCycleSettings/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-assessment/:id',
+        element: <PerformanceAssessment/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-final-recommendation/:id',
+        element: <PerformanceFinalRecommendation/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-employee-review/details-summary/:id',
+        element: <PerformanceEmployeeReviewDetailsSummary/>,
+    },
+    {
+        path: '/hrms/performance/performance-employee-review/details-submissions',
+        element: <PerformanceEmployeeReviewDetailsSubmissions/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-employee-review/details-assessments',
+        element: <PerformanceEmployeeReviewDetailsAssessments/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-employee-review/details-assessments',
+        element: <PerformanceEmployeeReviewDetailsAssessments/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-assign-assessor-assessment',
+        element: <PerformanceAssignAssessorAssessment/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-view-assessment-master',
+        element: <PerformanceViewAssessmentMaster/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-assessment-view-all-submissions',
+        element: <PerformanceAssessmentViewAllSubmissions/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-assign-final-recommendation',
+        element: <PerformanceAssignFinalRecommendation/>,
+    }, 
+    {
+        path: '/hrms/performance/performance-final-recommendation-view-all',
+        element: <PerformanceFinalRecommendationViewAll/>,
+    }, 
 ];
 export default routes;

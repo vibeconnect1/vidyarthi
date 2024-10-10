@@ -9,6 +9,11 @@ import {
   FaCircle,
   FaPlus,
 } from "react-icons/fa";
+import { AiOutlineDownload } from "react-icons/ai";
+import { CiLocationArrow1 } from "react-icons/ci";
+import { BiSolidFilePdf } from "react-icons/bi";
+import { IoLocationOutline } from "react-icons/io5";
+import StudentClassTimeTable from "./StudentClassTimeTable";
 function StudentDashboard() {
   const [activeTab, setActiveTab] = useState("hostel");
   const [studentHeader, setStudentHeader] = useState("Student-details");
@@ -120,12 +125,12 @@ function StudentDashboard() {
                       {
                         name: "Ralph Claudia",
                         class: "III, B",
-                        img: "/placeholder.svg?height=48&width=48",
+                        img: "/student-06.jpg",
                       },
                       {
                         name: "Julie Scott",
                         class: "V, A",
-                        img: "/placeholder.svg?height=48&width=48",
+                        img: "/student-07.jpg",
                       },
                     ].map((sibling, index) => (
                       <div
@@ -135,7 +140,7 @@ function StudentDashboard() {
                         <img
                           src={sibling.img}
                           alt={sibling.name}
-                          className="w-12 h-12 rounded-full mr-3"
+                          className="w-12 h-12 rounded-md mr-3"
                         />
                         <div>
                           <h6 className="font-medium">{sibling.name}</h6>
@@ -279,42 +284,260 @@ function StudentDashboard() {
                 </div>
               </div>
               {studentHeader === "Student-details" && (
-                  <div className="bg-white rounded-md my-5 w-full">
+                <div className="my-5 w-full">
+                  <div className="bg-white rounded-md py-5">
                     <div className="border-b py-2 px-5">
                       <h2>Parents Information</h2>
                     </div>
-                    <div>
-                      <div></div>
+                    <div className="flex justify-between border my-5 mx-5 px-5 py-3 rounded-md">
+                      <div className="flex gap-2">
+                        <div className="">
+                          <img
+                            src="/parent-13.jpg "
+                            className="h-12 w-12 rounded-md"
+                          ></img>
+                        </div>
+                        <div>
+                          <h2 className="text-gray-600 font-medium">
+                            Jerald Vicinius
+                          </h2>
+                          <span className="text-blue-800">Father</span>
+                        </div>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">Phone</h2>
+                        <span className="text-gray-800">+25945 46864</span>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">Email</h2>
+                        <span className="text-blue-800">jera@example.com</span>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">
+                          Jerald Vicinius
+                        </h2>
+                        <span className="text-blue-800">Father</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between border my-5 mx-5 px-5 py-3 rounded-md">
+                      <div className="flex gap-2">
+                        <div className="">
+                          <img
+                            src="/parent-14.jpg "
+                            className="h-12 w-12 rounded-md"
+                          ></img>
+                        </div>
+                        <div>
+                          <h2 className="text-gray-600 font-medium">
+                            Roberta Webber
+                          </h2>
+                          <span className="text-blue-800">Mother</span>
+                        </div>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">Phone</h2>
+                        <span className="text-gray-800">+22945 46864</span>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">Email</h2>
+                        <span className="text-blue-800">jera@example.com</span>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">
+                          Jerald Vicinius
+                        </h2>
+                        <span className="text-blue-800">Father</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between border my-5 mx-5 px-5 py-3 rounded-md">
+                      <div className="flex gap-2">
+                        <div className="">
+                          <img
+                            src="/parent-13.jpg "
+                            className="h-12 w-12 rounded-md"
+                          ></img>
+                        </div>
+                        <div>
+                          <h2 className="text-gray-600 font-medium">
+                            Jerald Vicinius
+                          </h2>
+                          <span className="text-blue-800">Father</span>
+                        </div>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">Phone</h2>
+                        <span className="text-gray-800">+21045 46864</span>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">Email</h2>
+                        <span className="text-blue-800">jera@example.com</span>
+                      </div>
+                      <div>
+                        <h2 className="text-gray-600 font-medium">
+                          Jerald Vicinius
+                        </h2>
+                        <span className="text-blue-800">Father</span>
+                      </div>
                     </div>
                   </div>
-                )}
-                {activeTab === "transport" && (
-                  <div className="bg-white my-5">
-                    <div className="flex items-center mb-3">
-                      <span className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-3">
-                        <FaBus className="w-5 h-5 text-gray-600" />
-                      </span>
-                      <div>
-                        <span className="text-sm text-gray-600">Route</span>
-                        <p className="font-medium">Newyork</p>
+                  <div className="grid grid-cols-12 gap-5 my-5">
+                    <div className="col-span-6 bg-white rounded-md py-2">
+                      <div className="border-b py-2 px-5">
+                        <h2>Documents</h2>
+                      </div>
+                      <div className="flex justify-between border my-5 mx-5 px-5 py-2 rounded-md items-center">
+                        <div className="flex gap-3">
+                          <span>
+                            <BiSolidFilePdf className="h-10 w-10 text-gray-300 rounded-md" />
+                          </span>
+                          <span className="text-gray-800 flex items-center">
+                            BirthCertificate.pdf
+                          </span>
+                        </div>
+                        <div>
+                          <span className="bg-black rounded-md flex justify-items-center text-white p-2">
+                            <AiOutlineDownload />
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between border my-5 mx-5 px-5 py-2 rounded-md items-center">
+                        <div className="flex gap-3">
+                          <span>
+                            <BiSolidFilePdf className="h-10 w-10 text-gray-300 rounded-md" />
+                          </span>
+                          <span className="text-gray-800 flex items-center">
+                            Transfer Certificate.pdf
+                          </span>
+                        </div>
+                        <div>
+                          <span className="bg-black rounded-md flex justify-items-center text-white p-2">
+                            <AiOutlineDownload />
+                          </span>
+                        </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <span className="text-sm text-gray-600">
-                          Bus Number
-                        </span>
-                        <p className="font-medium">AM 54548</p>
+                    <div className="col-span-6 bg-white rounded-md py-2">
+                      <div className="border-b py-2 px-5">
+                        <h2>Address</h2>
                       </div>
-                      <div>
-                        <span className="text-sm text-gray-600">
-                          Pickup Point
-                        </span>
-                        <p className="font-medium">Cincinatti</p>
+                      <div className="flex justify-between border my-5 mx-5 px-5 py-2 rounded-md">
+                        <div className="flex gap-2 items-center">
+                          <div className="flex bg-gray-100 h-10 w-10 rounded-md items-center justify-center">
+                            <IoLocationOutline />
+                          </div>
+                          <div>
+                            <h2 className="text-gray-600 font-medium">
+                              Current Address
+                            </h2>
+                            <span className="text-gray-800 text-sm">
+                              3495 Red Hawk Road, Buffalo Lake, MN 55314
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex justify-between border my-5 mx-5 px-5 py-2 rounded-md">
+                        <div className="flex gap-2 items-center">
+                          <div className="flex bg-gray-100 h-10 w-10 rounded-md items-center justify-center">
+                            <CiLocationArrow1 />
+                          </div>
+                          <div>
+                            <h2 className="text-gray-600 font-medium">
+                              Permanent Address
+                            </h2>
+                            <span className="text-gray-800 text-sm">
+                              3495 Red Hawk Road, Buffalo Lake, MN 55314
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                )}
+                  <div className="grid grid-cols-12 gap-5 my-5">
+                    <div className="col-span-12 bg-white rounded-md py-2">
+                      <div className="border-b py-2 px-5">
+                        <h2>Previous School Details</h2>
+                      </div>
+                      <div className="grid grid-cols-2 py-3 mx-5 rounded-md items-center">
+                        <div className="flex flex-col">
+                          <h2 className="font-medium">Previous School Name</h2>
+                          <span className="text-gray-800 flex items-center">
+                            Oxford Matriculation, USA
+                          </span>
+                        </div>
+                        <div className="flex flex-col">
+                          <h2 className="font-medium">School Address</h2>
+                          <span className="text-gray-800 flex items-center">
+                            1852 Barnes Avenue, Cincinnati, OH 45202
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 gap-5 my-5">
+                    <div className="col-span-6 bg-white rounded-md py-2">
+                      <div className="border-b py-2 px-5">
+                        <h2>Bank Details</h2>
+                      </div>
+                      <div className="flex justify-between mx-5 px-5 py-2 rounded-md items-center">
+                        <div className="flex flex-col">
+                          <h2 className="font-medium">Bank Name</h2>
+                          <span className="text-gray-800 flex items-center">
+                            Bank of America
+                          </span>
+                        </div>
+                        <div className="flex flex-col">
+                          <h2 className="font-medium">Branch</h2>
+                          <span className="text-gray-800 flex items-center">
+                            Cincinnati
+                          </span>
+                        </div>
+                        <div className="flex flex-col">
+                          <h2 className="font-medium">IFSC</h2>
+                          <span className="text-gray-800 flex items-center">
+                            BOA83209832
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-span-6 bg-white rounded-md py-2">
+                      <div className="border-b py-2 px-5">
+                        <h2>Medical History</h2>
+                      </div>
+                      <div className="flex justify-between mx-5 px-5 py-2 rounded-md items-center">
+                        <div className="flex flex-col">
+                          <h2 className="font-medium">Known Allergies</h2>
+                          <span className="text-gray-800 flex items-center bg-gray-100 rounded-md w-fit py-1 px-3 my-1 text-xs">
+                            Rashes
+                          </span>
+                        </div>
+                        <div className="flex flex-col">
+                          <h2 className="font-medium">Medications</h2>
+                          <span className="text-gray-800 flex items-center"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 gap-5 my-5">
+                    <div className="col-span-12 bg-white rounded-md py-2">
+                      <div className="border-b py-2 px-5">
+                        <h2>Previous School Details</h2>
+                      </div>
+                      <p className="text-gray-800 text-sm py-2 px-5">
+                        Depending on the specific needs of your organization or
+                        system, additional information may be collected or
+                        tracked. It's important to ensure that any data
+                        collected complies with privacy regulations and policies
+                        to protect students' sensitive information.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {studentHeader === "Time-Table" && (
+                <div>
+                  <StudentClassTimeTable/>
+                </div>
+              )}
             </div>
           </div>
         </div>
