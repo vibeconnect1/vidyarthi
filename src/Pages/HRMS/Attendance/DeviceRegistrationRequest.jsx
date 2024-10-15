@@ -7,8 +7,68 @@ import filter from "/filter.png";
 import { FaCheck, FaChevronDown } from "react-icons/fa";
 import { BsEye } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
+import { FilterForm } from "../../../ConfigurationFile/FilterForm";
 function DeviceRegistrationRequest() {
+  const [action, setAction] = useState(false);
+  const [bulkApprove, setBulkApprove] = useState(false);
+  const [bulkReject, setBulkReject] = useState(false)
   const [page, setPage] = useState("pending");
+  const [filterDropdown, setFilterDropdown] = useState(false);
+  const supervisorList = ["Karan", "Rohit", " Sonu"];
+  const branchLocationList = [
+    "Mumbai; Mumbai; Maharashtra",
+    "Test 1 ; Pune; Maharashtra",
+    "Delhi; Delhi NCR; Delhi",
+    "Asian Paints Delhi; Noida; Delhi",
+    "Asian Paints Gurgoan; Gurgoan ; Delhi",
+  ];
+  const employeeDepartmentList = [
+    "Finance",
+    "HR",
+    " HR",
+    "L machine",
+    "L packing",
+    "Marketing",
+    "Operations",
+    "Sales",
+    "Unassigned",
+  ];
+
+  const employeeStatusList = [
+    " Incomplete",
+    " Active",
+    " Onhold",
+    " Terminated",
+  ];
+
+  const joiningMonthList = [
+    "December-2024",
+    "November-2024",
+    "October-2024",
+    "September-2024",
+    "August-2024",
+    "July-2024",
+    "June-2024",
+    "May-2024",
+    "April-2024",
+    "March-2024",
+    "February-2024",
+    "January-2024",
+    "December-2023",
+    "November-2023",
+    "October-2023",
+  ];
+  const attendanceTemplateList = [
+    "Corporate",
+    "Finance Employees",
+    "Marketing Employees",
+    "Accounting Department",
+    "Grabbitempire Attendance",
+    "Xeon",
+    "IT Employees",
+    "HR Employees",
+    "Basic policy",
+  ];
   const pendingColumns = [
     {
       name: "Employee Name",
@@ -112,7 +172,7 @@ function DeviceRegistrationRequest() {
     //   ),
     // },
   ];
-  const  deviceAttachedData = [
+  const deviceAttachedData = [
     {
       id: 1,
       employee_name: "Karan",
@@ -174,16 +234,71 @@ function DeviceRegistrationRequest() {
                     className="border border-gray-500 py-2 px-2 text-black rounded-xl w-full  md:w-96"
                   />
                 </div>
-                <button className="bg-white rounded-full h-10 w-10">
-                  <span className="flex justify-center items-center text-black">
-                    <img src={filter} alt="filter-icon" />
-                  </span>
-                </button>
-                <div>
-                  <button className="bg-white text-gray-500 font-semibold py-2 px-4 rounded flex items-center justify-center space-x-2 w-full">
+                <div className="relative">
+                  <button
+                    className="bg-white rounded-full h-10 w-10"
+                    onClick={() => setFilterDropdown(!filterDropdown)}
+                  >
+                    <span className="flex justify-center items-center text-black">
+                      <img src={filter} alt="filter-icon" />
+                    </span>
+                  </button>
+                </div>
+                {filterDropdown && (
+                  <div className="absolute mt-12 right-32 bg-white rounded-md z-20 border-2 w-[810px] p-5">
+                    <div className="grid grid-cols-3 gap-8 pt-5">
+                      <FilterForm
+                        label="Attendance Template"
+                        options={attendanceTemplateList}
+                      />
+                      <FilterForm label="Supervisor" options={supervisorList} />
+                      <FilterForm
+                        label="Branch Location"
+                        options={branchLocationList}
+                      />
+                      <FilterForm
+                        label="Joining Month"
+                        options={joiningMonthList}
+                      />
+                      <FilterForm
+                        label="Employee Status"
+                        options={employeeStatusList}
+                      />
+                      <FilterForm
+                        label="Employee Department"
+                        options={employeeDepartmentList}
+                      />
+                      <div className="flex justify-end col-span-3 gap-2">
+                        <button className="border border-gray-500 rounded-md text-black py-1 px-4">
+                          Clear
+                        </button>
+                        <button className="bg-gray-500 text-white py-1 px-4 rounded-md ">
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div className="relative">
+                  <button
+                    className="bg-white text-gray-500 font-semibold py-2 px-4 rounded flex items-center justify-center space-x-2 w-full"
+                    onClick={() => setAction(!action)}
+                  >
                     <span>Actions</span>
                     <FaChevronDown />
                   </button>
+                  {action && (
+                    <div className="absolute right-0 mt-1 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-10 py-2">
+                      <div className="py-1 flex flex-col ">
+                        <button className="hover:bg-gray-100 px-4 py-1 cursor-pointer text-left hover:text-red-500" onClick={() =>setBulkApprove(!bulkApprove)}>
+                          Bulk Approve
+                        </button>
+                        <button className="hover:bg-gray-100 px-4 py-1  text-left cursor-pointer hover:text-red-500" onClick={() =>setBulkReject(!bulkReject)}>
+                          Bulk Reject
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AdminHRMS from "../AdminHRMS";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
@@ -6,8 +6,28 @@ import filter from "/filter.png";
 import Table from "../../../ConfigurationFile/Table";
 import ProcessHistorySetting from "./ProcessHistorySetting";
 import { BiEdit } from "react-icons/bi";
+import { FilterForm } from "../../../ConfigurationFile/FilterForm";
 
 function ProcessExpense() {
+  const [filterDropdown, setFilterDropdown] = useState(false);
+  const employeeDepartmentList = [
+    "Finance",
+    "HR",
+    " HR",
+    "L machine",
+    "L packing",
+    "Marketing",
+    "Operations",
+    "Sales",
+    "Unassigned",
+  ];
+  const branchLocationList = [
+    "Mumbai; Mumbai; Maharashtra",
+    "Test 1 ; Pune; Maharashtra",
+    "Delhi; Delhi NCR; Delhi",
+    "Asian Paints Delhi; Noida; Delhi",
+    "Asian Paints Gurgoan; Gurgoan ; Delhi",
+  ];
   const pendingColumns = [
     {
       name: "Report Title",
@@ -97,15 +117,68 @@ function ProcessExpense() {
                   className="border border-gray-500 py-2 px-2 text-black rounded-xl w-full  md:w-96"
                 />
               </div>
-              <button className="bg-white rounded-full h-10 w-10">
-                <span className="flex justify-center items-center text-black">
-                  <img src={filter} alt="filter-icon" />
-                </span>
-              </button>
+              <div className="relative">
+                <button
+                  className="bg-white rounded-full h-10 w-10"
+                  onClick={() => setFilterDropdown(!filterDropdown)}
+                >
+                  <span className="flex justify-center items-center text-black">
+                    <img src={filter} alt="filter-icon" />
+                  </span>
+                </button>
+              </div>
+              {filterDropdown && (
+                <div className="absolute mt-10 right-5 bg-white rounded-md z-20 border-2 w-[810px] p-5">
+                  <div className="grid grid-cols-3 gap-8 pt-5">
+                    <input
+                      type="text"
+                      className="border-b border-gray-500 focus:outline-none"
+                      placeholder="Start Date"
+                    />
+                    <input
+                      type="text"
+                      className="border-b border-gray-500 focus:outline-none"
+                      placeholder="End Date"
+                    />
+                    <FilterForm
+                      label="Employee Department"
+                      options={employeeDepartmentList}
+                    />
+                    <FilterForm
+                      label="Branch Location"
+                      options={branchLocationList}
+                    />
+                    <div className="flex justify-end col-span-3 gap-2">
+                      <button className="border border-gray-500 rounded-md text-black py-1 px-4">
+                        Clear
+                      </button>
+                      <button className="bg-gray-500 text-white py-1 px-4 rounded-md ">
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-          <div className="my-2">
-            <Table columns={pendingColumns} data={pendingData} selectableRows={true}/>
+          <div className="bg-white rounded-md py-5 px-5">
+            <div className="my-2">
+              <Table
+                columns={pendingColumns}
+                data={pendingData}
+                selectableRows={true}
+              />
+            </div>
+            <div className="border-t py-8">
+              <div className="flex justify-center col-span-3 gap-2">
+                <button className="border border-gray-500 rounded-md text-black py-1 px-4 flex items-center gap-1">
+                  Cancel
+                </button>
+                <button className="bg-gray-500 text-white py-1 px-4 rounded-md flex items-center gap-1">
+                  Proceed
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

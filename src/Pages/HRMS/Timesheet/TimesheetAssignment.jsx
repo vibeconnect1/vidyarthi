@@ -8,8 +8,59 @@ import { PiPlusCircle } from "react-icons/pi";
 import { FaChevronDown } from "react-icons/fa";
 import filter from "/filter.png";
 import TimesheetManagementSetting from "./TimesheetManagementSetting";
+import { FilterForm } from "../../../ConfigurationFile/FilterForm";
 function TimesheetAssignment() {
   const [action, setAction] = useState(false);
+  const [filterDropdown, setFilterDropdown] = useState(false);
+  const supervisorList = ["Karan", "Rohit", " Sonu"];
+  const branchLocationList = [
+    "Mumbai; Mumbai; Maharashtra",
+    "Test 1 ; Pune; Maharashtra",
+    "Delhi; Delhi NCR; Delhi",
+    "Asian Paints Delhi; Noida; Delhi",
+    "Asian Paints Gurgoan; Gurgoan ; Delhi",
+  ];
+  const employeeDepartmentList = [
+    "Finance",
+    "HR",
+    " HR",
+    "L machine",
+    "L packing",
+    "Marketing",
+    "Operations",
+    "Sales",
+    "Unassigned",
+  ];
+
+  const employeeStatusList = [
+    " Incomplete",
+    " Active",
+    " Onhold",
+    " Terminated",
+  ];
+
+  const joiningMonthList = [
+    "December-2024",
+    "November-2024",
+    "October-2024",
+    "September-2024",
+    "August-2024",
+    "July-2024",
+    "June-2024",
+    "May-2024",
+    "April-2024",
+    "March-2024",
+    "February-2024",
+    "January-2024",
+    "December-2023",
+    "November-2023",
+    "October-2023",
+  ];
+  const timesheetTemplateList = [
+    " General Template",
+    " Test Healthcare",
+    " No Template",
+  ];
   const columns = [
     {
       name: "Employee Name",
@@ -78,11 +129,51 @@ function TimesheetAssignment() {
                   className="border border-gray-500 py-2 px-2 text-black rounded-xl"
                 />
               </div>
-              <button className="bg-white rounded-full h-10 w-10">
-                <span className="flex justify-center items-center text-black">
-                  <img src={filter} alt="filter-icon" />
-                </span>
-              </button>
+              <div className="relative">
+                <button
+                  className="bg-white rounded-full h-10 w-10"
+                  onClick={() => setFilterDropdown(!filterDropdown)}
+                >
+                  <span className="flex justify-center items-center text-black">
+                    <img src={filter} alt="filter-icon" />
+                  </span>
+                </button>
+                {filterDropdown && (
+                  <div className="absolute mt-0 right-5 bg-white rounded-md z-20 border-2 w-[810px] p-5">
+                    <div className="grid grid-cols-3 gap-8 pt-5">
+                      <FilterForm
+                        label="Timesheet Template"
+                        options={timesheetTemplateList}
+                      />
+                      <FilterForm label="Supervisor" options={supervisorList} />
+                      <FilterForm
+                        label="Branch Location"
+                        options={branchLocationList}
+                      />
+                      <FilterForm
+                        label="Joining Month"
+                        options={joiningMonthList}
+                      />
+                      <FilterForm
+                        label="Employee Status"
+                        options={employeeStatusList}
+                      />
+                      <FilterForm
+                        label="Employee Department"
+                        options={employeeDepartmentList}
+                      />
+                      <div className="flex justify-end col-span-3 gap-2">
+                        <button className="border border-gray-500 rounded-md text-black py-1 px-4">
+                          Clear
+                        </button>
+                        <button className="bg-gray-500 text-white py-1 px-4 rounded-md ">
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
               <div className="relative">
                 <button
                   className="bg-white text-gray-500 font-semibold py-2 px-4 rounded flex items-center justify-center space-x-2 w-full"
@@ -101,10 +192,10 @@ function TimesheetAssignment() {
                         Assign supervisors
                       </button>
                       <button className="hover:bg-gray-100 px-4 py-1  text-left cursor-pointer hover:text-red-500">
-                        Upload template assignments
+                        Upload template assignment
                       </button>
                       <button className="hover:bg-gray-100 px-4 py-1  text-left cursor-pointer hover:text-red-500">
-                        Upload supervisors
+                        Upload approver assignment
                       </button>
                     </div>
                   </div>
@@ -129,16 +220,24 @@ function TimesheetAssignment() {
                 {/* <p className="font-medium">Help Center</p> */}
                 <ul className="list-disc pl-5 flex flex-col gap-2">
                   <li>
-                  Timesheet settings allows you to _ bconfigure and manage company clients, projects, allocated tasks and assigned templates. b_
+                    Timesheet settings allows you to _ bconfigure and manage
+                    company clients, projects, allocated tasks and assigned
+                    templates. b_
                   </li>
                   <li>
-                  You can define details like client code, project code, per hour rate, type of task (internal/external) and the status of the task.
+                    You can define details like client code, project code, per
+                    hour rate, type of task (internal/external) and the status
+                    of the task.
                   </li>
                   <li>
-                  You can configure template settings like frequency of timesheet submission (daily/weekly/monthly), set approval hierarchy and auto approvals, etc.
+                    You can configure template settings like frequency of
+                    timesheet submission (daily/weekly/monthly), set approval
+                    hierarchy and auto approvals, etc.
                   </li>
                   <li>
-                  Timesheet module is integrated with the attendance module. Hence, timesheet data can also be used for capturing attendance.
+                    Timesheet module is integrated with the attendance module.
+                    Hence, timesheet data can also be used for capturing
+                    attendance.
                   </li>
                   <li>
                     <Link to={`Click Here`} className="text-red-500">

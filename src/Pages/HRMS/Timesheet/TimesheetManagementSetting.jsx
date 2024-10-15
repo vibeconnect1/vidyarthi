@@ -14,8 +14,11 @@ const TimesheetManagementSetting = () => {
   useEffect(() => {
     const currentPath = window.location.pathname;
     setDropdownOpen(
-      currentPath === "/hrms/attendance/setting/attendance-general-setting" ||
-        currentPath === "/hrms/attendance/setting/regularization-reason"
+      currentPath === "/hrms/time-sheet/time-sheet-general-settings" ||
+        currentPath === "/hrms/time-sheet/time-sheet-clients" ||
+        currentPath === "/hrms/time-sheet/time-sheet-project" ||
+        currentPath === "/hrms/time-sheet/time-sheet-task" ||
+        currentPath === "/hrms/time-sheet/time-sheet-custom-fields"
     );
   }, []);
   return (
@@ -56,7 +59,7 @@ const TimesheetManagementSetting = () => {
               <ul className="pl-8 space-y-2 mt-2">
                 <li>
                   <NavLink
-                    to="/hrms/attendance/setting/attendance-general-setting"
+                    to="/hrms/time-sheet/time-sheet-general-settings"
                     className={({ isActive }) =>
                       `${
                         isActive

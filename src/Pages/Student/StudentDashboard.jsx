@@ -14,6 +14,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
 import { BiSolidFilePdf } from "react-icons/bi";
 import { IoLocationOutline } from "react-icons/io5";
 import StudentClassTimeTable from "./StudentClassTimeTable";
+import StudentAttendanceReport from "./StudentAttendanceReport";
+import StudentExamResult from "./StudentExamResult";
 function StudentDashboard() {
   const [activeTab, setActiveTab] = useState("hostel");
   const [studentHeader, setStudentHeader] = useState("Student-details");
@@ -243,13 +245,13 @@ function StudentDashboard() {
                   </button>
                   <button
                     className={`pb-2 px-4 ${
-                      studentHeader === "leave"
+                      studentHeader === "attendance"
                         ? "border-b-2 border-blue-500 text-blue-600 whitespace-nowrap"
                         : "text-gray-500 whitespace-nowrap"
                     }`}
-                    onClick={() => setStudentHeader("leave")}
+                    onClick={() => setStudentHeader("attendance")}
                   >
-                    Leave & Attendance
+                    Attendance
                   </button>
                   <button
                     className={`pb-2 px-4 ${
@@ -536,6 +538,16 @@ function StudentDashboard() {
               {studentHeader === "Time-Table" && (
                 <div>
                   <StudentClassTimeTable/>
+                </div>
+              )}
+              {studentHeader === "attendance" && (
+                <div>
+                  <StudentAttendanceReport/>
+                </div>
+              )}
+              {studentHeader === "Exam-Results" && (
+                <div>
+                  <StudentExamResult/>
                 </div>
               )}
             </div>

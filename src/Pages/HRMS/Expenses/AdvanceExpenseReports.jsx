@@ -9,9 +9,36 @@ import Table from "../../../ConfigurationFile/Table";
 import { BiEdit } from "react-icons/bi";
 import { HiDotsVertical } from "react-icons/hi";
 import { BsEye } from "react-icons/bs";
+import { FilterForm } from "../../../ConfigurationFile/FilterForm";
 
 function AdvanceExpenseReports() {
   const [page, setPage] = useState("pending");
+  const [filterDropdown, setFilterDropdown] = useState(false);
+  const [action, setAction] = useState(false);
+
+  const advanceExpenseStatusList = [
+    " Level 1 Approval Pending",
+    " Level 2 Approval Pending",
+  ];
+  const employeeDepartmentList = [
+    "Finance",
+    "HR",
+    " HR",
+    "L machine",
+    "L packing",
+    "Marketing",
+    "Operations",
+    "Sales",
+    "Unassigned",
+  ];
+  const branchLocationList = [
+    "Mumbai; Mumbai; Maharashtra",
+    "Test 1 ; Pune; Maharashtra",
+    "Delhi; Delhi NCR; Delhi",
+    "Asian Paints Delhi; Noida; Delhi",
+    "Asian Paints Gurgoan; Gurgoan ; Delhi",
+  ];
+
   const pendingColumns = [
     {
       name: "Employee Name",
@@ -121,7 +148,7 @@ function AdvanceExpenseReports() {
             <BsEye size={15} />
           </button>
           <button className="border p-2 cursor-pointer">
-          <FaDownload size={15}/>
+            <FaDownload size={15} />
           </button>
         </div>
       ),
@@ -171,16 +198,75 @@ function AdvanceExpenseReports() {
                   className="border border-gray-500 py-2 px-2 text-black rounded-xl w-full  md:w-96"
                 />
               </div>
-              <button className="bg-white rounded-full h-10 w-10">
-                <span className="flex justify-center items-center text-black">
-                  <img src={filter} alt="filter-icon" />
-                </span>
-              </button>
-              <div>
-                <button className="bg-white text-gray-500 font-semibold py-2 px-4 rounded flex items-center justify-center space-x-2 w-full">
+              <div className="relative">
+                <button
+                  className="bg-white rounded-full h-10 w-10"
+                  onClick={() => setFilterDropdown(!filterDropdown)}
+                >
+                  <span className="flex justify-center items-center text-black">
+                    <img src={filter} alt="filter-icon" />
+                  </span>
+                </button>
+              </div>
+              {filterDropdown && (
+                <div className="absolute mt-12 right-32 bg-white rounded-md z-20 border-2 w-[810px] p-5">
+                  <div className="grid grid-cols-3 gap-8 pt-5">
+                    <FilterForm
+                      label="Advance Expense Status"
+                      options={advanceExpenseStatusList}
+                    />
+                    <input
+                      type="text"
+                      className="border-b border-gray-500 focus:outline-none"
+                      placeholder="Start Date"
+                    />
+                    <input
+                      type="text"
+                      className="border-b border-gray-500 focus:outline-none"
+                      placeholder="End Date"
+                    />
+                    <FilterForm
+                      label="Employee Department"
+                      options={employeeDepartmentList}
+                    />
+                    <FilterForm
+                      label="Branch Location"
+                      options={branchLocationList}
+                    />
+                    <div className="flex justify-end col-span-3 gap-2">
+                      <button className="border border-gray-500 rounded-md text-black py-1 px-4">
+                        Clear
+                      </button>
+                      <button className="bg-gray-500 text-white py-1 px-4 rounded-md ">
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div className="relative">
+                <button
+                  className="bg-white text-gray-500 font-semibold py-2 px-4 rounded flex items-center justify-center space-x-2 w-full"
+                  onClick={() => setAction(!action)}
+                >
                   <span>Actions</span>
                   <FaChevronDown />
                 </button>
+                {action && (
+                  <div className="absolute right-0 mt-1 w-72 bg-white border border-gray-300 rounded-md shadow-lg z-10 py-2">
+                    <div className="py-1 flex flex-col ">
+                      <button className="hover:bg-gray-100 px-4 py-1 cursor-pointer text-left hover:text-red-500">
+                        Add Advance Request
+                      </button>
+                      <button className="hover:bg-gray-100 px-4 py-1  text-left cursor-pointer hover:text-red-500">
+                        Approve multiple requests
+                      </button>
+                      <button className="hover:bg-gray-100 px-4 py-1  text-left cursor-pointer hover:text-red-500">
+                        Reject multiple requests
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -439,6 +439,26 @@ import PerformanceViewAssessmentMaster from '../Pages/HRMS/Performance/Performan
 import PerformanceAssessmentViewAllSubmissions from '../Pages/HRMS/Performance/PerformanceAssessmentViewAllSubmissions';
 import PerformanceAssignFinalRecommendation from '../Pages/HRMS/Performance/PerformanceAssignFinalRecommendation';
 import PerformanceFinalRecommendationViewAll from '../Pages/HRMS/Performance/PerformanceFinalRecommendationViewAll';
+import GoalCategoryCompetencyBank from '../Pages/HRMS/Performance/GoalCategoryCompetencyBank';
+import PerformanceEvaluationTemplate from '../Pages/HRMS/Performance/PerformanceEvaluationTemplate';
+import PerformanceCycle from '../Pages/HRMS/Performance/PerformanceCycle';
+import GeneralSurvey from '../Pages/HRMS/Survey/GeneralSurvey';
+import GeneralSurveyView from '../Pages/HRMS/Survey/GeneralSurveyView';
+import OnboardingSurvey from '../Pages/HRMS/Survey/OnboardingSurvey';
+import ExitInterviews from '../Pages/HRMS/Survey/ExitInterviews';
+import QuestionBankGeneralSurvey from '../Pages/HRMS/Survey/QuestionBankGeneralSurvey';
+import QuestionBankOnboardingSurvey from '../Pages/HRMS/Survey/QuestionBankOnboardingSurvey';
+import QuestionBankExitInterviews from '../Pages/HRMS/Survey/QuestionBankExitInterviews';
+import GeneralSurveySetting from '../Pages/HRMS/Survey/GeneralSurveySetting';
+import OnboardingSurveySetting from '../Pages/HRMS/Survey/OnboardingSurveySetting';
+import ExitInterviewsSetting from '../Pages/HRMS/Survey/ExitInterviewsSetting';
+import FlexiBenefits from '../Pages/HRMS/Flexi/FlexiBenefits';
+import FlexiEmployeeBalance from '../Pages/HRMS/Flexi/FlexiEmployeeBalance';
+import GeneralSettingsFlexi from '../Pages/HRMS/Flexi/GeneralSettingsFlexi';
+import FlexiBenefitCategories from '../Pages/HRMS/Flexi/FlexiBenefitCategories';
+import AddFlexiBenefitCategories from '../Pages/HRMS/Flexi/AddFlexiBenefitCategories';
+import EditFlexiBenefitCategory from '../Pages/HRMS/Flexi/EditFlexiBenefitCategory';
+import FlexiBenefitSupervisorAssignment from '../Pages/HRMS/Flexi/FlexiBenefitSupervisorAssignment';
 const routes = [
     {
         path: '/',
@@ -2236,5 +2256,87 @@ const routes = [
         path: '/hrms/performance/performance-final-recommendation-view-all',
         element: <PerformanceFinalRecommendationViewAll/>,
     }, 
+    {
+        path: '/hrms/performance/setting/goal-category-competency-bank',
+        element: <GoalCategoryCompetencyBank/>,
+    }, 
+    {
+        path: '/hrms/performance/setting/evaluation-template',
+        element: <PerformanceEvaluationTemplate/>,
+    }, 
+    {
+        path: '/hrms/performance/setting/performance-cycle',
+        element: <PerformanceCycle/>,
+    }, 
+    //survey
+    {
+        path: '/hrms/survey/general-survey',
+        element: <GeneralSurvey/>,
+    },
+    {
+        path: '/hrms/survey/general-survey-view',
+        element: <GeneralSurveyView/>,
+    },
+    {
+        path: '/hrms/survey/onboarding-survey',
+        element: <OnboardingSurvey/>,
+    },
+    {
+        path: '/hrms/survey/exit-interviews',
+        element: <ExitInterviews/>,
+    },
+    {
+        path: '/hrms/survey/question-bank-general-survey',
+        element: <QuestionBankGeneralSurvey/>,
+    },
+    {
+        path: '/hrms/survey/question-bank-onboarding-survey',
+        element: <QuestionBankOnboardingSurvey/>,
+    },
+    {
+        path: '/hrms/survey/question-bank-exit-interviews',
+        element: <QuestionBankExitInterviews/>,
+    },
+    {
+        path: '/hrms/survey/general-survey-setting',
+        element: <GeneralSurveySetting/>,
+    },
+    {
+        path: '/hrms/survey/onboarding-survey-setting',
+        element: <OnboardingSurveySetting/>,
+    },
+    {
+        path: '/hrms/survey/exit-interviews-setting',
+        element: <ExitInterviewsSetting/>,
+    },
+    //Flexi
+    {
+        path: '/hrms/flexi/flexi-benefits',
+        element: <FlexiBenefits/>,
+    },
+    {
+        path: '/hrms/flexi/flexi-employee-balance',
+        element: <FlexiEmployeeBalance/>,
+    },
+    {
+        path: '/hrms/flexi/setting/general-settings-flexi',
+        element: <GeneralSettingsFlexi/>,
+    },
+    {
+        path: '/hrms/flexi/setting/flexi-benefit-categories',
+        element: <FlexiBenefitCategories/>,
+    },
+    {
+        path: '/hrms/flexi/setting/add-flexi-benefit-categories',
+        element: <AddFlexiBenefitCategories/>,
+    },
+    {
+        path: '/hrms/flexi/setting/edit-flexi-benefit-categories/:id',
+        element: <EditFlexiBenefitCategory/>,
+    },
+    {
+        path: '/hrms/flexi/flexi-benefit-supervisor-assignment',
+        element: < FlexiBenefitSupervisorAssignment/>,
+    },
 ];
 export default routes;
